@@ -1,0 +1,8 @@
+#include <xadrez.h>
+
+int main () {
+  
+  xadrez_iniciar();
+  
+  return 0;
+}
