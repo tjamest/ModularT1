@@ -10,6 +10,6 @@ int main () {
 
 
 // editado.
-//gustavo nao manja das coisa
-
+// gustavo nao manja das coisa
 // certamente ele não manja dos gits
+// agr ele sabe q a gente ta escrevendo em C
