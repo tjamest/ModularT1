@@ -123,4 +123,5 @@ typedef enum {
 *     
 *
 ***********************************************************************/
-BAR_tpCondRet BAR_CriarBaralho(afadfagage);
+BAR_tpCondRet BAR_CriarBaralho(Ponteiro que recebe o endereço do baralho criado);
+BAR_tppBaralho BAR_EmbaralhaBaralho(Endereço para cabeça da lista que contem o baralho);
