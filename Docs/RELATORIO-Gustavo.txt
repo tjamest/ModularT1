@@ -1,29 +1,29 @@
-Na descriÁ„o da tarefa redija uma explicaÁ„o breve sobre o que o componente do
-grupo fez. Esta descriÁ„o deve estar de acordo com o Tipo Tarefa. Cada Tipo Tarefa
-identifica uma natureza de atividade que dever· ser discriminada explicitamente,
-mesmo que, durante uma mesma sess„o de trabalho tenham sido realizadas diversas
+Na descri√ß√£o da tarefa redija uma explica√ß√£o breve sobre o que o componente do
+grupo fez. Esta descri√ß√£o deve estar de acordo com o Tipo Tarefa. Cada Tipo Tarefa
+identifica uma natureza de atividade que dever√° ser discriminada explicitamente,
+mesmo que, durante uma mesma sess√£o de trabalho tenham sido realizadas diversas
 tarefas.
 
-Os tipos de tarefa s„o:
+Os tipos de tarefa s√£o:
 - estudar
-- especificar os mÛdulos
-- especificar as funÁıes
-- revisar especificaÁıes
+- especificar os m√≥dulos
+- especificar as fun√ß√µes
+- revisar especifica√ß√µes
 - projetar
 - revisar projetos
-- codificar mÛdulo
-- revisar cÛdigo do mÛdulo
+- codificar m√≥dulo
+- revisar c√≥digo do m√≥dulo
 - redigir script de teste
 - revisar script de teste
 - realizar os testes
 - diagnosticar e corrigir os problemas encontrados
 
-Data		Horas Trabalhadas	Tipo Tarefa					DescriÁ„o da Tarefa Realizada
+Data		Horas Trabalhadas	Tipo Tarefa					      Descri√ß√£o da Tarefa Realizada
 
-04/04/2018	1h					estudar						Estudamos os requisitos funcionais e n„o funcionais de um jogo de truco
-05/04/2018	1h					estudar						Estudamos as regras do jogo de truco baseados nas regras de um encontro nacional de jogos de truco
-09/04/2018	2h					revisar especificaÁıes		Revisamos as especificaÁıes do programa vendo especificaÁıes de outros grupos
-11/04/2018	1h					especificar as funÁıes		Fizemos um esboÁo das funÁıes que existir„o no programa
-11/04/2018	1h					especificar os mÛdulos		Fizemos um esboÁo dos mÛdulos que existir„o no programa
-16/04/2018	3h					revisar especificaÁıes		Foi feita uma revis„o da Vis„o de MÛdulos, da Vis„o de Interface e dos Requisitos
-18/04/2018	3h					codificar mÛdulo			Foi iniciado o desenvolvimento do MÛdulo Baralho
+04/04/2018	1h					  estudar						        Estudamos os requisitos funcionais e n√£o funcionais de um jogo de truco
+05/04/2018	1h					  estudar						        Estudamos as regras do jogo de truco baseados nas regras de um encontro nacional de jogos de truco
+09/04/2018	2h					  revisar especifica√ß√µes		Revisamos as especifica√ß√µes do programa vendo especifica√ß√µes de outros grupos
+11/04/2018	1h					  especificar as fun√ß√µes		Fizemos um esbo√ßo das fun√ß√µes que existir√£o no programa
+11/04/2018	1h					  especificar os m√≥dulos		Fizemos um esbo√ßo dos m√≥dulos que existir√£o no programa
+16/04/2018	3h					  revisar especifica√ß√µes		Foi feita uma revis√£o da Vis√£o de M√≥dulos, da Vis√£o de Interface e dos Requisitos
+18/04/2018	3h					  codificar m√≥dulo			    Foi iniciado o desenvolvimento do M√≥dulo Baralho
