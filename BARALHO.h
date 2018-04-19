@@ -50,8 +50,9 @@ typedef enum {
 
   BAR_CondRetOK,              /* Concluiu corretamente */
 
-  BAR_CondRetFaltouMemoria,   /* Faltou memoria */
-  
+  BAR_CondRetFaltouMemoria,   /* Faltou memoria */ /*OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
+módulo lista, e quando nós tentassemos criar um baralho adicionando cartas para a lista ia retornar a condição de falta
+de memória*/
   } BAR_tpCondRet;
 
 /***********************************************************************
@@ -117,7 +118,7 @@ typedef enum {
 *
 *     Assertivas de entrada:
 *     - O endereço de ponteiro para a carta deve ser válido
-*     - O valor deve estar dentro do intervalo definido (0 a 12)
+*     - O valor deve estar dentro do intervalo definido (0 a 10)
 *     - O naipe deve ser válido
 *     Assertivas de saída:
 *     - O espaço de memória para o baralho foi alocado com sucesso e seus valores definidos corretamente
