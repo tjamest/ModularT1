@@ -10,7 +10,7 @@ Revisamos as especificações do programa vendo especificações de outros grupo
 11/04/2018 - 1h	trabalhada - Especificar as Funções
 Fizemos um esboço das funções que existirão no programa.
 
-11/04/2018 - 1h Trabalhada - Especificar os Módulos
+11/04/2018 - 1h trabalhada - Especificar os Módulos
 Fizemos um esboço dos módulos que existirão no programa.
 
 16/04/2018 - 3h trabalhadas - Revisar Especificações
