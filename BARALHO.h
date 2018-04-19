@@ -69,15 +69,12 @@ typedef enum {
   _5,               /* 1  */
   _6,               /* 2  */
   _7,               /* 3  */
-  _J,               /* 4  */
-  _Q,               /* 5  */
+  _Q,               /* 4  */
+  _J,               /* 5  */
   _K,               /* 6  */
-  _2,               /* 7  */
-  _3,               /* 8  */
-  _ManilhaOuros,    /* 9  */
-  _ManilhaEspadas,  /* 10 */
-  _ManilhaCopas,    /* 11 */
-  _ManilhaPaus      /* 12 */
+  _A,               /* 7  */
+  _2,               /* 8  */
+  _3,               /* 9  */
   
    } BAR_tpValor ;
 
