@@ -75,6 +75,7 @@ typedef enum {
   _A,               /* 7  */
   _2,               /* 8  */
   _3,               /* 9  */
+  _Manilha          /* 10 */
   
    } BAR_tpValor ;
 
