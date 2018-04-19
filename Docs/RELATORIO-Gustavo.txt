@@ -19,6 +19,9 @@ Foi feita uma revisão da Visão de Módulos, da Visão de Interface e dos Requi
 18/04/2018 - 3h trabalhadas - Codificar Módulo
 Foi iniciado o desenvolvimento do Módulo Baralho.
 
+19/04/2018 - 1h trabalhada - Estudar
+Estudamos o Módulo Baralho e o Módulo Lista para continuar a codificação.
+
 
 
 
