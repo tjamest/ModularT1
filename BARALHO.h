@@ -24,6 +24,8 @@
 *     Destrói esse baralho.
 ***************************************************************************/
 
+#include "LISTA.h"
+
 #if defined( BARALHO_OWN )
    #define BARALHO_EXT
 #else
@@ -100,13 +102,13 @@ typedef enum {
 
 /***********************************************************************
 *
-*  $FC Função: LIS  &Criar Baralho
+*  $FC Função: BAR  &Criar Baralho
 *
 *  $ED Descrição da função
 *   Cria um baralho (lista) de 40 cartas sem os 8, 9, 10 e coringas.
 *
 *  $EP Parâmetros
-*     *pBaralho: Ponteiro para o início da lista (baralho)
+*     baralho: uma estrutura LIS_tppLista com uma cabeça vazia para poder preencher
 *
 *  $FV Valor retornado
 *     Se executou corretamente retorna o ponteiro para o início do baralho.
@@ -125,8 +127,44 @@ typedef enum {
 *     
 *
 ***********************************************************************/
-BAR_tpCondRet BAR_CriarBaralho(Ponteiro que recebe o endereço do baralho criado);
-BAR_tppBaralho BAR_EmbaralhaBaralho(Endereço para cabeça da lista que contem o baralho);
+
+BAR_tpCondRet BAR_CriarBaralho(LIS_tppLista baralho);
+
+/**********************************************************************
+*
+*  $FC Função: BAR  &Embaralha Baralho
+*
+*  $ED Descrição da função
+*   Recebe um baralho (lista) e reordena a ordem de seus elementos para uma ordem aleatória.
+*
+*  $EP Parâmetros
+*     baralho: uma estrutura LIS_tppLista apontado para a cabeça com o baralho
+*
+*  $FV Valor retornado
+*     Se executou corretamente retorna o ponteiro para o início do baralho.
+*     Este ponteiro será utilizado pelas funções que manipulem este baralho.
+*
+*     Se ocorreu algum erro, por exemplo falts de memória ou dados incorretos, 
+*     a função retornará NULL.
+*     Não será dada mais informação quanto ao problema ocorrido.
+*
+*     Assertivas de entrada:
+*     - O endereço de ponteiro para o baralho deve conter elementos preenchidos com cartas
+*     - O endereço de ponteiro para a carta deve ser válido
+*     - O valor deve estar dentro do intervalo definido (0 a 10)
+*     - O naipe deve ser válido
+*     Assertivas de sada:
+*     - A ordem das cartas do baralho estão diferentes da ordem de antes de entrar na função
+*     - As cartas foram reordenadas de uma maneira aleatória
+*
+*
+***********************************************************************/
+
+BAR_tppBaralho BAR_EmbaralhaBaralho(LIS_tppLista baralho);
+
+#undef BARALHO_EXT
+
+/************** Fim do módulo de definição: BAR  Baralho **************/
 
 #else
 #endif
