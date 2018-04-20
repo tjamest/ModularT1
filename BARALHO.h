@@ -91,10 +91,10 @@ typedef enum {
 ***********************************************************************/
 typedef enum {
 
-  Ouros,
-  Espadas,
-  Copas,
-  Paus
+  Ouros,           /*0*/
+  Espadas,        /*1*/
+  Copas,          /*2*/
+  Paus            /*3*/
 
    } BAR_tpNaipe ;
 
