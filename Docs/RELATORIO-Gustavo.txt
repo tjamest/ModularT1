@@ -22,6 +22,8 @@ Foi iniciado o desenvolvimento do Módulo Baralho.
 19/04/2018 - 1h trabalhada - Estudar
 Estudamos o Módulo Baralho e o Módulo Lista para continuar a codificação.
 
+20/04/2018 - 1h trabalhada - Projetar
+Foi feito um gráfico que mostra como a estrutura de Lista de Listas funcionará.
 
 
 
