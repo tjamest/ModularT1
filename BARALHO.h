@@ -132,13 +132,13 @@ BAR_tpCondRet BAR_CriarBaralho(LIS_tppLista baralho);
 
 /**********************************************************************
 *
-*  $FC Função: BAR  &Embaralha Baralho
+*  $FC Função: BAR  &Embaralhar Baralho
 *
 *  $ED Descrição da função
-*   Recebe um baralho (lista) e reordena a ordem de seus elementos para uma ordem aleatória.
+*   Recebe uma lista (baralho) e reordena a ordem de seus elementos para uma ordem aleatória.
 *
 *  $EP Parâmetros
-*     baralho: uma estrutura LIS_tppLista apontado para a cabeça com o baralho
+*     baralho: uma estrutura LIS_tppLista apontando para a cabeça com o baralho.
 *
 *  $FV Valor retornado
 *     Se executou corretamente retorna o ponteiro para o início do baralho.
@@ -151,16 +151,15 @@ BAR_tpCondRet BAR_CriarBaralho(LIS_tppLista baralho);
 *     Assertivas de entrada:
 *     - O endereço de ponteiro para o baralho deve conter elementos preenchidos com cartas
 *     - O endereço de ponteiro para a carta deve ser válido
-*     - O valor deve estar dentro do intervalo definido (0 a 10)
-*     - O naipe deve ser válido
-*     Assertivas de sada:
+
+*     Assertivas de saída:
 *     - A ordem das cartas do baralho estão diferentes da ordem de antes de entrar na função
 *     - As cartas foram reordenadas de uma maneira aleatória
 *
 *
 ***********************************************************************/
 
-BAR_tppBaralho BAR_EmbaralhaBaralho(LIS_tppLista baralho);
+BAR_tppBaralho BAR_EmbaralharBaralho(LIS_tppLista baralho);
 
 #undef BARALHO_EXT
 
