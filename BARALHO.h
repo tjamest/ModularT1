@@ -24,6 +24,8 @@
 *     Destrói esse baralho.
 ***************************************************************************/
 
+#include "LISTA.h"
+
 #if defined( BARALHO_OWN )
    #define BARALHO_EXT
 #else
@@ -50,9 +52,11 @@ typedef enum {
 
   BAR_CondRetOK,              /* Concluiu corretamente */
 
-  BAR_CondRetFaltouMemoria,   /* Faltou memoria */ /*OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
-módulo lista, e quando nós tentassemos criar um baralho adicionando cartas para a lista ia retornar a condição de falta
-de memória*/
+  BAR_CondRetFaltouMemoria,   /* Faltou memoria */ 
+/* OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
+módulo lista, e quando nós tentassemos criar um baralho adicionando cartas
+para a lista ia retornar a condição de falta de memória */
+
   } BAR_tpCondRet;
 
 /***********************************************************************
@@ -100,13 +104,13 @@ typedef enum {
 
 /***********************************************************************
 *
-*  $FC Função: LIS  &Criar Baralho
+*  $FC Função: BAR  &Criar Baralho
 *
 *  $ED Descrição da função
 *   Cria um baralho (lista) de 40 cartas sem os 8, 9, 10 e coringas.
 *
 *  $EP Parâmetros
-*     *pBaralho: Ponteiro para o início da lista (baralho)
+*     pBaralho: uma estrutura LIS_tppLista com uma cabeça vazia para poder preencher
 *
 *  $FV Valor retornado
 *     Se executou corretamente retorna o ponteiro para o início do baralho.
@@ -125,8 +129,61 @@ typedef enum {
 *     
 *
 ***********************************************************************/
-BAR_tpCondRet BAR_CriarBaralho(Ponteiro que recebe o endereço do baralho criado);
-BAR_tppBaralho BAR_EmbaralhaBaralho(Endereço para cabeça da lista que contem o baralho);
+
+BAR_tpCondRet BAR_CriarBaralho(LIS_tppLista pBaralho);
+
+/**********************************************************************
+*
+*  $FC Função: BAR  &Embaralhar Baralho
+*
+*  $ED Descrição da função
+*   Recebe uma lista (baralho) e reordena a ordem de seus elementos para uma ordem aleatória.
+*
+*  $EP Parâmetros
+*     pBaralho: uma estrutura LIS_tppLista apontando para a cabeça com o baralho.
+*
+*  $FV Valor retornado
+*     Se executou corretamente retorna o ponteiro para o início do baralho.
+*     Este ponteiro será utilizado pelas funções que manipulem este baralho.
+*
+*     Se ocorreu algum erro, por exemplo falta de memória ou dados incorretos, 
+*     a função retornará NULL.
+*     Não será dada mais informação quanto ao problema ocorrido.
+*
+*     Assertivas de entrada:
+*     - O endereço de ponteiro para o baralho deve conter elementos preenchidos com cartas.
+*     - O endereço de ponteiro para a carta deve ser válido.
+
+*     Assertivas de saída:
+*     - A ordem das cartas do baralho tem de estar diferentes da ordem de antes de entrar na função.
+*     - As cartas devem ser reordenadas de maneira aleatória.
+*
+*
+***********************************************************************/
+
+BAR_tppBaralho BAR_EmbaralharBaralho(LIS_tppLista pBaralho);
+
+/**********************************************************************
+*
+*  $FC Função: BAR  &Destruir Baralho
+*
+*  $ED Descrição da função
+*     Destrói a lista baralho fornecida.
+*     O parâmetro ponteiro para a lista não é modificado.
+*     Se ocorrer algum erro durante a destruição, a lista resultará
+*     estruturalmente incorreta.
+*     OBS. não existe previsão para possíveis falhas de execução.
+*
+*  $FV Valor retornado
+*     LIS_CondRetOK    - destruiu sem problemas
+*
+***********************************************************************/
+
+void BAR_DestruirBaralho(LIS_tppLista pBaralho);
+
+#undef BARALHO_EXT
+
+/************** Fim do módulo de definição: BAR  Baralho **************/
 
 #else
 #endif
