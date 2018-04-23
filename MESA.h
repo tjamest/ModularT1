@@ -211,3 +211,42 @@ void MES_AtualizarPontuacaoPartida(  ) ;
 ***********************************************************************/
 
 void MES_ChecarPontuacaoPartida(  ) ;
+
+/***********************************************************************
+*
+*  $FC Função: MES  &Atualizar cartas mesa
+*
+*  $ED Descrição da função
+*     Atualiza a lista "mesa" incluindo nela 
+*     as cartas que os jogadores apostarem.
+*
+*  $EP Parâmetros
+*     pBaralho  - ponteiro para a lista de listas que contém
+*                 a lista "mesa" onde será armazenada as 
+*                 cartas apostadas pelos jogadores.
+*
+*  $FV Valor retornado
+*     MES_CondRetOK
+*     MES_CondRetNaoAtualizouCartasMesa
+*
+***********************************************************************/
+
+void MES_AtualizarCartasMesa( LIS_tppLista pBaralho ) ;
+
+/***********************************************************************
+*
+*  $FC Função: MES  &Atualizar valor rodada
+*
+*  $ED Descrição da função
+*     Atualiza o valor da rodada em execução. 
+*
+*  $EP Parâmetros
+*     //não faço ideia
+*
+*  $FV Valor retornado
+*     MES_CondRetOK
+*     MES_CondRetNaoAtualizouValorRodada
+*
+***********************************************************************/
+
+void MES_AtualizarValorRodada(  ) ;
