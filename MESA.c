@@ -15,3 +15,26 @@
 *     1       avs   23/abr/2018 início desenvolvimento
 *
 ***************************************************************************/
+
+/***** Protótipos das funções encapsuladas no módulo *****/
+
+/*   static void LiberarElemento( LIS_tppLista   pLista ,
+                                tpElemLista  * pElem   ) ;
+
+   static tpElemLista * CriarElemento( LIS_tppLista pLista ,
+                                       void *       pValor  ) ;
+
+static void LimparCabeca( LIS_tppLista pLista ) ;       */
+
+/*****  Código das funções exportadas pelo módulo  *****/
+
+/***************************************************************************
+*
+*  Função: MES  &Definir vira
+****************************************************************************/
+
+   void MES_DefinirVira( LIS_tppLista pUltimoElemMesa )
+   {
+     
+     
+   } /* Fim função: MES &Definir vira
