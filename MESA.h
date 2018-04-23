@@ -98,3 +98,116 @@ typedef struct LIS_tagLista * LIS_tppLista ; // <- não editei, original do LIST
 ***********************************************************************/
 
    void MES_DefinirVira( LIS_tppLista pBaralho ) ;
+
+/***********************************************************************
+*
+*  $FC Função: MES  &Distribuir mãos
+*
+*  $ED Descrição da função
+*     Preenche as listas de mãos de jogadores
+*     retirando cartas aleatórias da lista "baralho".
+*
+*  $EP Parâmetros
+*     pBaralho  - ponteiro para a lista de listas que contém
+*                 a lista "baralho" onde estará armazenada o 
+*                 baralho com 40 cartas embaralhadas.
+*
+*  $FV Valor retornado
+*     MES_CondRetOK
+*     MES_CondRetNaoDistribuiuMaos
+*
+***********************************************************************/
+
+void MES_DistribuirMaos( LIS_tppLista pBaralho ) ;
+
+/***********************************************************************
+*
+*  $FC Função: MES  &Definir quem começa
+*
+*  $ED Descrição da função
+*     Define qual jogador começará a rodada.
+*
+*  $EP Parâmetros
+*     //não faço ideia
+*
+*  $FV Valor retornado
+*     MES_CondRetOK
+*     MES_CondRetNaoDefiniuQuemComeca
+*
+***********************************************************************/
+
+void MES_DefinirQuemComeca(  ) ;
+
+/***********************************************************************
+*
+*  $FC Função: MES  &Atualizar pontuação rodada
+*
+*  $ED Descrição da função
+*     Atualiza o placar da rodada em execução.
+*
+*  $EP Parâmetros
+*     //não faço ideia
+*
+*  $FV Valor retornado
+*     MES_CondRetOK
+*     MES_CondRetNaoAtualizouPontuacaoRodada
+*
+***********************************************************************/
+
+void MES_AtualizarPontuacaoRodada(  ) ;
+
+/***********************************************************************
+*
+*  $FC Função: MES  &Checar pontuação rodada
+*
+*  $ED Descrição da função
+*     Checa a pontuação da rodada para saber 
+*     se a rodada terminou.
+*
+*  $EP Parâmetros
+*     //não faço ideia
+*
+*  $FV Valor retornado
+*     MES_CondRetOK
+*     MES_CondRetNaoChecouPontuacaoRodada
+*
+***********************************************************************/
+
+void MES_ChecarPontuacaoRodada(  ) ;
+
+/***********************************************************************
+*
+*  $FC Função: MES  &Atualizar pontuação partida
+*
+*  $ED Descrição da função
+*     Atualiza o placar da partida.
+*
+*  $EP Parâmetros
+*     //não faço ideia
+*
+*  $FV Valor retornado
+*     MES_CondRetOK
+*     MES_CondRetNaoAtualizouPontuacaoPartida
+*
+***********************************************************************/
+
+void MES_AtualizarPontuacaoPartida(  ) ;
+
+/***********************************************************************
+*
+*  $FC Função: MES  &Checar pontuação partida
+*
+*  $ED Descrição da função
+*     Checa a pontuação da partida para saber 
+*     se a partida terminou.
+*
+*  $EP Parâmetros
+*     //não faço ideia
+*
+*  $FV Valor retornado
+*     MES_CondRetOK
+*     MES_CondRetNaoChecouPontuacaoPartida
+*
+***********************************************************************/
+
+void MES_ChecarPontuacaoPartida(  ) ;
