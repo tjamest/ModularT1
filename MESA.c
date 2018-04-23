@@ -35,6 +35,8 @@ static void LimparCabeca( LIS_tppLista pLista ) ;       */
 
    void MES_DefinirVira( LIS_tppLista pUltimoElemMesa )
    {
-     
+      pUltimoElemMesa->pValor->Valor = //uma carta aleatória do baralho que não
+      pUltimoElemMesa->pValor->Naipe = //esteja nas mãos dos jogadores
+                                       //tenho qse ctz q essa declaração ta errada
      
    } /* Fim função: MES &Definir vira
