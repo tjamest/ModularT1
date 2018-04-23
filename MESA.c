@@ -38,5 +38,10 @@ static void LimparCabeca( LIS_tppLista pLista ) ;       */
       pUltimoElemMesa->pValor->Valor = //uma carta aleatória do baralho que não
       pUltimoElemMesa->pValor->Naipe = //esteja nas mãos dos jogadores
                                        //tenho qse ctz q essa declaração ta errada
-     
+        
+      if ( (pUltimoElemMesa->pValor->Valor && pUltimoElemMesa->pValor->Naipe) == //carta da mão de algum jogador ) 
+      {
+                 
+        
+      } /* fim if */
    } /* Fim função: MES &Definir vira
