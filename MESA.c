@@ -16,6 +16,13 @@
 *
 ***************************************************************************/
 
+#include   <stdio.h>
+
+#define MESA_OWN
+#include "BARALHO.h"
+#include "LISTA.h"
+#undef MESA_OWN
+
 /***** Protótipos das funções encapsuladas no módulo *****/
 
 /*   static void LiberarElemento( LIS_tppLista   pLista ,
