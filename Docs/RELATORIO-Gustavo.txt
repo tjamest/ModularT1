@@ -25,6 +25,12 @@ Estudamos o Módulo Baralho e o Módulo Lista para continuar a codificação.
 20/04/2018 - 1h trabalhada - Projetar
 Foi feito um gráfico que mostra como a estrutura de Lista de Listas funcionará.
 
+23/04/2018 - 1h trabalhada - Especificar módulos
+Foi iniciado o desenvolvimento do MESA.h e MESA.c.
+
+23/04/2018 - 1h trabalhada - Especificar funções
+Foram definidas as funções do módulo mesa.
+
 
 
 Os tipos de tarefa são:
