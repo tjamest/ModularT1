@@ -87,9 +87,9 @@ typedef struct LIS_tagLista * LIS_tppLista ; // <- não editei, original do LIST
 *     define também a manilha.
 *
 *  $EP Parâmetros
-*     pBaralho  - ponteiro para a lista de listas que contém
-*                 a lista "mesa" onde estará armazenada (no 
-*                 último elemento da lista) a carta "vira". //ou armazena a carta "manilha"? pra usar pra comparações no código
+*     pUltimoElem  - ponteiro para o último elemento da
+*                    lista "mesa", que será a carta "vira".
+*                    //ou armazena a carta "manilha"? pra usar pra comparações no código
 *
 *  $FV Valor retornado
 *     MES_CondRetOK
@@ -97,7 +97,7 @@ typedef struct LIS_tagLista * LIS_tppLista ; // <- não editei, original do LIST
 *
 ***********************************************************************/
 
-   void MES_DefinirVira( LIS_tppLista pBaralho ) ;
+   void MES_DefinirVira( LIS_tppLista pUltimoElemMesa ) ;
 
 /***********************************************************************
 *
