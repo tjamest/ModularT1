@@ -136,7 +136,7 @@ typedef enum {
 *
 ***********************************************************************/
 
-BAR_tpCondRet BAR_CriarBaralho(LIS_tppLista pBaralho);
+CAR_tpCondRet CAR_CriarBaralho(LIS_tppLista pBaralho);
 
 /**********************************************************************
 *
@@ -167,7 +167,7 @@ BAR_tpCondRet BAR_CriarBaralho(LIS_tppLista pBaralho);
 *
 ***********************************************************************/
 
-BAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho);
+CAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho);
 
 /**********************************************************************
 *
