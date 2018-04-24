@@ -34,8 +34,8 @@
 
    typedef struct Carta {
 
-         BAR_ValorCarta	/* Valores: 4, 5, 6, 7, Q, J, K, A, 2, 3, ManilhaOuros, ManilhaEspadas, ManilhaCopas, ManilhaPaus */
+         CAR_ValorCarta	/* Valores: 4, 5, 6, 7, Q, J, K, A, 2, 3, ManilhaOuros, ManilhaEspadas, ManilhaCopas, ManilhaPaus */
 
-         BAR_NaipeCarta	/* Naipes: Ouros, Espadas, Copas, Paus */
+         CAR_NaipeCarta	/* Naipes: Ouros, Espadas, Copas, Paus */
 
 } CAR_tppCarta;
