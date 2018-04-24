@@ -31,6 +31,9 @@ Foi iniciado o desenvolvimento do MESA.h e MESA.c.
 23/04/2018 - 1h trabalhada - Especificar funções
 Foram definidas as funções do módulo mesa.
 
+24/04/2018 - 1h trabalhada - Estudar
+Foi estudado os módulos do trabalho.
+
 
 
 Os tipos de tarefa são:
