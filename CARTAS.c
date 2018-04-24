@@ -38,4 +38,4 @@
 
          BAR_NaipeCarta	/* Naipes: Ouros, Espadas, Copas, Paus */
 
-} BAR_tppCarta;
+} CAR_tppCarta;
