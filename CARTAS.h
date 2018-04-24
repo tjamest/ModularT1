@@ -42,11 +42,11 @@ typedef struct Carta * CAR_tpCarta
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: BAR Condições de retorno
+*  $TC Tipo de dados: CAR Condições de retorno
 *
 *
 *  $ED Descrição do tipo
-*     Condições de retorno das funções de carta
+*     Condições de retorno das funções de carta.
 *
 ***********************************************************************/
 
