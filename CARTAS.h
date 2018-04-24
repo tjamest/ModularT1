@@ -2,10 +2,10 @@
 #define BARALHO_
 /***************************************************************************
 *
-*  $MCD Módulo de definição: BAR  Baralho
+*  $MCD Módulo de definição: CAR  Cartas
 *
-*  Arquivo gerado:              BARALHO.h
-*  Letras identificadoras:      BAR
+*  Arquivo gerado:              CARTAS.h
+*  Letras identificadoras:      CAR
 *
 *  Nome da base de software:    Truco
 *  Arquivo da base de software:
@@ -19,8 +19,10 @@
 *     1       gsc   19/abr/2018 início desenvolvimento
 *
 *  $ED Descrição do módulo
-*     Cria um baralho de 40 cartas (sem os 8, 9, 10 e coringa).
-*     Embaralha essas 40 cartas.
+*     Cria um baralho (lista) de 40 cartas (sem os 8, 9, 10 e coringa);
+*     Embaralha essas 40 cartas;
+*     Cria as mãos dos jogadores (lista de 3 elementos, que são 3 cartas);
+*     Cria uma lista que armazena as cartas apostadas na mesa e a manilha;
 *     Destrói esse baralho.
 ***************************************************************************/
 
@@ -50,12 +52,16 @@ typedef struct Carta * BAR_tpCarta
 
 typedef enum {
 
-  BAR_CondRetOK,              /* Concluiu corretamente */
-
-  BAR_CondRetFaltouMemoria,   /* Faltou memoria */ 
-/* OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
-módulo lista, e quando nós tentassemos criar um baralho adicionando cartas
-para a lista ia retornar a condição de falta de memória */
+  BAR_CondRetOK,                 /* Concluiu corretamente */
+  BAR_CondRetNaoCriouBaralho,    /* Não criou a lista "baralho" de 40 cartas */
+  BAR_CondRetNaoCriouMaoJogador, /* Não criou as listas "mão jogador" */
+  BAR_CondRetNaoCriouMesa,       /* Não criou a lista "mesa" */
+  BAR_CondRetNaoDestruiuBaralho, /* Não destruiu o baralho no fim da partida */
+  BAR_CondRetFaltouMemoria       /* Faltou memoria */ 
+  
+  /* OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
+  módulo lista, e quando nós tentassemos criar um baralho adicionando cartas
+  para a lista ia retornar a condição de falta de memória */
 
   } BAR_tpCondRet;
 
@@ -95,7 +101,7 @@ typedef enum {
 ***********************************************************************/
 typedef enum {
 
-  Ouros,           /*0*/
+  Ouros,          /*0*/
   Espadas,        /*1*/
   Copas,          /*2*/
   Paus            /*3*/
