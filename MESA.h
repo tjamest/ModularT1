@@ -86,8 +86,8 @@ typedef struct LIS_tagLista * LIS_tppLista ; // <- não editei, original do LIST
 *     Define qual carta será a manilha.
 *
 *  $EP Parâmetros
-*     pUltimoElem  - ponteiro para o último elemento da lista
-*                    "mesa", que armazenará a carta "manilha".
+*     pUltimoElemMesa  - ponteiro para o último elemento da lista
+*                        "mesa", que armazenará a carta "manilha".
 *
 *  $FV Valor retornado
 *     MES_CondRetOK
