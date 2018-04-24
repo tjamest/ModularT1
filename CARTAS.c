@@ -1,8 +1,8 @@
 /***************************************************************************
-*  $MCI Módulo de implementação: BAR  Baralho
+*  $MCI Módulo de implementação: CAR  Cartas
 *
-*  Arquivo gerado:              BARALHO.c
-*  Letras identificadoras:      BAR
+*  Arquivo gerado:              CARTAS.c
+*  Letras identificadoras:      CAR
 *
 *  Nome da base de software:    Truco
 *  Arquivo da base de software:
@@ -21,13 +21,13 @@
 #include   <string.h>
 #include   <malloc.h>
 
-#define BARALHO_OWN
-#include "BARALHO.h"
-#undef BARALHO_OWN
+#define CARTAS_OWN
+#include "CARTAS.h"
+#undef CARTAS_OWN
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: BAR Carta do Baralho
+*  $TC Tipo de dados: CAR Carta do Baralho
 *
 *
 ***********************************************************************/
