@@ -1,5 +1,5 @@
-#if ! defined( BARALHO_ )
-#define BARALHO_
+#if ! defined( CARTAS_ )
+#define CARTAS_
 /***************************************************************************
 *
 *  $MCD Módulo de definição: CAR  Cartas
@@ -28,17 +28,17 @@
 
 #include "LISTA.h"
 
-#if defined( BARALHO_OWN )
-   #define BARALHO_EXT
+#if defined( CARTAS_OWN )
+   #define CARTAS_EXT
 #else
-   #define BARALHO_EXT extern
+   #define CARTAS_EXT extern
 #endif
 
 /***** Declarações exportadas pelo módulo *****/
 
 /* Tipo referência para uma carta */
 
-typedef struct Carta * BAR_tpCarta
+typedef struct Carta * CAR_tpCarta
 
 /***********************************************************************
 *
@@ -50,24 +50,24 @@ typedef struct Carta * BAR_tpCarta
 *
 ***********************************************************************/
 
-typedef enum {
+typedef enum { //não tenho certeza se essas condições de retorno devem existir
 
-  BAR_CondRetOK,                 /* Concluiu corretamente */
-  BAR_CondRetNaoCriouBaralho,    /* Não criou a lista "baralho" de 40 cartas */
-  BAR_CondRetNaoCriouMaoJogador, /* Não criou as listas "mão jogador" */
-  BAR_CondRetNaoCriouMesa,       /* Não criou a lista "mesa" */
-  BAR_CondRetNaoDestruiuBaralho, /* Não destruiu o baralho no fim da partida */
-  BAR_CondRetFaltouMemoria       /* Faltou memoria */ 
+  CAR_CondRetOK,                 /* Concluiu corretamente */
+  CAR_CondRetNaoCriouBaralho,    /* Não criou a lista "baralho" de 40 cartas */
+  CAR_CondRetNaoCriouMaoJogador, /* Não criou as listas "mão jogador" */
+  CAR_CondRetNaoCriouMesa,       /* Não criou a lista "mesa" */
+  CAR_CondRetNaoDestruiuBaralho, /* Não destruiu o baralho no fim da partida */
+  CAR_CondRetFaltouMemoria       /* Faltou memoria */ 
   
   /* OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
   módulo lista, e quando nós tentassemos criar um baralho adicionando cartas
   para a lista ia retornar a condição de falta de memória */
 
-  } BAR_tpCondRet;
+  } CAR_tpCondRet;
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: BAR tpValor
+*  $TC Tipo de dados: CAR tpValor
 *
 *
 *  $ED Descrição do tipo
@@ -88,7 +88,7 @@ typedef enum {
   _3,               /* 9  */
   _Manilha          /* 10 */
   
-   } BAR_tpValor ;
+   } CAR_tpValor ;
 
 /***********************************************************************
 *
@@ -106,11 +106,11 @@ typedef enum {
   Copas,          /*2*/
   Paus            /*3*/
 
-   } BAR_tpNaipe ;
+   } CAR_tpNaipe ;
 
 /***********************************************************************
 *
-*  $FC Função: BAR  &Criar Baralho
+*  $FC Função: CAR  &Criar Baralho
 *
 *  $ED Descrição da função
 *   Cria um baralho (lista) de 40 cartas sem os 8, 9, 10 e coringas.
@@ -140,7 +140,7 @@ BAR_tpCondRet BAR_CriarBaralho(LIS_tppLista pBaralho);
 
 /**********************************************************************
 *
-*  $FC Função: BAR  &Embaralhar Baralho
+*  $FC Função: CAR  &Embaralhar Baralho
 *
 *  $ED Descrição da função
 *   Recebe uma lista (baralho) e reordena a ordem de seus elementos para uma ordem aleatória.
@@ -167,11 +167,11 @@ BAR_tpCondRet BAR_CriarBaralho(LIS_tppLista pBaralho);
 *
 ***********************************************************************/
 
-BAR_tppBaralho BAR_EmbaralharBaralho(LIS_tppLista pBaralho);
+BAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho);
 
 /**********************************************************************
 *
-*  $FC Função: BAR  &Destruir Baralho
+*  $FC Função: CAR  &Destruir Baralho
 *
 *  $ED Descrição da função
 *     Destrói a lista baralho fornecida.
@@ -185,11 +185,11 @@ BAR_tppBaralho BAR_EmbaralharBaralho(LIS_tppLista pBaralho);
 *
 ***********************************************************************/
 
-void BAR_DestruirBaralho(LIS_tppLista pBaralho);
+void CAR_DestruirBaralho(LIS_tppLista pBaralho);
 
-#undef BARALHO_EXT
+#undef CARTAS_EXT
 
-/************** Fim do módulo de definição: BAR  Baralho **************/
+/************** Fim do módulo de definição: CAR  Cartas **************/
 
 #else
 #endif
