@@ -49,8 +49,8 @@ typedef struct LIS_tagLista * LIS_tppLista ; // <- não editei, original do LIST
          MES_CondRetOK ,
                /* Concluiu corretamente */
 
-         MES_CondRetNaoDefiniuVira ,
-               /* A mesa não definiu a vira */
+         MES_CondRetNaoDefiniuManilha ,
+               /* A mesa não definiu a manilha */
 
          MES_CondRetNaoDistribuiuMaos ,
                /* A mesa não distribuiu as mãos */
@@ -80,24 +80,22 @@ typedef struct LIS_tagLista * LIS_tppLista ; // <- não editei, original do LIST
 
 /***********************************************************************
 *
-*  $FC Função: MES  &Definir vira
+*  $FC Função: MES  &Definir manilha
 *
 *  $ED Descrição da função
-*     Define qual carta será a vira e, consequentemente,
-*     define também a manilha.
+*     Define qual carta será a manilha.
 *
 *  $EP Parâmetros
-*     pUltimoElem  - ponteiro para o último elemento da
-*                    lista "mesa", que será a carta "vira".
-*                    //ou armazena a carta "manilha"? pra usar pra comparações no código
+*     pUltimoElem  - ponteiro para o último elemento da lista
+*                    "mesa", que armazenará a carta "manilha".
 *
 *  $FV Valor retornado
 *     MES_CondRetOK
-*     MES_CondRetNaoDefiniuVira
+*     MES_CondRetNaoDefiniuManilha
 *
 ***********************************************************************/
 
-   void MES_DefinirVira( LIS_tppLista pUltimoElemMesa ) ;
+   void MES_DefinirManilha( LIS_tppLista pUltimoElemMesa ) ;
 
 /***********************************************************************
 *
