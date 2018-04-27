@@ -39,3 +39,48 @@
          CAR_NaipeCarta	/* Naipes: Ouros, Espadas, Copas, Paus */
 
 } CAR_tppCarta;
+
+/***** Protótipos das funções encapsuladas no módulo *****/
+
+static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
+
+/*****  Código das funções exportadas pelo módulo  *****/
+
+/***************************************************************************
+*
+*  Função: CAR  &Criar baralho
+*  ****/
+
+CAR_tpCondRet CAR_CriarBaralho(LIS_tppLista pBaralho) {
+   
+} /* Fim função: CAR &Criar baralho
+
+/***************************************************************************
+*
+*  Função: CAR  &Destruir baralho
+*  ****/
+
+void CAR_DestruirBaralho(LIS_tppLista pBaralho) {
+   
+} /* Fim função: CAR &Destruir baralho
+
+
+/*****  Código das funções encapsuladas no módulo  *****/
+
+
+/***********************************************************************
+*
+*  $FC Função: LIS  -Liberar elemento da lista
+*
+*  $ED Descrição da função
+*     Recebe uma lista (baralho) e reordena a ordem de seus elementos
+*     para uma ordem aleatória.
+*
+***********************************************************************/
+
+CAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho) {
+   
+} /* Fim função: CAR &Embaralhar baralho
+
+
+/************ Fim do módulo de implementação: CAR   Cartas ************/
