@@ -34,7 +34,7 @@ Foram definidas as funções do módulo mesa.
 24/04/2018 - 1h trabalhada - Estudar
 Foi estudado os módulos do trabalho.
 
-29/04/2018 - 1h trabalhada - Estudar
+29/04/2018 - 2h trabalhadas - Estudar
 Foi estudado o funcionamento do arcabouço.
 
 
