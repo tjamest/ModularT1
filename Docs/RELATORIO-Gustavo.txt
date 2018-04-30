@@ -37,6 +37,9 @@ Foi estudado os módulos do trabalho.
 29/04/2018 - 2h trabalhadas - Estudar
 Foi estudado o funcionamento do arcabouço.
 
+30/04/2018 - 1h trabalhada - Estudar
+Foi estudado o funcionamento do arcabouço.
+
 
 
 Os tipos de tarefa são:
