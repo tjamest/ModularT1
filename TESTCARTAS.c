@@ -1,22 +1,18 @@
 /***************************************************************************
-*  $MCI Módulo de implementação: TLIS Teste lista de símbolos
+*  $MCI MÃ³dulo de implementaÃ§Ã£o: TCAR Teste cartas
 *
-*  Arquivo gerado:              TestLIS.c
-*  Letras identificadoras:      TLIS
+*  Arquivo gerado:              TestCAR.c
+*  Letras identificadoras:      TCAR
 *
-*  Nome da base de software:    Arcabouço para a automação de testes de programas redigidos em C
-*  Arquivo da base de software: D:\AUTOTEST\PROJETOS\LISTA.BSW
+*  Nome da base de software:    Jogo de Truco
 *
-*  Projeto: INF 1301 / 1628 Automatização dos testes de módulos C
+*  Projeto: Jogo de Truco
 *  Gestor:  LES/DI/PUC-Rio
-*  Autores: avs
+*  Autores: gsc, jvr, tgf
 *
-*  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-*     4       avs   01/fev/2006 criar linguagem script simbólica
-*     3       avs   08/dez/2004 uniformização dos exemplos
-*     2       avs   07/jul/2003 unificação de todos os módulos em um só projeto
-*     1       avs   16/abr/2003 início desenvolvimento
+*  $HA HistÃ³rico de evoluÃ§Ã£o:
+*     VersÃ£o  Autor    Data     ObservaÃ§Ãµes
+*     1       avs   30/abr/2018 inÃ­cio desenvolvimento
 *
 ***************************************************************************/
 
@@ -29,9 +25,10 @@
 #include    "Generico.h"
 #include    "LerParm.h"
 
-#include    "Lista.h"
+#include    "Cartas.h"
+#include    "Lista.h" //deve incluir?
 
-
+//comandos originais do TESTLIS.c (nÃ£o sei se eles devem ser incluÃ­dos)
 static const char RESET_LISTA_CMD         [ ] = "=resetteste"     ;
 static const char CRIAR_LISTA_CMD         [ ] = "=criarlista"     ;
 static const char DESTRUIR_LISTA_CMD      [ ] = "=destruirlista"  ;
@@ -43,6 +40,11 @@ static const char EXC_ELEM_CMD            [ ] = "=excluirelem"    ;
 static const char IR_INICIO_CMD           [ ] = "=irinicio"       ;
 static const char IR_FIM_CMD              [ ] = "=irfinal"        ;
 static const char AVANCAR_ELEM_CMD        [ ] = "=avancarelem"    ;
+
+//comandos do TESTCARTAS.c
+static const char CRIAR_BARALHO_CARTAS_CMD        [ ] = "=criarbaralho"     ;
+static const char EMBARALHAR_BARALHO_CARTAS_CMD   [ ] = "=embaralharbaralho"  ;
+static const char DESTRUIR_BARALHO_CARTAS_CMD     [ ] = "=destruirbaralho"  ;
 
 
 #define TRUE  1
@@ -56,26 +58,26 @@ static const char AVANCAR_ELEM_CMD        [ ] = "=avancarelem"    ;
 
 LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
 
-/***** Protótipos das funções encapuladas no módulo *****/
+/***** ProtÃ³tipos das funÃ§Ãµes encapsuladas no mÃ³dulo *****/
 
    static void DestruirValor( void * pValor ) ;
 
    static int ValidarInxLista( int inxLista , int Modo ) ;
 
-/*****  Código das funções exportadas pelo módulo  *****/
+/*****  CÃ³digo das funÃ§Ãµes exportadas pelo mÃ³dulo  *****/
 
 
 /***********************************************************************
 *
-*  $FC Função: TLIS &Testar lista
+*  $FC FunÃ§Ã£o: TLIS &Testar lista
 *
-*  $ED Descrição da função
-*     Podem ser criadas até 10 listas, identificadas pelos índices 0 a 10
+*  $ED DescriÃ§Ã£o da funÃ§Ã£o
+*     Podem ser criadas atÃ© 10 listas, identificadas pelos Ã­ndices 0 a 10
 *
-*     Comandos disponíveis:
+*     Comandos disponÃ­veis:
 *
 *     =resetteste
-*           - anula o vetor de listas. Provoca vazamento de memória
+*           - anula o vetor de listas. Provoca vazamento de memÃ³ria
 *     =criarlista                   inxLista
 *     =destruirlista                inxLista
 *     =esvaziarlista                inxLista
@@ -272,7 +274,7 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
 
             return TST_CompararInt( CondRetEsp ,
                       LIS_ExcluirElemento( vtListas[ inxLista ] ) ,
-                     "Condição de retorno errada ao excluir."   ) ;
+                     "CondiÃ§Ã£o de retorno errada ao excluir."   ) ;
 
          } /* fim ativa: Testar excluir simbolo */
 
@@ -295,7 +297,7 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
             if ( ValEsp == 0 )
             {
                return TST_CompararPonteiroNulo( 0 , pDado ,
-                         "Valor não deveria existir." ) ;
+                         "Valor nÃ£o deveria existir." ) ;
             } /* if */
 
             if ( pDado == NULL )
@@ -347,7 +349,7 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
 
          } /* fim ativa: LIS  &Ir para o elemento final */
 
-      /* LIS  &Avançar elemento */
+      /* LIS  &AvanÃ§ar elemento */
 
          else if ( strcmp( ComandoTeste , AVANCAR_ELEM_CMD ) == 0 )
          {
@@ -365,19 +367,19 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
                       LIS_AvancarElementoCorrente( vtListas[ inxLista ] , numElem ) ,
                       "Condicao de retorno errada ao avancar" ) ;
 
-         } /* fim ativa: LIS  &Avançar elemento */
+         } /* fim ativa: LIS  &AvanÃ§ar elemento */
 
       return TST_CondRetNaoConhec ;
 
-   } /* Fim função: TLIS &Testar lista */
+   } /* Fim funÃ§Ã£o: TLIS &Testar lista */
 
 
-/*****  Código das funções encapsuladas no módulo  *****/
+/*****  CÃ³digo das funÃ§Ãµes encapsuladas no mÃ³dulo  *****/
 
 
 /***********************************************************************
 *
-*  $FC Função: TLIS -Destruir valor
+*  $FC FunÃ§Ã£o: TLIS -Destruir valor
 *
 ***********************************************************************/
 
@@ -386,12 +388,12 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
 
       free( pValor ) ;
 
-   } /* Fim função: TLIS -Destruir valor */
+   } /* Fim funÃ§Ã£o: TLIS -Destruir valor */
 
 
 /***********************************************************************
 *
-*  $FC Função: TLIS -Validar indice de lista
+*  $FC FunÃ§Ã£o: TLIS -Validar indice de lista
 *
 ***********************************************************************/
 
@@ -420,7 +422,7 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
          
       return TRUE ;
 
-   } /* Fim função: TLIS -Validar indice de lista */
+   } /* Fim funÃ§Ã£o: TLIS -Validar indice de lista */
 
-/********** Fim do módulo de implementação: TLIS Teste lista de símbolos **********/
+/********** Fim do mÃ³dulo de implementaÃ§Ã£o: TLIS Teste lista de sÃ­mbolos **********/
 
