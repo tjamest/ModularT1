@@ -1,3 +1,41 @@
+[CARTAS.c] Módulo de implementação de CARTAS
+
+[CARTAS.h] Módulo de definição de CARTAS
+
+[MESA.c] Módulo de implementação de MESA
+
+[MESA.h] Módulo de definição de MESA
+
+[LISTA.c] Módulo de implementação de LISTA
+
+[LISTA.h] Módulo de definição de LISTA
+
+Para testes:
+
+[TSTLIS.c] Módulo que testa o módulo LISTA
+
+[TesteLista.script] Massa de testes para testes do módulo LISTA
+
+[TSTCARTAS.c] Módulo que testa o módulo CARTAS
+
+[TesteCartas.script] Massa de testes para testes do módulo CARTAS
+
+[TSTMESA.c] Módulo que testa o módulo MESA
+
+[TesteMesa.script] Massa de testes para testes do módulo MESA
+
+[TSTINTERFACE.c] Módulo que testa o módulo INTERFACE
+
+[TesteInterface.script] Massa de testes para testes do módulo INTERFACE
+
+[GENERICO.h] Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
+
+[LERPARM.h] Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
+
+[TST_ESPC.h] Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
+
+
+
 #ModularT2
 
 1. Estude as regras do jogo de truco e crie um documento que contenha a Especificação de
