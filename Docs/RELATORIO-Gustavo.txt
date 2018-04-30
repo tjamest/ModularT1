@@ -40,6 +40,9 @@ Foi estudado o funcionamento do arcabouço.
 30/04/2018 - 1h trabalhada - Estudar
 Foi estudado o funcionamento do arcabouço.
 
+30/04/2018 - 1h trabalhada - Codificar módulo
+Foi iniciado o desenvolvimento do módulo de teste TESTCARTAS.c.
+
 
 
 Os tipos de tarefa são:
