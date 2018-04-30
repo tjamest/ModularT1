@@ -1,7 +1,9 @@
+#ModularT2
+
 1. Estude as regras do jogo de truco e crie um documento que contenha a Especificação de
 Requisitos de TODO O TRABALHO DO PERÍODO. Mesmo que no trabalho 2 não seja
 objetivo completar a implementação do jogo como um todo, a especificação deverá nortear
-todo o projeto.
+todo o projeto. (DONE)
 
 2. Crie a arquitetura do programa, apresentando um diagrama contendo a definição de todos os
 módulos (e respectivas interfaces) necessários para a implementação do jogo de truco.
@@ -9,13 +11,13 @@ Novamente, isto se refere a TODO O TRABALHO DO PERÍODO. Este diagrama apresenta
 cada módulo necessário, suas interfaces, seus interrelacionamentos, e as funções
 disponibilizadas em cada interface. Adicione este diagrama ao documento, elaborado no item
 1, criando assim uma boa especificação de programa que documente o trabalho que o grupo
-terá ao longo do período.
+terá ao longo do período. (DONE)
 
 3. Elabore o modelo estrutural do trabalho. É importante que haja apenas UMA estrutura para
 cada jogo. Esta será uma lista de listas. Cada nó da lista principal apontará para a cabeça de
 uma lista com as cartas do jogador 1, outro para a lista com as cartas do jogador 2, etc..., outro
 apontará para a lista de cartas descartadas na mesa, e assim por diante. Esta estrutura será
-especificada no trabalho 2, porém implementada no trabalho3.
+especificada no trabalho 2, porém implementada no trabalho3. (DONE)
 
 4. Elabore e teste separadamente o módulo de embaralhamento. Este módulo deverá receber
 uma sequência representando baralho ordenado e retornar esta sequência embaralhada.
