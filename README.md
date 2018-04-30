@@ -1,9 +1,9 @@
 #ModularT2
 
-1. Estude as regras do jogo de truco e crie um documento que contenha a Especificação de
+1. [strike]Estude as regras do jogo de truco e crie um documento que contenha a Especificação de
 Requisitos de TODO O TRABALHO DO PERÍODO. Mesmo que no trabalho 2 não seja
 objetivo completar a implementação do jogo como um todo, a especificação deverá nortear
-todo o projeto. (DONE)
+todo o projeto.[/strike] (DONE)
 
 2. Crie a arquitetura do programa, apresentando um diagrama contendo a definição de todos os
 módulos (e respectivas interfaces) necessários para a implementação do jogo de truco.
