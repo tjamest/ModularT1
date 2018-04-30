@@ -1,38 +1,38 @@
-[CARTAS.c] Módulo de implementação de CARTAS
+CARTAS.c - Módulo de implementação de CARTAS
 
-[CARTAS.h] Módulo de definição de CARTAS
+CARTAS.h - Módulo de definição de CARTAS
 
-[MESA.c] Módulo de implementação de MESA
+MESA.c - Módulo de implementação de MESA
 
-[MESA.h] Módulo de definição de MESA
+MESA.h - Módulo de definição de MESA
 
-[LISTA.c] Módulo de implementação de LISTA
+LISTA.c - Módulo de implementação de LISTA
 
-[LISTA.h] Módulo de definição de LISTA
+LISTA.h - Módulo de definição de LISTA
 
 Para testes:
 
-[TSTLIS.c] Módulo que testa o módulo LISTA
+TSTLIS.c - Módulo que testa o módulo LISTA
 
-[TesteLista.script] Massa de testes para testes do módulo LISTA
+TesteLista.script - Massa de testes para testes do módulo LISTA
 
-[TSTCARTAS.c] Módulo que testa o módulo CARTAS
+TSTCARTAS.c - Módulo que testa o módulo CARTAS
 
-[TesteCartas.script] Massa de testes para testes do módulo CARTAS
+TesteCartas.script - Massa de testes para testes do módulo CARTAS
 
-[TSTMESA.c] Módulo que testa o módulo MESA
+TSTMESA.c - Módulo que testa o módulo MESA
 
-[TesteMesa.script] Massa de testes para testes do módulo MESA
+TesteMesa.script - Massa de testes para testes do módulo MESA
 
-[TSTINTERFACE.c] Módulo que testa o módulo INTERFACE
+TSTINTERFACE.c - Módulo que testa o módulo INTERFACE
 
-[TesteInterface.script] Massa de testes para testes do módulo INTERFACE
+TesteInterface.script - Massa de testes para testes do módulo INTERFACE
 
-[GENERICO.h] Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
+GENERICO.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 
-[LERPARM.h] Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
+LERPARM.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 
-[TST_ESPC.h] Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
+TST_ESPC.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 
 
 
