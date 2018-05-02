@@ -43,6 +43,9 @@ Foi estudado o funcionamento do arcabouço.
 30/04/2018 - 1h trabalhada - Codificar módulo
 Foi iniciado o desenvolvimento do módulo de teste TESTCARTAS.c.
 
+02/05/2018 - 1h trabalhada - Estudar
+Foi estudado os slides das aulas sobre testes automatizados e iniciada a codificação da função CriarBaralho.
+
 
 
 Os tipos de tarefa são:
