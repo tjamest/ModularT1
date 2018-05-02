@@ -1,8 +1,8 @@
 /***************************************************************************
-*  $MCI Módulo de implementação: CAR  Cartas
+*  $MCI Módulo de implementação: BAR  Baralho
 *
-*  Arquivo gerado:              CARTAS.c
-*  Letras identificadoras:      CAR
+*  Arquivo gerado:              BARALHO.c
+*  Letras identificadoras:      BAR
 *
 *  Nome da base de software:    Truco
 *  Arquivo da base de software:
@@ -21,74 +21,74 @@
 #include   <string.h>
 #include   <malloc.h>
 
-#define CARTAS_OWN
-#include "CARTAS.h"
+#define BARALHO_OWN
+#include "BARALHO.h"
 #include "LISTA.h"
 
-#undef CARTAS_OWN
+#undef BARALHO_OWN
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: CAR Carta do Baralho
+*  $TC Tipo de dados: BAR Carta do Baralho
 *
 *
 ***********************************************************************/
 
    typedef struct Carta {
 
-         CAR_tpValor	valor ; /* 4, 5, 6, 7, Q, J, K, A, 2, 3,
+         int valor ; /* 4, 5, 6, 7, Q, J, K, A, 2, 3,
                               ManilhaOuros, ManilhaEspadas, 
                               ManilhaCopas, ManilhaPaus */
 
-         CAR_tpNaipe	naipe ; /* Ouros, Espadas, Copas, Paus */
+         int naipe ; /* Ouros, Espadas, Copas, Paus */
 
-   } CAR_tpCarta;
+   } BAR_tpCarta;
 
 /***** Protótipos das funções encapsuladas no módulo *****/
 
-static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
+static BAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 
 /*****  Código das funções exportadas pelo módulo  *****/
 
 /***************************************************************************
 *
-*  Função: CAR  &Criar baralho
+*  Função: BAR  &Criar baralho
    
    Dúvidas durante a elaboração:
    
 1) Se a LIS_CriarLista retorna um tipo "ponteiro pro tipo lista" (LIS_tppLista),
-por que a CAR_CriarBaralho retorna uma condição de retorno (CAR_tpCondRet) e não
+por que a BAR_CriarBaralho retorna uma condição de retorno (BAR_tpCondRet) e não
 um "ponteiro pra um tipo lista"?
 
-2) A função CAR_CriarBaralho recebe um "ponteiro pro tipo lista", mas isso pode ser
+2) A função BAR_CriarBaralho recebe um "ponteiro pro tipo lista", mas isso pode ser
 declarado como (LIS_tpLista * pBaralho) ou (LIS_tppLista pBaralho), qual o correto?
 *
 ***************************************************************************/
 
-//LIS_tppLista CAR_CriarBaralho(LIS_tpLista * pBaralho) { //dúvida 1
-//LIS_tppLista CAR_CriarBaralho(LIS_tppLista pBaralho) { //dúvida 2
+//LIS_tppLista BAR_CriarBaralho(LIS_tpLista * pBaralho) { //dúvida 1
+//LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho) { //dúvida 2
 
-CAR_tpCondRet CAR_CriarBaralho(LIS_tpLista * pBaralho) {
+LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho) {
    
-   *pBaralho = (CAR_tppCarta*) malloc (sizeof(CAR_tppCarta)); //aloca espaço do tamanho de uma struct Carta
+   pBaralho = (BAR_tppCarta*) malloc (sizeof(BAR_tppCarta)); //aloca espaço do tamanho de uma struct Carta
    
-   if (*pBaralho == NULL)
-      return CAR_CondRetFaltouMemoria ;
+   if (pBaralho == NULL)
+      return BAR_CondRetFaltouMemoria ;
    
-   pBaralho = LIS_CriarLista ( &(*pBaralho), CAR_DestruirBaralho ) ; //ou eh " *pBaralho = " ?
+   pBaralho = LIS_CriarLista ( &(*pBaralho), BAR_DestruirBaralho ) ; //ou eh " *pBaralho = " ?
    
    return pBaralho ; //ou eh " *pBaralho " ?
    
-} /* Fim função: CAR &Criar baralho
+} /* Fim função: BAR &Criar baralho
 
 /***************************************************************************
 *
-*  Função: CAR  &Destruir baralho
+*  Função: BAR  &Destruir baralho
 ***************************************************************************/
 
-void CAR_DestruirBaralho(LIS_tppLista pBaralho) {
+void BAR_DestruirBaralho(LIS_tppLista pBaralho) {
    
-} /* Fim função: CAR &Destruir baralho
+} /* Fim função: BAR &Destruir baralho
 
 
 /*****  Código das funções encapsuladas no módulo  *****/
@@ -104,9 +104,9 @@ void CAR_DestruirBaralho(LIS_tppLista pBaralho) {
 *
 ***********************************************************************/
 
-CAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho) {
+BAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho) {
    
-} /* Fim função: CAR &Embaralhar baralho
+} /* Fim função: BAR &Embaralhar baralho
 
 
-/************ Fim do módulo de implementação: CAR   Cartas ************/
+/************ Fim do módulo de implementação: BAR   Baralho ************/
