@@ -1,8 +1,9 @@
 Tarefas a fazer até o dia 7 (entrega):
-( ) Criar as funções do CARTAS.c
-( ) Criar a linguagem do TSTCARTAS.c
-( ) Incrementar a massa de testes do TesteLista.script
-( ) Criar a massa de testes do TesteCartas.script
+
+- Criar as funções do CARTAS.c
+- Criar a linguagem do TSTCARTAS.c
+- Incrementar a massa de testes do TesteLista.script
+- Criar a massa de testes do TesteCartas.script
 
 Projeto:
 
@@ -33,9 +34,7 @@ GENERICO.h - Módulo de suporte para testes (deve ser incluído nos módulos de 
 LERPARM.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 TST_ESPC.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 
-
-
-#ModularT2
+Passo-a-passo T2:
 
 1. Estude as regras do jogo de truco e crie um documento que contenha a Especificação de
 Requisitos de TODO O TRABALHO DO PERÍODO. Mesmo que no trabalho 2 não seja
