@@ -8,26 +8,33 @@ Tarefas a fazer até o dia 7 (entrega):
 Projeto:
 
 CARTAS.c - Implementação do módulo CARTAS
+
 CARTAS.h - Definição do módulo CARTAS
 
 MESA.c - Implementação do módulo MESA
+
 MESA.h - Definição do módulo MESA
 
 LISTA.c - Implementação do módulo LISTA
+
 LISTA.h - Definição do módulo LISTA
 
 Para testes:
 
 TSTLIS.c - Implementação do teste do módulo LISTA
+
 TesteLista.script - Massa de testes para testes do módulo LISTA
 
 TSTCARTAS.c - Implementação do teste do módulo CARTAS
+
 TesteCartas.script - Massa de testes para testes do módulo CARTAS
 
 TSTMESA.c - Implementação do teste do módulo MESA
+
 TesteMesa.script - Massa de testes para testes do módulo MESA
 
 TSTINTERFACE.c - Implementação do teste do módulo INTERFACE
+
 TesteInterface.script - Massa de testes para testes do módulo INTERFACE
 
 GENERICO.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
