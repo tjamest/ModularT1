@@ -38,7 +38,9 @@ TSTINTERFACE.c - Implementação do teste do módulo INTERFACE
 TesteInterface.script - Massa de testes para testes do módulo INTERFACE
 
 GENERICO.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
+
 LERPARM.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
+
 TST_ESPC.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 
 Passo-a-passo T2:
