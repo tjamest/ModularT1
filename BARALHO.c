@@ -76,17 +76,20 @@ BAR_tpCarta CriarEmbaralharVetor() {
    int iElem, iValor, iNaipe, iSort;
 	
    for (iElem=0; iElem<52; iElem++) {
+	   
       for (iValor=0; iValor<13; iValor++) { 
-      pVetorEmbaralhado[iElem]->valor = iValor ;    
+      pVetorEmbaralhado[iElem].valor = iValor ;   
+	      
          for (iNaipe=0; iNaipe<4; iNaipe++) {
-            pVetorEmbaralhado[iElem]->naipe = iNaipe ;
+            pVetorEmbaralhado[iElem].naipe = iNaipe ;
+		 
 	 } /* fim for naipe */
       } /* fim for valor */	   
    } /* fim for elem */
 
    for (iSort = 0; iSort < 52; iSort++) {
       int r = rand() % 52;
-      int temp = pVetorEmbaralhado[i];
+      BAR_tpCarta temp = pVetorEmbaralhado[i];
       pVetorEmbaralhado[i] = pVetorEmbaralhado[r];
       pVetorEmbaralhado[r] = temp;
    }
