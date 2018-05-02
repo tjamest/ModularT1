@@ -97,7 +97,8 @@ BAR_tpCarta CriarEmbaralharVetor() {
       else {
          pVetorEmbaralhado[i]->naipe = 3 ;
       }
-	}
+
+   return pVetorEmbaralhado ;
    
 } /* Fim função: BAR &Criar embaralhar vetor *******************************/
 
