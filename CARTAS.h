@@ -116,7 +116,7 @@ typedef enum {
 *   Cria um baralho (lista) de 40 cartas sem os 8, 9, 10 e coringas.
 *
 *  $EP Parâmetros
-*     pBaralho: uma estrutura LIS_tppLista com uma cabeça vazia para poder preencher
+*     * pBaralho: ponteiro pro tipo Lista
 *
 *  $FV Valor retornado
 *     Se executou corretamente retorna o ponteiro para o início do baralho.
@@ -136,7 +136,7 @@ typedef enum {
 *
 ***********************************************************************/
 
-CAR_tpCondRet CAR_CriarBaralho(LIS_tppLista pBaralho);
+CAR_tpCondRet CAR_CriarBaralho(LIS_tpLista * pBaralho);
 
 /**********************************************************************
 *
