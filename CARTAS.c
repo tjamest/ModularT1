@@ -38,7 +38,7 @@
 
          CAR_NaipeCarta	/* Naipes: Ouros, Espadas, Copas, Paus */
 
-} CAR_tppCarta;
+   } CAR_tppCarta;
 
 /***** Protótipos das funções encapsuladas no módulo *****/
 
@@ -49,16 +49,25 @@ static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 /***************************************************************************
 *
 *  Função: CAR  &Criar baralho
-*  ****/
+***************************************************************************/
 
-CAR_tpCondRet CAR_CriarBaralho(LIS_tppLista pBaralho) {
+CAR_tpCondRet CAR_CriarBaralho(LIS_tpLista * pBaralho) {
+   
+   *pBaralho = (CAR_tppCarta*) malloc (sizeof(CAR_tppCarta)); //aloca espaço do tamanho de uma struct Carta
+   
+   if (*pBaralho == NULL)
+      return CAR_CondRetFaltouMemoria ;
+   
+   pBaralho = LIS_CriarLista ( &((*pBaralho)->pElemCorr), CAR_DestruirBaralho ) ;
+   
+   return pBaralho ;
    
 } /* Fim função: CAR &Criar baralho
 
 /***************************************************************************
 *
 *  Função: CAR  &Destruir baralho
-*  ****/
+***************************************************************************/
 
 void CAR_DestruirBaralho(LIS_tppLista pBaralho) {
    
