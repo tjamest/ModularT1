@@ -72,17 +72,19 @@ typedef enum { //não tenho certeza se algumas dessas condições de retorno dev
 ***********************************************************************/
 typedef enum {
 
-  _4,               /* 0  */
-  _5,               /* 1  */
-  _6,               /* 2  */
-  _7,               /* 3  */
-  _Q,               /* 4  */
-  _J,               /* 5  */
-  _K,               /* 6  */
-  _A,               /* 7  */
-  _2,               /* 8  */
-  _3,               /* 9  */
-  _Manilha          /* 10 */
+  _A,               /* 0  */
+  _2,               /* 1  */
+  _3,               /* 2  */
+  _4,               /* 3  */
+  _5,               /* 4  */
+  _6,               /* 5  */
+  _7,               /* 6  */
+  _8,               /* 7  */
+  _9,               /* 8  */
+  _10,              /* 9  */
+  _J,               /* 10 */
+  _Q,               /* 11 */
+  _K                /* 12 */
   
 } BAR_tpValorCarta ;
 
@@ -114,7 +116,7 @@ typedef enum {
 typedef struct BAR_tagCarta {
 
   BAR_tpValorCarta valor ; /* 0 4, 1 5, 2 6, 3 7, 4 Q, 5 J, 6 K, 7 A,
-                              8 2, 9 3, 10 Manilha*/
+                              8 2, 9 3*/
 
   BAR_tpNaipeCarta naipe ; /* 0 Ouros, 1 Espadas, 2 Copas, 3 Paus */
 
