@@ -7,17 +7,17 @@ Tarefas a fazer até o dia 7 (entrega):
 
 Projeto:
 
-CARTAS.c - Implementação do módulo CARTAS
+- CARTAS.c - Implementação do módulo CARTAS
 
-CARTAS.h - Definição do módulo CARTAS
+- CARTAS.h - Definição do módulo CARTAS
 
-MESA.c - Implementação do módulo MESA
+- MESA.c - Implementação do módulo MESA
 
-MESA.h - Definição do módulo MESA
+- MESA.h - Definição do módulo MESA
 
-LISTA.c - Implementação do módulo LISTA
+- LISTA.c - Implementação do módulo LISTA
 
-LISTA.h - Definição do módulo LISTA
+- LISTA.h - Definição do módulo LISTA
 
 Para testes:
 
