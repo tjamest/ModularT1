@@ -58,9 +58,9 @@ CAR_tpCondRet CAR_CriarBaralho(LIS_tpLista * pBaralho) {
    if (*pBaralho == NULL)
       return CAR_CondRetFaltouMemoria ;
    
-   pBaralho = LIS_CriarLista ( &((*pBaralho)->pElemCorr), CAR_DestruirBaralho ) ;
+   pBaralho = LIS_CriarLista ( &((*pBaralho)->pElemCorr), CAR_DestruirBaralho ) ; //ou eh " *pBaralho = " ?
    
-   return pBaralho ;
+   return pBaralho ; //ou eh " *pBaralho " ?
    
 } /* Fim função: CAR &Criar baralho
 
