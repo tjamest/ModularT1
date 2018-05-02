@@ -111,6 +111,25 @@ typedef enum {
 
 /***********************************************************************
 *
+*  $TC Tipo de dados: BAR tpCarta
+*
+*
+*  $ED Descrição do tipo
+*     Estrutura de uma carta, que tem um valor e um naipe.
+*
+***********************************************************************/
+   typedef struct Carta {
+
+     BAR_tpValorCarta valor ; /* 4, 5, 6, 7, Q, J, K, A, 2, 3,
+                              ManilhaOuros, ManilhaEspadas, 
+                              ManilhaCopas, ManilhaPaus */
+
+     BAR_tpNaipeCarta naipe ; /* Ouros, Espadas, Copas, Paus */
+
+   } BAR_tpCarta;
+
+/***********************************************************************
+*
 *  $FC Função: BAR  &Criar Baralho
 *
 *  $ED Descrição da função
