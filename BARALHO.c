@@ -27,23 +27,6 @@
 
 #undef BARALHO_OWN
 
-/***********************************************************************
-*
-*  $TC Tipo de dados: BAR Carta do Baralho
-*
-*
-***********************************************************************/
-
-   typedef struct Carta {
-
-         int valor ; /* 4, 5, 6, 7, Q, J, K, A, 2, 3,
-                              ManilhaOuros, ManilhaEspadas, 
-                              ManilhaCopas, ManilhaPaus */
-
-         int naipe ; /* Ouros, Espadas, Copas, Paus */
-
-   } BAR_tpCarta;
-
 /***** Protótipos das funções encapsuladas no módulo *****/
 
 static BAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
@@ -53,20 +36,8 @@ static BAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 /***************************************************************************
 *
 *  Função: BAR  &Criar baralho
-   
-   Dúvidas durante a elaboração:
-   
-1) Se a LIS_CriarLista retorna um tipo "ponteiro pro tipo lista" (LIS_tppLista),
-por que a BAR_CriarBaralho retorna uma condição de retorno (BAR_tpCondRet) e não
-um "ponteiro pra um tipo lista"?
-
-2) A função BAR_CriarBaralho recebe um "ponteiro pro tipo lista", mas isso pode ser
-declarado como (LIS_tpLista * pBaralho) ou (LIS_tppLista pBaralho), qual o correto?
 *
 ***************************************************************************/
-
-//LIS_tppLista BAR_CriarBaralho(LIS_tpLista * pBaralho) { //dúvida 1
-//LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho) { //dúvida 2
 
 LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho) {
    
@@ -84,9 +55,10 @@ LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho) {
 /***************************************************************************
 *
 *  Função: BAR  &Destruir baralho
+*
 ***************************************************************************/
 
-void BAR_DestruirBaralho(LIS_tppLista pBaralho) {
+BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
    
 } /* Fim função: BAR &Destruir baralho
 
@@ -96,17 +68,17 @@ void BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 
 /***********************************************************************
 *
-*  $FC Função: LIS  -Liberar elemento da lista
+*  $FC Função: BAR Criar Embaralhar Vetor
 *
 *  $ED Descrição da função
-*     Recebe uma lista (baralho) e reordena a ordem de seus elementos
-*     para uma ordem aleatória.
+*     Cria e reordena aleatóriamente um
+*     vetor de 52 elementos do tipo Carta.
 *
-***********************************************************************/
+************************************************************************/
 
-BAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho) {
+BAR_tpCarta CriarEmbaralharVetor() {
    
-} /* Fim função: BAR &Embaralhar baralho
+} /* Fim função: BAR &Criar embaralhar vetor****************************/
 
 
 /************ Fim do módulo de implementação: BAR   Baralho ************/
