@@ -133,30 +133,32 @@ typedef enum {
 *  $FC Função: BAR  &Criar Baralho
 *
 *  $ED Descrição da função
-*   Cria um baralho (tpLista) de 40 elementos (tpCarta) sem os 8, 9, 10 e coringas.
+*     Cria um baralho (tpLista) de 40 elementos (tpCarta) sem os 8, 9, 10
+*     e coringas.
+*     Pega 40 elementos (tipo Carta) de um vetor aleatoriamente ordenado
+*     e coloca em uma lista.
 *
 *  $EP Parâmetros
-*     pBaralho: ponteiro pro tipo Lista
+*     pVetorEmbaralhado: ponteiro pra um vetor de tipo Carta
 *
 *  $FV Valor retornado
-*     Se executou corretamente retorna o ponteiro para o início do baralho.
-*     Este ponteiro será utilizado pelas funções que manipulem este baralho.
+*     Se executar corretamente retorna o ponteiro para o início do baralho
+*     (ponteiro para o tipo lista). Este ponteiro será utilizado pelas
+*     funções que manipulem este baralho.
 *
-*     Se ocorreu algum erro, por exemplo falta de memória ou dados errados,
+*     Se ocorrer algum erro, por exemplo falta de memória ou dados errados,
 *     a função retornará NULL.
 *     Não será dada mais informação quanto ao problema ocorrido.
 *
 *     Assertivas de entrada:
-*     - O endereço de ponteiro para a carta deve ser válido
-*     - O valor deve estar dentro do intervalo definido (0 a 10)
-*     - O naipe deve ser válido
+*     - pVetorEmbaralhado != NULL
 *     Assertivas de saída:
-*     - O espaço de memória para o baralho foi alocado com sucesso e seus valores definidos corretamente
+*     - pBaralho != NULL
 *     
 *
 ***********************************************************************/
 
-LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho);
+LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
 
 /**********************************************************************
 *
