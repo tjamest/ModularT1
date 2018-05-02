@@ -27,11 +27,11 @@
 
 #undef BARALHO_OWN
 
-/***** Protótipos das funções encapsuladas no módulo *****/
+/***** Protótipos das funções encapsuladas no módulo **********************/
 
-static BAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
+static BAR_tppCarta CriarEmbaralharVetor ();
 
-/*****  Código das funções exportadas pelo módulo  *****/
+/*****  Código das funções exportadas pelo módulo  ************************/
 
 /***************************************************************************
 *
@@ -41,16 +41,9 @@ static BAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 
 LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho) {
    
-   pBaralho = (BAR_tppCarta*) malloc (sizeof(BAR_tppCarta)); //aloca espaço do tamanho de uma struct Carta
+   return pBaralho ;
    
-   if (pBaralho == NULL)
-      return BAR_CondRetFaltouMemoria ;
-   
-   pBaralho = LIS_CriarLista ( &(*pBaralho), BAR_DestruirBaralho ) ; //ou eh " *pBaralho = " ?
-   
-   return pBaralho ; //ou eh " *pBaralho " ?
-   
-} /* Fim função: BAR &Criar baralho
+} /* Fim função: BAR &Criar baralho ***************************************/
 
 /***************************************************************************
 *
@@ -60,13 +53,13 @@ LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho) {
 
 BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
    
-} /* Fim função: BAR &Destruir baralho
+} /* Fim função: BAR &Destruir baralho ************************************/
 
 
-/*****  Código das funções encapsuladas no módulo  *****/
+/*****  Código das funções encapsuladas no módulo  ************************/
 
 
-/***********************************************************************
+/***************************************************************************
 *
 *  $FC Função: BAR Criar Embaralhar Vetor
 *
@@ -74,11 +67,11 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 *     Cria e reordena aleatóriamente um
 *     vetor de 52 elementos do tipo Carta.
 *
-************************************************************************/
+****************************************************************************/
 
 BAR_tpCarta CriarEmbaralharVetor() {
    
-} /* Fim função: BAR &Criar embaralhar vetor****************************/
+} /* Fim função: BAR &Criar embaralhar vetor *******************************/
 
 
-/************ Fim do módulo de implementação: BAR   Baralho ************/
+/************ Fim do módulo de implementação: BAR   Baralho ****************/
