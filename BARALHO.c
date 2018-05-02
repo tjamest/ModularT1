@@ -70,33 +70,26 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 *
 ****************************************************************************/
 
-BAR_tpCarta CriarEmbaralharVetor() { //ta errada pode desconsiderar tudo abaixo
+BAR_tpCarta CriarEmbaralharVetor() {
    
-   tpCarta pVetorEmbaralhado[40] ;
-   
-   for (int i = 0; i < 10; i++)
-	{
-      srand((unsigned)time(NULL)) ;
-      
-      //atribuindo valor
-		int r = rand() % 10 ;   //sorteia um numero de 0 a 9
-		pVetorEmbaralhado[i]->valor = r ;
-      
-      //atribuindo naipe
-      r = rand() % 100 ;      //sorteia um numero de 0 a 99
-      
-      if (r >= 0 && r < 24) {
-         pVetorEmbaralhado[i]->naipe = 0 ;
-      }
-      else if (r >= 24 && r < 49) {
-         pVetorEmbaralhado[i]->naipe = 1 ;
-      }
-      else if (r >= 49 && r < 74) {
-         pVetorEmbaralhado[i]->naipe = 2 ;
-      }
-      else {
-         pVetorEmbaralhado[i]->naipe = 3 ;
-      }
+   tpCarta pVetorEmbaralhado[52] ;
+   int iElem, iValor, iNaipe, iSort;
+	
+   for (iElem=0; iElem<52; iElem++) {
+      for (iValor=0; iValor<13; iValor++) { 
+      pVetorEmbaralhado[iElem]->valor = iValor ;    
+         for (iNaipe=0; iNaipe<4; iNaipe++) {
+            pVetorEmbaralhado[iElem]->naipe = iNaipe ;
+	 } /* fim for naipe */
+      } /* fim for valor */	   
+   } /* fim for elem */
+
+   for (iSort = 0; iSort < 52; iSort++) {
+      int r = rand() % 52;
+      int temp = pVetorEmbaralhado[i];
+      pVetorEmbaralhado[i] = pVetorEmbaralhado[r];
+      pVetorEmbaralhado[r] = temp;
+   }
 
    return pVetorEmbaralhado ;
    
