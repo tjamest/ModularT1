@@ -19,6 +19,10 @@ Projeto:
 
 - LISTA.h - Definição do módulo LISTA
 
+- INTERFACE.c - Implementação do módulo INTERFACE
+
+- INTERFACE.h - Definição do módulo INTERFACE
+
 Para testes:
 
 - TSTLIS.c - Implementação do teste do módulo LISTA
