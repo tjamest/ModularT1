@@ -39,7 +39,7 @@
 
 /* Tipo referência para uma carta */
 
-typedef struct Carta * BAR_tppCarta
+typedef struct BAR_tagCarta * BAR_tppCarta
 
 /***********************************************************************
 *
@@ -118,7 +118,7 @@ typedef enum {
 *     Estrutura de uma carta, que tem um valor e um naipe.
 *
 ***********************************************************************/
-   typedef struct Carta {
+   typedef struct BAR_tagCarta {
 
      BAR_tpValorCarta valor ; /* 4, 5, 6, 7, Q, J, K, A, 2, 3,
                               ManilhaOuros, ManilhaEspadas, 
