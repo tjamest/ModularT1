@@ -1,37 +1,36 @@
-CARTAS.c - Módulo de implementação de CARTAS
+Tarefas a fazer até o dia 7 (entrega):
+( ) Criar as funções do CARTAS.c
+( ) Criar a linguagem do TSTCARTAS.c
+( ) Incrementar a massa de testes do TesteLista.script
+( ) Criar a massa de testes do TesteCartas.script
 
-CARTAS.h - Módulo de definição de CARTAS
+Projeto:
 
-MESA.c - Módulo de implementação de MESA
+CARTAS.c - Implementação do módulo CARTAS
+CARTAS.h - Definição do módulo CARTAS
 
-MESA.h - Módulo de definição de MESA
+MESA.c - Implementação do módulo MESA
+MESA.h - Definição do módulo MESA
 
-LISTA.c - Módulo de implementação de LISTA
-
-LISTA.h - Módulo de definição de LISTA
+LISTA.c - Implementação do módulo LISTA
+LISTA.h - Definição do módulo LISTA
 
 Para testes:
 
-TSTLIS.c - Módulo que testa o módulo LISTA
-
+TSTLIS.c - Implementação do teste do módulo LISTA
 TesteLista.script - Massa de testes para testes do módulo LISTA
 
-TSTCARTAS.c - Módulo que testa o módulo CARTAS
-
+TSTCARTAS.c - Implementação do teste do módulo CARTAS
 TesteCartas.script - Massa de testes para testes do módulo CARTAS
 
-TSTMESA.c - Módulo que testa o módulo MESA
-
+TSTMESA.c - Implementação do teste do módulo MESA
 TesteMesa.script - Massa de testes para testes do módulo MESA
 
-TSTINTERFACE.c - Módulo que testa o módulo INTERFACE
-
+TSTINTERFACE.c - Implementação do teste do módulo INTERFACE
 TesteInterface.script - Massa de testes para testes do módulo INTERFACE
 
 GENERICO.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
-
 LERPARM.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
-
 TST_ESPC.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 
 
