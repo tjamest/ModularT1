@@ -23,6 +23,8 @@
 
 #define CARTAS_OWN
 #include "CARTAS.h"
+#include "LISTA.h"
+
 #undef CARTAS_OWN
 
 /***********************************************************************
@@ -34,9 +36,11 @@
 
    typedef struct Carta {
 
-         CAR_ValorCarta	/* Valores: 4, 5, 6, 7, Q, J, K, A, 2, 3, ManilhaOuros, ManilhaEspadas, ManilhaCopas, ManilhaPaus */
+         CAR_tpValor	valor ; /* 4, 5, 6, 7, Q, J, K, A, 2, 3,
+                              ManilhaOuros, ManilhaEspadas, 
+                              ManilhaCopas, ManilhaPaus */
 
-         CAR_NaipeCarta	/* Naipes: Ouros, Espadas, Copas, Paus */
+         CAR_tpNaipe	naipe ; /* Ouros, Espadas, Copas, Paus */
 
    } CAR_tppCarta;
 
@@ -49,7 +53,20 @@ static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 /***************************************************************************
 *
 *  Função: CAR  &Criar baralho
+   
+   Dúvidas durante a elaboração:
+   
+1) Se a LIS_CriarLista retorna um tipo "ponteiro pro tipo lista" (LIS_tppList),
+por que a CAR_CriarBaralho retorna uma condição de retorno (CAR_tpCondRet) e não
+um "ponteiro pra um tipo lista"?
+
+2) A função CAR_CriarBaralho recebe um "ponteiro pro tipo lista", mas isso pode ser
+declarado como (LIS_tpLista * pBaralho) ou (LIS_tppLista pBaralho), qual o correto?
+*
 ***************************************************************************/
+
+//LIS_tppLista CAR_CriarBaralho(LIS_tpLista * pBaralho) { //dúvida 1
+//LIS_tppLista CAR_CriarBaralho(LIS_tppLista pBaralho) { //dúvida 2
 
 CAR_tpCondRet CAR_CriarBaralho(LIS_tpLista * pBaralho) {
    
@@ -58,7 +75,7 @@ CAR_tpCondRet CAR_CriarBaralho(LIS_tpLista * pBaralho) {
    if (*pBaralho == NULL)
       return CAR_CondRetFaltouMemoria ;
    
-   pBaralho = LIS_CriarLista ( &((*pBaralho)->pElemCorr), CAR_DestruirBaralho ) ; //ou eh " *pBaralho = " ?
+   pBaralho = LIS_CriarLista ( &(*pBaralho), CAR_DestruirBaralho ) ; //ou eh " *pBaralho = " ?
    
    return pBaralho ; //ou eh " *pBaralho " ?
    
