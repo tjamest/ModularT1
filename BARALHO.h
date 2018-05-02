@@ -15,11 +15,13 @@
 *  Autores: gsc, jvr, tgf
 *
 *  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-*     1       gsc   19/abr/2018 início desenvolvimento
+*     Versão      Autor         Data            Observações
+*     2       gsc, jvr, tgf   31/abr/2018     criação da função CriarBaralho
+*     1            gsc        19/abr/2018     início desenvolvimento
 *
 *  $ED Descrição do módulo
-*     Cria um baralho (lista) de 40 cartas (sem os 8, 9, 10 e coringa) embaralhado;
+*     Cria um baralho (lista) de 40 (ou vamos fazer com 52?) cartas (sem os 8,
+*     9, 10 e coringa) pegando elementos previamente embaralhados em um vetor;
 *     Cria as mãos dos jogadores (lista de 3 elementos, que são 3 cartas);
 *     Cria uma lista que armazena as cartas apostadas na mesa e a manilha;
 *     Destrói esse baralho.
@@ -49,14 +51,14 @@ typedef struct Carta * BAR_tppCarta
 *
 ***********************************************************************/
 
-typedef enum { //não tenho certeza se essas condições de retorno devem existir
+typedef enum { //não tenho certeza se algumas dessas condições de retorno devem existir
 
-  BAR_CondRetOK,                 /* Concluiu corretamente */
-  BAR_CondRetNaoCriouBaralho,    /* Não criou a lista "baralho" de 40 cartas */
-  BAR_CondRetNaoCriouMaoJogador, /* Não criou as listas "mão jogador" */
-  BAR_CondRetNaoCriouMesa,       /* Não criou a lista "mesa" */
-  BAR_CondRetNaoDestruiuBaralho, /* Não destruiu o baralho no fim da partida */
-  BAR_CondRetFaltouMemoria       /* Faltou memoria */ 
+  BAR_CondRetOK,                 /* 0 = Concluiu corretamente */
+  BAR_CondRetNaoCriouBaralho,    /* 1 = Não criou a lista "baralho" de 40 cartas */
+  BAR_CondRetNaoCriouMaoJogador, /* 2 = Não criou as listas "mão jogador" */
+  BAR_CondRetNaoCriouMesa,       /* 3 = Não criou a lista "mesa" */
+  BAR_CondRetNaoDestruiuBaralho, /* 4 = Não destruiu o baralho no fim da partida */
+  BAR_CondRetFaltouMemoria       /* 5 = Faltou memoria */ 
   
   /* OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
   módulo lista, e quando nós tentassemos criar um baralho adicionando cartas
@@ -100,10 +102,10 @@ typedef enum {
 ***********************************************************************/
 typedef enum {
 
-  Ouros,          /*0*/
-  Espadas,        /*1*/
-  Copas,          /*2*/
-  Paus            /*3*/
+  Ouros,          /* 0 */
+  Espadas,        /* 1 */
+  Copas,          /* 2 */
+  Paus            /* 3 */
 
    } BAR_tpNaipeCarta ;
 
@@ -112,10 +114,10 @@ typedef enum {
 *  $FC Função: BAR  &Criar Baralho
 *
 *  $ED Descrição da função
-*   Cria um baralho (lista) de 40 cartas sem os 8, 9, 10 e coringas.
+*   Cria um baralho (tpLista) de 40 elementos (tpCarta) sem os 8, 9, 10 e coringas.
 *
 *  $EP Parâmetros
-*     * pBaralho: ponteiro pro tipo Lista
+*     pBaralho: ponteiro pro tipo Lista
 *
 *  $FV Valor retornado
 *     Se executou corretamente retorna o ponteiro para o início do baralho.
@@ -135,38 +137,30 @@ typedef enum {
 *
 ***********************************************************************/
 
-BAR_tpCondRet BAR_CriarBaralho(LIS_tpLista * pBaralho);
+LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho);
 
 /**********************************************************************
 *
-*  $FC Função: BAR  &Embaralhar Baralho
+*  $FC Função: BAR  &Criar Embaralhar Vetor
 *
 *  $ED Descrição da função
-*   Recebe uma lista (baralho) e reordena a ordem de seus elementos para uma ordem aleatória.
-*
-*  $EP Parâmetros
-*     pBaralho: uma estrutura LIS_tppLista apontando para a cabeça com o baralho.
+*   Cria e reordena aleatóriamente um vetor de 52 elementos do tipo Carta.
 *
 *  $FV Valor retornado
-*     Se executou corretamente retorna o ponteiro para o início do baralho.
-*     Este ponteiro será utilizado pelas funções que manipulem este baralho.
+*     Se executou corretamente retorna o ponteiro pro primeiro elemento do vetor.
+*     Este ponteiro será utilizado pela função CriarBaralho.
 *
 *     Se ocorreu algum erro, por exemplo falta de memória ou dados incorretos, 
 *     a função retornará NULL.
 *     Não será dada mais informação quanto ao problema ocorrido.
 *
-*     Assertivas de entrada:
-*     - O endereço de ponteiro para o baralho deve conter elementos preenchidos com cartas.
-*     - O endereço de ponteiro para a carta deve ser válido.
-
 *     Assertivas de saída:
-*     - A ordem das cartas do baralho tem de estar diferentes da ordem de antes de entrar na função.
-*     - As cartas devem ser reordenadas de maneira aleatória.
+*     - O ponteiro pro tpCarta retornado não pode ser NULL.
 *
 *
 ***********************************************************************/
 
-BAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho);
+BAR_tpCarta CriarEmbaralharVetor();
 
 /**********************************************************************
 *
@@ -180,11 +174,12 @@ BAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho);
 *     OBS. não existe previsão para possíveis falhas de execução.
 *
 *  $FV Valor retornado
-*     LIS_CondRetOK    - destruiu sem problemas
+*     BAR_tpCondRet    - BAR_CondRetNaoDestruiuBaralho
+*     BAR_tpCondRet    - BAR_CondRetOK
 *
 ***********************************************************************/
 
-void BAR_DestruirBaralho(LIS_tppLista pBaralho);
+BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho);
 
 #undef BARALHO_EXT
 
