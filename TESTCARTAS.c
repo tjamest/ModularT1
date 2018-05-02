@@ -12,7 +12,7 @@
 *
 *  $HA Histórico de evolução:
 *     Versão  Autor    Data     Observações
-*     1       avs   30/abr/2018 início desenvolvimento
+*     1       gsc   30/abr/2018 início desenvolvimento
 *
 ***************************************************************************/
 
