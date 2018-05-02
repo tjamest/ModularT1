@@ -1,11 +1,11 @@
-#if ! defined( CARTAS_ )
-#define CARTAS_
+#if ! defined( BARALHO_ )
+#define BARALHO_
 /***************************************************************************
 *
-*  $MCD Módulo de definição: CAR  Cartas
+*  $MCD Módulo de definição: BAR  Baralho
 *
-*  Arquivo gerado:              CARTAS.h
-*  Letras identificadoras:      CAR
+*  Arquivo gerado:              BARALHO.h
+*  Letras identificadoras:      BAR
 *
 *  Nome da base de software:    Truco
 *  Arquivo da base de software:
@@ -19,8 +19,7 @@
 *     1       gsc   19/abr/2018 início desenvolvimento
 *
 *  $ED Descrição do módulo
-*     Cria um baralho (lista) de 40 cartas (sem os 8, 9, 10 e coringa);
-*     Embaralha essas 40 cartas;
+*     Cria um baralho (lista) de 40 cartas (sem os 8, 9, 10 e coringa) embaralhado;
 *     Cria as mãos dos jogadores (lista de 3 elementos, que são 3 cartas);
 *     Cria uma lista que armazena as cartas apostadas na mesa e a manilha;
 *     Destrói esse baralho.
@@ -28,21 +27,21 @@
 
 #include "LISTA.h"
 
-#if defined( CARTAS_OWN )
-   #define CARTAS_EXT
+#if defined( BARALHO_OWN )
+   #define BARALHO_EXT
 #else
-   #define CARTAS_EXT extern
+   #define BARALHO_EXT extern
 #endif
 
 /***** Declarações exportadas pelo módulo *****/
 
 /* Tipo referência para uma carta */
 
-typedef struct Carta * CAR_tpCarta
+typedef struct Carta * BAR_tppCarta
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: CAR Condições de retorno
+*  $TC Tipo de dados: BAR Condições de retorno
 *
 *
 *  $ED Descrição do tipo
@@ -52,22 +51,22 @@ typedef struct Carta * CAR_tpCarta
 
 typedef enum { //não tenho certeza se essas condições de retorno devem existir
 
-  CAR_CondRetOK,                 /* Concluiu corretamente */
-  CAR_CondRetNaoCriouBaralho,    /* Não criou a lista "baralho" de 40 cartas */
-  CAR_CondRetNaoCriouMaoJogador, /* Não criou as listas "mão jogador" */
-  CAR_CondRetNaoCriouMesa,       /* Não criou a lista "mesa" */
-  CAR_CondRetNaoDestruiuBaralho, /* Não destruiu o baralho no fim da partida */
-  CAR_CondRetFaltouMemoria       /* Faltou memoria */ 
+  BAR_CondRetOK,                 /* Concluiu corretamente */
+  BAR_CondRetNaoCriouBaralho,    /* Não criou a lista "baralho" de 40 cartas */
+  BAR_CondRetNaoCriouMaoJogador, /* Não criou as listas "mão jogador" */
+  BAR_CondRetNaoCriouMesa,       /* Não criou a lista "mesa" */
+  BAR_CondRetNaoDestruiuBaralho, /* Não destruiu o baralho no fim da partida */
+  BAR_CondRetFaltouMemoria       /* Faltou memoria */ 
   
   /* OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
   módulo lista, e quando nós tentassemos criar um baralho adicionando cartas
   para a lista ia retornar a condição de falta de memória */
 
-  } CAR_tpCondRet;
+  } BAR_tpCondRet;
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: CAR tpValor
+*  $TC Tipo de dados: BAR tpValorCarta
 *
 *
 *  $ED Descrição do tipo
@@ -88,11 +87,11 @@ typedef enum {
   _3,               /* 9  */
   _Manilha          /* 10 */
   
-   } CAR_tpValor ;
+   } BAR_tpValorCarta ;
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: BAR tpNaipe
+*  $TC Tipo de dados: BAR tpNaipeCarta
 *
 *
 *  $ED Descrição do tipo
@@ -106,11 +105,11 @@ typedef enum {
   Copas,          /*2*/
   Paus            /*3*/
 
-   } CAR_tpNaipe ;
+   } BAR_tpNaipeCarta ;
 
 /***********************************************************************
 *
-*  $FC Função: CAR  &Criar Baralho
+*  $FC Função: BAR  &Criar Baralho
 *
 *  $ED Descrição da função
 *   Cria um baralho (lista) de 40 cartas sem os 8, 9, 10 e coringas.
@@ -136,11 +135,11 @@ typedef enum {
 *
 ***********************************************************************/
 
-CAR_tpCondRet CAR_CriarBaralho(LIS_tpLista * pBaralho);
+BAR_tpCondRet BAR_CriarBaralho(LIS_tpLista * pBaralho);
 
 /**********************************************************************
 *
-*  $FC Função: CAR  &Embaralhar Baralho
+*  $FC Função: BAR  &Embaralhar Baralho
 *
 *  $ED Descrição da função
 *   Recebe uma lista (baralho) e reordena a ordem de seus elementos para uma ordem aleatória.
@@ -167,11 +166,11 @@ CAR_tpCondRet CAR_CriarBaralho(LIS_tpLista * pBaralho);
 *
 ***********************************************************************/
 
-CAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho);
+BAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho);
 
 /**********************************************************************
 *
-*  $FC Função: CAR  &Destruir Baralho
+*  $FC Função: BAR  &Destruir Baralho
 *
 *  $ED Descrição da função
 *     Destrói a lista baralho fornecida.
@@ -185,11 +184,11 @@ CAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho);
 *
 ***********************************************************************/
 
-void CAR_DestruirBaralho(LIS_tppLista pBaralho);
+void BAR_DestruirBaralho(LIS_tppLista pBaralho);
 
-#undef CARTAS_EXT
+#undef BARALHO_EXT
 
-/************** Fim do módulo de definição: CAR  Cartas **************/
+/************** Fim do módulo de definição: BAR  Baralho **************/
 
 #else
 #endif
