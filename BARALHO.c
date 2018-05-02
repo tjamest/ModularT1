@@ -20,6 +20,7 @@
 #include   <stdio.h>
 #include   <string.h>
 #include   <malloc.h>
+#include   <time.h>
 
 #define BARALHO_OWN
 #include "BARALHO.h"
@@ -70,6 +71,33 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 ****************************************************************************/
 
 BAR_tpCarta CriarEmbaralharVetor() {
+   
+   tpCarta pVetorEmbaralhado[40] ;
+   
+   for (int i = 0; i < 10; i++)
+	{
+      srand((unsigned)time(NULL)) ;
+      
+      //atribuindo valor
+		int r = rand() % 10 ;   //sorteia um numero de 0 a 9
+		pVetorEmbaralhado[i]->valor = r ;
+      
+      //atribuindo naipe
+      r = rand() % 100 ;      //sorteia um numero de 0 a 99
+      
+      if (r >= 0 && r < 24) {
+         pVetorEmbaralhado[i]->naipe = 0 ;
+      }
+      else if (r >= 24 && r < 49) {
+         pVetorEmbaralhado[i]->naipe = 1 ;
+      }
+      else if (r >= 49 && r < 74) {
+         pVetorEmbaralhado[i]->naipe = 2 ;
+      }
+      else {
+         pVetorEmbaralhado[i]->naipe = 3 ;
+      }
+	}
    
 } /* Fim função: BAR &Criar embaralhar vetor *******************************/
 
