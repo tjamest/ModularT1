@@ -42,7 +42,7 @@
 
          CAR_tpNaipe	naipe ; /* Ouros, Espadas, Copas, Paus */
 
-   } CAR_tppCarta;
+   } CAR_tpCarta;
 
 /***** Protótipos das funções encapsuladas no módulo *****/
 
@@ -56,7 +56,7 @@ static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
    
    Dúvidas durante a elaboração:
    
-1) Se a LIS_CriarLista retorna um tipo "ponteiro pro tipo lista" (LIS_tppList),
+1) Se a LIS_CriarLista retorna um tipo "ponteiro pro tipo lista" (LIS_tppLista),
 por que a CAR_CriarBaralho retorna uma condição de retorno (CAR_tpCondRet) e não
 um "ponteiro pra um tipo lista"?
 
