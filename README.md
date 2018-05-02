@@ -8,7 +8,6 @@ Tarefas a fazer até o dia 7 (entrega):
 Projeto:
 
 - CARTAS.c - Implementação do módulo CARTAS
-
 - CARTAS.h - Definição do módulo CARTAS
 
 - MESA.c - Implementação do módulo MESA
