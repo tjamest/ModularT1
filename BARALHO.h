@@ -53,23 +53,18 @@ typedef struct BAR_tagCarta * BAR_tppCarta
 
 typedef enum { //não tenho certeza se algumas dessas condições de retorno devem existir
 
-  BAR_CondRetOK,                 /* 0 = Concluiu corretamente */
-  BAR_CondRetNaoCriouBaralho,    /* 1 = Não criou a lista "baralho" de 40 cartas */
-  BAR_CondRetNaoCriouMaoJogador, /* 2 = Não criou as listas "mão jogador" */
-  BAR_CondRetNaoCriouMesa,       /* 3 = Não criou a lista "mesa" */
-  BAR_CondRetNaoDestruiuBaralho, /* 4 = Não destruiu o baralho no fim da partida */
-  BAR_CondRetFaltouMemoria       /* 5 = Faltou memoria */ 
-  
-  /* OBS:.Já sabemos se faltou memória ou não já que estamos utilizando o
-  módulo lista, e quando nós tentassemos criar um baralho adicionando cartas
-  para a lista ia retornar a condição de falta de memória */
+  BAR_CondRetOK,                 /* 0 Concluiu corretamente */
+  BAR_CondRetNaoCriouBaralho,    /* 1 Não criou a lista "baralho" de 40 cartas */
+  BAR_CondRetNaoCriouMaoJogador, /* 2 Não criou as listas "mão jogador" */
+  BAR_CondRetNaoCriouMesa,       /* 3 Não criou a lista "mesa" */
+  BAR_CondRetNaoDestruiuBaralho, /* 4 Não destruiu o baralho no fim da partida */
+  BAR_CondRetFaltouMemoria       /* 5 Faltou memoria */ 
 
   } BAR_tpCondRet;
 
 /***********************************************************************
 *
 *  $TC Tipo de dados: BAR tpValorCarta
-*
 *
 *  $ED Descrição do tipo
 *     Domínio dos possíveis valores de uma carta.
@@ -89,12 +84,11 @@ typedef enum {
   _3,               /* 9  */
   _Manilha          /* 10 */
   
-   } BAR_tpValorCarta ;
+} BAR_tpValorCarta ;
 
 /***********************************************************************
 *
 *  $TC Tipo de dados: BAR tpNaipeCarta
-*
 *
 *  $ED Descrição do tipo
 *     Dominio dos possiveis naipes de uma carta.
@@ -107,26 +101,24 @@ typedef enum {
   Copas,          /* 2 */
   Paus            /* 3 */
 
-   } BAR_tpNaipeCarta ;
+} BAR_tpNaipeCarta ;
 
 /***********************************************************************
 *
 *  $TC Tipo de dados: BAR tpCarta
 *
-*
 *  $ED Descrição do tipo
 *     Estrutura de uma carta, que tem um valor e um naipe.
 *
 ***********************************************************************/
-   typedef struct BAR_tagCarta {
+typedef struct BAR_tagCarta {
 
-     BAR_tpValorCarta valor ; /* 4, 5, 6, 7, Q, J, K, A, 2, 3,
-                              ManilhaOuros, ManilhaEspadas, 
-                              ManilhaCopas, ManilhaPaus */
+  BAR_tpValorCarta valor ; /* 0 4, 1 5, 2 6, 3 7, 4 Q, 5 J, 6 K, 7 A,
+                              8 2, 9 3, 10 Manilha*/
 
-     BAR_tpNaipeCarta naipe ; /* Ouros, Espadas, Copas, Paus */
+  BAR_tpNaipeCarta naipe ; /* 0 Ouros, 1 Espadas, 2 Copas, 3 Paus */
 
-   } BAR_tpCarta;
+} BAR_tpCarta;
 
 /***********************************************************************
 *
