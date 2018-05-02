@@ -27,11 +27,12 @@
 
 #undef BARALHO_OWN
 
-/***** Protótipos das funções encapsuladas no módulo **********************/
+/***** PROTÓTIPOS DAS FUNÇÕES ENCAPSULADAS NO MÓDULO **********************/
 
 static BAR_tppCarta CriarEmbaralharVetor ();
 
-/*****  Código das funções exportadas pelo módulo  ************************/
+
+/*****  CÓDIGO DAS FUNÇÕES EXPORTADAS PELO MÓDULO  ************************/
 
 /***************************************************************************
 *
@@ -56,8 +57,7 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 } /* Fim função: BAR &Destruir baralho ************************************/
 
 
-/*****  Código das funções encapsuladas no módulo  ************************/
-
+/*****  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  ************************/
 
 /***************************************************************************
 *
