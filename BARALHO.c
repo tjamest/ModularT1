@@ -70,7 +70,7 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 *
 ****************************************************************************/
 
-BAR_tpCarta CriarEmbaralharVetor() {
+BAR_tpCarta CriarEmbaralharVetor() { //ta errada pode desconsiderar tudo abaixo
    
    tpCarta pVetorEmbaralhado[40] ;
    
