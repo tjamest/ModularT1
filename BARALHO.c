@@ -268,7 +268,7 @@ BAR_tppCarta CriarVetorAux() {
 	pVetorAux[39].valor = _3 ;
 	pVetorAux[39].naipe = Paus ;
 
-return pVetorAux ;
+return pVetorAux[40] ;
    
 } /* Fim função: BAR &Criar vetor auxiliar *********************************/
 
