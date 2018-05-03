@@ -32,7 +32,6 @@
 
 static BAR_tppCarta CriarEmbaralharVetor ();
 
-
 /*****  CÓDIGO DAS FUNÇÕES EXPORTADAS PELO MÓDULO  ************************/
 
 /***************************************************************************
@@ -67,6 +66,7 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado) {
    
 } /* Fim função: BAR &Criar baralho ***************************************/
 
+
 /***************************************************************************
 *
 *  Função: BAR  &Destruir baralho
@@ -74,7 +74,18 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado) {
 ***************************************************************************/
 
 BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
-   
+   return 0;
+} /* Fim função: BAR &Destruir baralho ************************************/
+
+
+/***************************************************************************
+*
+*  Função: BAR  &Destruir carta
+*
+***************************************************************************/
+
+BAR_tpCondRet BAR_DestruirCarta(LIS_tppCarta pCarta) {
+   return 0;
 } /* Fim função: BAR &Destruir baralho ************************************/
 
 
@@ -88,9 +99,12 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 *     Cria e reordena aleatóriamente um
 *     vetor de 40 elementos do tipo Carta.
 *
+*  $FV Valor retornado
+*     BAR_tppCarta pVetorEmbaralhado: retorna um ponteiro pra um vetor de tpCarta
+*
 ****************************************************************************/
 
-BAR_tpCarta CriarEmbaralharVetor() {
+BAR_tppCarta CriarEmbaralharVetor() {
    
 	/* carta 4 de ouros */
 	pVetorEmbaralhado[0].valor = 0 ;
