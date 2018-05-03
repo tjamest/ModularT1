@@ -104,9 +104,9 @@ BAR_tpCondRet BAR_DestruirCarta(LIS_tppCarta pCarta) {
 *
 ****************************************************************************/
 
-BAR_tppCarta CriarEmbaralharVetor() {
+BAR_tppCarta CriarVetorAuxEmbaralha() {
    
-	BAR_tppCarta pVetorEmbaralhado ;
+	BAR_tppCarta pVetorEmbaralhado[40] ;
 	
 	/* carta 4 de ouros */
 	pVetorEmbaralhado[0].valor = 0 ;
@@ -268,12 +268,13 @@ BAR_tppCarta CriarEmbaralharVetor() {
 	pVetorEmbaralhado[39].valor = 9 ;
 	pVetorEmbaralhado[39].naipe = 3 ;
 
-	for (i=0; i<40; i++) {
+	for (i=0; i<40; i++) { /*oque está acontecendo nesse for ?
+	, por que vc ta atribuindo o valor para algo dentro do printf?!?!?!?!?!? isso vai printar a linha de comnado*/
 		printf("pVetorEmbaralhado[%i].valor = %i\n", (i+1), pVetorEmbaralhado[i].valor);
 		printf("pVetorEmbaralhado[%i].naipe = %i\n\n", (i+1), pVetorEmbaralhado[i].naipe);
 	}
 	
-	for (iSort = 0; iSort < 40; iSort++) {
+	for ( = 0; iSort < 40; iSort++) { // oque é esse isort? por que tem um nada RECEBENDO O VALOR 0 ????
 		srand( (unsigned)time(NULL) );
 		r = rand() % 40;
 		temp.valor = pVetorEmbaralhado[iSort].valor;
