@@ -53,7 +53,7 @@ static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 
 /***************************************************************************
 *
-*  Função: CAR  &Criar baralho
+*  Função: CAR  &Criar baralho embaralhado
    
    Dúvidas durante a elaboração:
    
@@ -61,8 +61,8 @@ static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 por que a CAR_CriarBaralho retorna uma condição de retorno (CAR_tpCondRet) e não
 um "ponteiro pra um tipo lista"?
 
-2) A função CAR_CriarBaralho recebe um "ponteiro pro tipo lista", mas isso pode ser
-declarado como (LIS_tpLista * pBaralho) ou (LIS_tppLista pBaralho), qual o correto?
+2) A função CAR_CriarBaralho recebe um "ponteiro pro tipo lista".
+
 *
 ***************************************************************************/
 
@@ -141,7 +141,7 @@ LIS_tppLista CAR_CriarBaralho(void) {
    
    return pBaralho; 
    
-} /* Fim função: CAR &Criar baralho
+} /* Fim função: CAR &Criar baralho embaralhado
 
 /***************************************************************************
 *
@@ -171,8 +171,7 @@ void CAR_DestruirBaralho(LIS_tppLista pBaralho) {
 *
 ***********************************************************************/
 
-CAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho) {
-   
+
 } /* Fim função: CAR &Embaralhar baralho
 
 
