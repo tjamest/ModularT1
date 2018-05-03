@@ -66,33 +66,12 @@ declarado como (LIS_tpLista * pBaralho) ou (LIS_tppLista pBaralho), qual o corre
 *
 ***************************************************************************/
 
-//LIS_tppLista CAR_CriarBaralho(LIS_tpLista * pBaralho) { //dúvida 1
-//LIS_tppLista CAR_CriarBaralho(LIS_tppLista pBaralho) { //dúvida 2
+
 
 LIS_tppLista CAR_CriarBaralho(void) {
    LIS_tppLista pBaralho;
    CAR_tpCarta aux[40];
    int tam = 40;
-   
-   for(int i=0;i<9;i++){
-	   aux[i].valor = i;
-	   aux[i].naipe = Ouros;
-   }
-   for(int i=9;i<18;i++){
-	   aux[i].valor = i-9;
-	   aux[i].naipe = Espadas;
-   }
-   for(int i=18;i<27;i++){
-	   aux[i].valor = i-18;
-	   aux[i].naipe = Copas;
-   }
-   for(int i=27;i<36;i++){
-	   aux[i].valor = i-27;
-	   aux[i].naipe = Paus;
-   }
-   for(int i = 0;i < 40; i++){ //printa um teste de como esta o vetor
-	   printf("%d %d\n" aux[i].valor,aux[i].naipe);
-   }
    
    pBaralho = LIS_CriarLista(NULL);
    
@@ -105,10 +84,55 @@ LIS_tppLista CAR_CriarBaralho(void) {
 
 		carta = aux[random];
 		if(LIS_QtdElem(pBaralho) <3){
-			//TEM QUE ANDAR COM O ELEMENTO CORRENTE.
-			
-			
+			condRetLista = LIS_InserirElementoApos (pBaralho, carta);
+			switch(condRetLista){
+			case LIS_CondRetOK:
+				printf("ok criado baralho\n ");
+				break;
+			case LIS_CondRetNaoEncontrou:
+				printf("Ponteiro,nao encontrado criar baralho\n");
+				break;
+			case LIS_CondRetListaVazia:
+				printf("A lista esta vazia criar baralho\n");
+				break;
+			default
+				printf("fudeu muito");
+			}
 		}
+		else{
+			condRetLista = LIS_AvancarElementoCorrente(pBaralho,1);
+			switch(condRetLista){
+			case LIS_CondRetOK:
+				printf("ok criado baralho\n ");
+				break;
+			case LIS_CondRetNaoEncontrou:
+				printf("Ponteiro,nao encontrado criar baralho\n");
+				break;
+			case LIS_CondRetListaVazia:
+				printf("A lista esta vazia criar baralho\n");
+				break;
+			default
+				printf("fudeu muito");
+			}
+			condRetLista = LIS_InserirElementoApos (pBaralho, carta);
+			switch(condRetLista){
+			case LIS_CondRetOK:
+				printf("ok criado baralho\n ");
+				break;
+			case LIS_CondRetNaoEncontrou:
+				printf("Ponteiro,nao encontrado criar baralho\n");
+				break;
+			case LIS_CondRetListaVazia:
+				printf("A lista esta vazia criar baralho\n");
+				break;
+			default
+				printf("fudeu muito");
+			}
+
+		}
+
+			
+		
 			
 		condRetLista = LIS_InserirElementoApos (pBaralho, carta);
 
