@@ -43,26 +43,79 @@ static BAR_tppCarta CriarVetorAux ();
 
 LIS_tppLista BAR_CriarBaralho() {
 
-	LIS_tppLista pBaralho = (LIS_tppLista*)(malloc(sizeof(LIS_tppLista))) ;
+	//aloca memória pro ponteiro que aponta pra cabeca
+	//do baralho (um ponteiro pro tipo lista)
+	LIS_tppLista pCabecaBaralho = (LIS_tppLista*)(malloc(sizeof(LIS_tppLista))) ;
 	
-	pBaralho = LIS_CriarLista ( &(pValor), BAR_DestruirCarta );
+	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
+	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
+	pCabecaBaralho = LIS_CriarLista (( * ExcluirValor ) ( void * pDado )) ;
+	//não sei o que botar no ExcluirValor nem no pDado
 	
-	//inserindo na lista elementos do vetor escolhidos de forma aleatória
+	//cria um vetor de 40 elementos tipo carta
+	BAR_tppCarta pVetorAux[40] = CriarVetorAux ();
+	
+	//cria uma variável que armazena a condição de
+	//retorno de funções de manipulação da lista
+	LIS_tpCondRet condRetLista;
+	
+	//cria uma variável que armazena o ponteiro pro tipo carta
+	BAR_tppCarta pCarta;
+	
 	srand (time(NULL));
-  	for (int i = 0 ; i < tam ; tam--) {
-		BAR_tppCarta pCarta;
-		LIS_tpCondRet condRetLista;
-
-		int random = rand()%tam;
-
+	
+	/* solução de vcs */
+	//insere 40 elementos no pCabecaBaralho e o valor de
+	//cada elemento será um ponteiro pra um tipo Carta
+  	for (int i = 0 ; i < 40 ; i++) {
+		
+		//gera um valor int aleatório entre 0 e 39
+		int random = rand()%40;
+		
+		//pCarta recebe um ponteiro aleatório pra um tipo carta
 		pCarta = pVetorAux[random];
 		
-		condRetLista = LIS_InserirElementoApos (pBaralho, pCarta);
-
-		pVetorAux[random] = pVetorAux[tam-1];
+		//é inserido um elemento na lista Baralho e 
+		//seu valor é um ponteiro pra um tipo Carta
+		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta);
+		
+		//nao entendi
+		pVetorAux[random] = pVetorAux[39];	
   	} /* fim for */
 	
-  return pBaralho ;
+	/* https://www.clubedohardware.com.br/forums/topic/957532-resolvido-embaralhar-vetor/ */
+	/* https://www.cprogressivo.net/2013/03/Como-gerar-numeros-aleatorios-em-C-com-a-rand-srand-e-seed.html */
+	/* https://forum.imasters.com.br/topic/312920-código-gerando-numeros-aleatorios-sem-repeti%C3%A7%C3%A3o/ */
+	for (int i = 0; i < 40 i++){
+		
+		/* parte que copiei do site */
+		//gera um número aleatorio entre 0 e 39
+		int random = rand() % 40 ;
+
+		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
+		BAR_tppCarta pCarta = pVetorAux[i] ;
+		
+		//o ponteiro pra um tipo Carta usado anteriormente recebe agora
+		//um ponteiro pra um tipo Carta escolhido aleatoriamente
+		vet[i] = pVetorAux[random] ;
+		
+		//o ponteiro pra um tipo Carta aleatório
+		//recebe o ponteiro pra um tipo Carta inicial
+		pVetorAux[random] = pCarta ;
+		
+		//conclusao: as cartas trocaram de lugar no vetor auxiliar
+		//ja testei ontem com uma main simples e tinha funcionado
+		
+		/* minha parte */
+		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
+		pCarta = pVetorAux[i];
+		
+		//é inserido um elemento na lista Baralho e 
+		//seu valor é um ponteiro pra um tipo Carta
+		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta);
+	}
+	
+  return pCabecaBaralho ;
    
 } /* Fim função: BAR &Criar baralho ***************************************/
 
