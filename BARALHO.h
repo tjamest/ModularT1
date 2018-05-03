@@ -75,15 +75,15 @@ typedef enum {
 
 
   _4,               /* 0 */
-  _5,               /* 1*/
+  _5,               /* 1 */
   _6,               /* 2 */
   _7,               /* 3 */
   _Q,               /* 4 */
   _J,               /* 5 */
-  _K,               /* 6*/
-  _A,               /* 7*/                         
-  _2,               /* 8*/
-  _3,               /* 9*/
+  _K,               /* 6 */
+  _A,               /* 7 */                         
+  _2,               /* 8 */
+  _3,               /* 9 */
 } BAR_tpValorCarta ;
 
 /***********************************************************************
@@ -154,10 +154,10 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
 
 /**********************************************************************
 *
-*  $FC Função: BAR  &Criar Embaralhar Vetor
+*  $FC Função: BAR  &CriarVetorAuxEmbaralha
 *
 *  $ED Descrição da função
-*   Cria e reordena aleatóriamente um vetor de 52 elementos do tipo Carta.
+*   Cria e reordena aleatóriamente um vetor de 40 elementos do tipo Carta.
 *
 *  $FV Valor retornado
 *     Se executou corretamente retorna o ponteiro pro primeiro elemento do vetor.
@@ -165,6 +165,7 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
 *
 *     Se ocorreu algum erro, por exemplo falta de memória ou dados incorretos, 
 *     a função retornará NULL.
+*     E Dirá erro ao criar Vetor Auxiliar.
 *     Não será dada mais informação quanto ao problema ocorrido.
 *
 *     Assertivas de saída:
@@ -173,7 +174,7 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
 *
 ***********************************************************************/
 
-BAR_tppCarta CriarEmbaralharVetor();
+BAR_tppCarta CriarVetorAuxEmbaralha();
 
 /**********************************************************************
 *
