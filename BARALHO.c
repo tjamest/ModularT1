@@ -51,7 +51,7 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado) {
 	//CriarLista recebe um ponteiro pra função void que aceita void como parametro
 	//LIS_tppLista LIS_CriarLista(void ( * ExcluirValor ) ( void * pDado ) )
 	
-	pBaralho = LIS_CriarLista ( &(pElemCorr), BAR_DestruirCarta );
+	pBaralho = LIS_CriarLista ( &(pValor), BAR_DestruirCarta );
 	
 	for (i = 0; i < 40; i++) {
 		BAR_tppCarta pValor;
