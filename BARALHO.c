@@ -94,14 +94,14 @@ BAR_tpCondRet BAR_DestruirCarta(LIS_tppCarta pCarta) {
 
 /***************************************************************************
 *
-*  $FC Função: BAR Criar Embaralhar Vetor
+*  $FC Função: BAR Criar Vetor Auxiliar Embaralha
 *
 *  $ED Descrição da função
-*     Cria e reordena aleatóriamente um
-*     vetor de 40 elementos do tipo Carta.
+*     Cria um vetor de 40 elementos tpCarta e insere
+*     na lista "baralho" de forma aleatória.
 *
 *  $FV Valor retornado
-*     BAR_tppCarta pVetorEmbaralhado: retorna um ponteiro pra um vetor de tpCarta
+*     BAR_tppLista pBaralho: retorna um ponteiro pra um tpLista
 *
 ****************************************************************************/
 
@@ -271,7 +271,7 @@ BAR_tppCarta CriarVetorAuxEmbaralha() {
 	
 	srand (time(NULL));
 	
-  for (int i = 0 ; i < tam ; tam--) {
+  	for (int i = 0 ; i < tam ; tam--) {
 		BAR_tpCarta carta;	//carta não é um ponteiro pro tipo carta? não deveria ser BAR_tppCarta?
 		LIS_tpCondRet condRetLista;
 
@@ -282,7 +282,7 @@ BAR_tppCarta CriarVetorAuxEmbaralha() {
 		condRetLista = LIS_InserirElementoApos (pBaralho, carta);
 
 		aux[random] = aux[tam-1];
-  } /* fim for */
+  	} /* fim for */
 
 return pBaralho ;
    
