@@ -58,9 +58,10 @@ typedef enum { //não tenho certeza se algumas dessas condições de retorno dev
   BAR_CondRetNaoCriouMaoJogador, /* 2 Não criou as listas "mão jogador" */
   BAR_CondRetNaoCriouMesa,       /* 3 Não criou a lista "mesa" */
   BAR_CondRetNaoDestruiuBaralho, /* 4 Não destruiu o baralho no fim da partida */
-  BAR_CondRetFaltouMemoria       /* 5 Faltou memoria */ 
+  BAR_CondRetNaoDestruiuCarta,   /* 5 Não destruiu o baralho no fim da partida */
+  BAR_CondRetFaltouMemoria       /* 6 Faltou memoria */ 
 
-  } BAR_tpCondRet;
+} BAR_tpCondRet;
 
 /***********************************************************************
 *
@@ -176,6 +177,21 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
 ***********************************************************************/
 
 BAR_tpCarta CriarEmbaralharVetor();
+
+/**********************************************************************
+*
+*  $FC Função: BAR  &Destruir Carta
+*
+*  $ED Descrição da função
+*     Destrói uma carta.
+*
+*  $FV Valor retornado
+*     BAR_tpCondRet    - BAR_CondRetNaoDestruiuCarta
+*     BAR_tpCondRet    - BAR_CondRetOK
+*
+***********************************************************************/
+
+BAR_tpCondRet DestruirCarta(BAR_tppCarta pCarta);
 
 /**********************************************************************
 *
