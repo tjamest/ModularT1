@@ -18,6 +18,7 @@
 ***************************************************************************/
 
 #include   <stdio.h>
+#include   <stdlib.h>
 #include   <string.h>
 #include   <malloc.h>
 #include   <time.h>
@@ -106,173 +107,167 @@ BAR_tpCondRet BAR_DestruirCarta(LIS_tppCarta pCarta) {
 
 BAR_tppCarta CriarVetorAuxEmbaralha() {
    
-	BAR_tppCarta pVetorEmbaralhado[40] ;
+	BAR_tppCarta VetorAux[40] ;
 	
 	/* carta 4 de ouros */
-	pVetorEmbaralhado[0].valor = 0 ;
-	pVetorEmbaralhado[0].naipe = 0 ; 
+	VetorAux[0].valor = 0 ;
+	VetorAux[0].naipe = 0 ; 
 
 	/* carta 4 de espadas */
-	pVetorEmbaralhado[1].valor = 0 ;
-	pVetorEmbaralhado[1].naipe = 1 ; 
+	VetorAux[1].valor = 0 ;
+	VetorAux[1].naipe = 1 ; 
 
 	/* carta 4 de copas */
-	pVetorEmbaralhado[2].valor = 0 ;
-	pVetorEmbaralhado[2].naipe = 2 ; 
+	VetorAux[2].valor = 0 ;
+	VetorAux[2].naipe = 2 ; 
 
 	/* carta 4 de paus */
-	pVetorEmbaralhado[3].valor = 0 ;
-	pVetorEmbaralhado[3].naipe = 3 ; 
+	VetorAux[3].valor = 0 ;
+	VetorAux[3].naipe = 3 ; 
 
 	/* carta 5 de ouros */
-	pVetorEmbaralhado[4].valor = 1 ;
-	pVetorEmbaralhado[4].naipe = 0 ; 
+	VetorAux[4].valor = 1 ;
+	VetorAux[4].naipe = 0 ; 
 
 	/* carta 5 de espadas */
-	pVetorEmbaralhado[5].valor = 1 ;
-	pVetorEmbaralhado[5].naipe = 1 ; 
+	VetorAux[5].valor = 1 ;
+	VetorAux[5].naipe = 1 ; 
 
 	/* carta 5 de copas */
-	pVetorEmbaralhado[6].valor = 1 ;
-	pVetorEmbaralhado[6].naipe = 2 ; 
+	VetorAux[6].valor = 1 ;
+	VetorAux[6].naipe = 2 ; 
 
 	/* carta 5 de paus */
-	pVetorEmbaralhado[7].valor = 1 ;
-	pVetorEmbaralhado[7].naipe = 3 ;
+	VetorAux[7].valor = 1 ;
+	VetorAux[7].naipe = 3 ;
 
 	/* carta 6 de ouros */
-	pVetorEmbaralhado[8].valor = 2 ;
-	pVetorEmbaralhado[8].naipe = 0 ; 
+	VetorAux[8].valor = 2 ;
+	VetorAux[8].naipe = 0 ; 
 
 	/* carta 6 de espadas */
-	pVetorEmbaralhado[9].valor = 2 ;
-	pVetorEmbaralhado[9].naipe = 1 ; 
+	VetorAux[9].valor = 2 ;
+	VetorAux[9].naipe = 1 ; 
 
 	/* carta 6 de copas */
-	pVetorEmbaralhado[10].valor = 2 ;
-	pVetorEmbaralhado[10].naipe = 2 ; 
+	VetorAux[10].valor = 2 ;
+	VetorAux[10].naipe = 2 ; 
 
 	/* carta 6 de paus */
-	pVetorEmbaralhado[11].valor = 2 ;
-	pVetorEmbaralhado[11].naipe = 3 ; 
+	VetorAux[11].valor = 2 ;
+	VetorAux[11].naipe = 3 ; 
 
 	/* carta 7 de ouros */
-	pVetorEmbaralhado[12].valor = 3 ;
-	pVetorEmbaralhado[12].naipe = 0 ; 
+	VetorAux[12].valor = 3 ;
+	VetorAux[12].naipe = 0 ; 
 
 	/* carta 7 de espadas */
-	pVetorEmbaralhado[13].valor = 3 ;
-	pVetorEmbaralhado[13].naipe = 1 ; 
+	VetorAux[13].valor = 3 ;
+	VetorAux[13].naipe = 1 ; 
 
 	/* carta 7 de copas */
-	pVetorEmbaralhado[14].valor = 3 ;
-	pVetorEmbaralhado[14].naipe = 2 ; 
+	VetorAux[14].valor = 3 ;
+	VetorAux[14].naipe = 2 ; 
 
 	/* carta 7 de paus */
-	pVetorEmbaralhado[15].valor = 3 ;
-	pVetorEmbaralhado[15].naipe = 3 ; 
+	VetorAux[15].valor = 3 ;
+	VetorAux[15].naipe = 3 ; 
 
 	/* carta Q de ouros */
-	pVetorEmbaralhado[16].valor = 4 ;
-	pVetorEmbaralhado[16].naipe = 0 ; 
+	VetorAux[16].valor = 4 ;
+	VetorAux[16].naipe = 0 ; 
 
 	/* carta Q de espadas */
-	pVetorEmbaralhado[17].valor = 4 ;
-	pVetorEmbaralhado[17].naipe = 1 ; 
+	VetorAux[17].valor = 4 ;
+	VetorAux[17].naipe = 1 ; 
 
 	/* carta Q de copas */
-	pVetorEmbaralhado[18].valor = 4 ;
-	pVetorEmbaralhado[18].naipe = 2 ; 
+	VetorAux[18].valor = 4 ;
+	VetorAux[18].naipe = 2 ; 
 
 	/* carta Q de paus */
-	pVetorEmbaralhado[19].valor = 4 ;
-	pVetorEmbaralhado[19].naipe = 3 ; 
+	VetorAux[19].valor = 4 ;
+	VetorAux[19].naipe = 3 ; 
 
 	/* carta J de ouros */
-	pVetorEmbaralhado[20].valor = 5 ;
-	pVetorEmbaralhado[20].naipe = 0 ; 
+	VetorAux[20].valor = 5 ;
+	VetorAux[20].naipe = 0 ; 
 
 	/* carta J de espadas */
-	pVetorEmbaralhado[21].valor = 5 ;
-	pVetorEmbaralhado[21].naipe = 1 ; 
+	VetorAux[21].valor = 5 ;
+	VetorAux[21].naipe = 1 ; 
 
 	/* carta J de copas */
-	pVetorEmbaralhado[22].valor = 5 ;
-	pVetorEmbaralhado[22].naipe = 2 ; 
+	VetorAux[22].valor = 5 ;
+	VetorAux[22].naipe = 2 ; 
 
 	/* carta J de paus */
-	pVetorEmbaralhado[23].valor = 5 ;
-	pVetorEmbaralhado[23].naipe = 3 ;
+	VetorAux[23].valor = 5 ;
+	VetorAux[23].naipe = 3 ;
 
 	/* carta K de ouros */
-	pVetorEmbaralhado[24].valor = 6 ;
-	pVetorEmbaralhado[24].naipe = 0 ; 
+	VetorAux[24].valor = 6 ;
+	VetorAux[24].naipe = 0 ; 
 
 	/* carta K de espadas */
-	pVetorEmbaralhado[25].valor = 6 ;
-	pVetorEmbaralhado[25].naipe = 1 ; 
+	VetorAux[25].valor = 6 ;
+	VetorAux[25].naipe = 1 ; 
 
 	/* carta K de copas */
-	pVetorEmbaralhado[26].valor = 6 ;
-	pVetorEmbaralhado[26].naipe = 2 ; 
+	VetorAux[26].valor = 6 ;
+	VetorAux[26].naipe = 2 ; 
 
 	/* carta K de paus */
-	pVetorEmbaralhado[27].valor = 6 ;
-	pVetorEmbaralhado[27].naipe = 3 ; 
+	VetorAux[27].valor = 6 ;
+	VetorAux[27].naipe = 3 ; 
 
 	/* carta A de ouros */
-	pVetorEmbaralhado[28].valor = 7 ;
-	pVetorEmbaralhado[28].naipe = 0 ; 
+	VetorAux[28].valor = 7 ;
+	VetorAux[28].naipe = 0 ; 
 
 	/* carta A de espadas */
-	pVetorEmbaralhado[29].valor = 7 ;
-	pVetorEmbaralhado[29].naipe = 1 ; 
+	VetorAux[29].valor = 7 ;
+	VetorAux[29].naipe = 1 ; 
 
 	/* carta A de copas */
-	pVetorEmbaralhado[30].valor = 7 ;
-	pVetorEmbaralhado[30].naipe = 2 ; 
+	VetorAux[30].valor = 7 ;
+	VetorAux[30].naipe = 2 ; 
 
 	/* carta A de paus */
-	pVetorEmbaralhado[31].valor = 7 ;
-	pVetorEmbaralhado[31].naipe = 3 ; 
+	VetorAux[31].valor = 7 ;
+	VetorAux[31].naipe = 3 ; 
 
 	/* carta 2 de ouros */
-	pVetorEmbaralhado[32].valor = 8 ;
-	pVetorEmbaralhado[32].naipe = 0 ; 
+	VetorAux[32].valor = 8 ;
+	VetorAux[32].naipe = 0 ; 
 
 	/* carta 2 de espadas */
-	pVetorEmbaralhado[33].valor = 8 ;
-	pVetorEmbaralhado[33].naipe = 1 ; 
+	VetorAux[33].valor = 8 ;
+	VetorAux[33].naipe = 1 ; 
 
 	/* carta 2 de copas */
-	pVetorEmbaralhado[34].valor = 8 ;
-	pVetorEmbaralhado[34].naipe = 2 ; 
+	VetorAux[34].valor = 8 ;
+	VetorAux[34].naipe = 2 ; 
 
 	/* carta 2 de paus */
-	pVetorEmbaralhado[35].valor = 8 ;
-	pVetorEmbaralhado[35].naipe = 3 ; 
+	VetorAux[35].valor = 8 ;
+	VetorAux[35].naipe = 3 ; 
 
 	/* carta 3 de ouros */
-	pVetorEmbaralhado[36].valor = 9 ;
-	pVetorEmbaralhado[36].naipe = 0 ; 
+	VetorAux[36].valor = 9 ;
+	VetorAux[36].naipe = 0 ; 
 
 	/* carta 3 de espadas */
-	pVetorEmbaralhado[37].valor = 9 ;
-	pVetorEmbaralhado[37].naipe = 1 ; 
+	VetorAux[37].valor = 9 ;
+	VetorAux[37].naipe = 1 ; 
 
 	/* carta 3 de copas */
-	pVetorEmbaralhado[38].valor = 9 ;
-	pVetorEmbaralhado[38].naipe = 2 ; 
+	VetorAux[38].valor = 9 ;
+	VetorAux[38].naipe = 2 ; 
 
 	/* carta 3 de paus */
-	pVetorEmbaralhado[39].valor = 9 ;
-	pVetorEmbaralhado[39].naipe = 3 ;
-
-	for (i=0; i<40; i++) { /*oque está acontecendo nesse for ?
-	, por que vc ta atribuindo o valor para algo dentro do printf?!?!?!?!?!? isso vai printar a linha de comnado*/
-		printf("pVetorEmbaralhado[%i].valor = %i\n", (i+1), pVetorEmbaralhado[i].valor);
-		printf("pVetorEmbaralhado[%i].naipe = %i\n\n", (i+1), pVetorEmbaralhado[i].naipe);
-	}
+	VetorAux[39].valor = 9 ;
+	VetorAux[39].naipe = 3 ;
 	
 	for (cont = 0; cont < 40; cont++) { 
 		srand( (unsigned)time(NULL) );
