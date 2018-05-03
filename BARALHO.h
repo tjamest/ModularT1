@@ -191,7 +191,7 @@ BAR_tpCarta CriarEmbaralharVetor();
 *
 ***********************************************************************/
 
-BAR_tpCondRet DestruirCarta(BAR_tppCarta pCarta);
+BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta);
 
 /**********************************************************************
 *
