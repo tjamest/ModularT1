@@ -11,8 +11,9 @@
 *  Autores: gsc, jvr, tgf
 *
 *  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-*     1       gsc   30/abr/2018 início desenvolvimento
+*     Versão      Autor       Data        Observações
+*     2            gsc     03/mai/2018    feito resettteste e criarbaralho
+*     1            gsc     30/abr/2018    início desenvolvimento
 *
 ***************************************************************************/
 
@@ -25,63 +26,100 @@
 #include    "Generico.h"
 #include    "LerParm.h"
 
-#include    "Cartas.h"
-#include    "Lista.h" //deve incluir?
+#include    "Baralho.h"
+#include    "Lista.h"
 
-//comandos do TESTBARALHO.c
-static const char CRIAR_BARALHO_CARTAS_CMD        [ ] = "=criarbaralho"     ;
-static const char EMBARALHAR_BARALHO_CARTAS_CMD   [ ] = "=embaralharbaralho"  ;
-static const char DESTRUIR_BARALHO_CARTAS_CMD     [ ] = "=destruirbaralho"  ;
+//comandos do TestBAR.c
+static const char RESET_BARALHO_CMD             [ ] = "=resetteste" ;
+static const char CRIAR_BARALHO_CMD             [ ] = "=criarbaralho"     ;
+static const char CRIAR_EMBARALHAR_VETOR_CMD    [ ] = "=criarembaralharvetor"  ;
+static const char DESTRUIR_BARALHO_CMD          [ ] = "=destruirbaralho"  ;
+static const char DESTRUIR_CARTA_CMD            [ ] = "=destruircarta"  ;
 
-
-#define TRUE  1
 #define FALSE 0
+#define TRUE  1
 
 #define VAZIO     0
 #define NAO_VAZIO 1
 
-#define DIM_VT_LISTA   10
-#define DIM_VALOR     100
+#define DIM_VT_BARALHO   10
+#define DIM_VALOR        100
 
-LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
+//na função strcmp: 0 = equal
 
-/***** Protótipos das funções encapsuladas no módulo *****/
+LIS_tppLista   vtBaralhos[ DIM_VT_BARALHO ] ;
+
+/*********** PROTÓTIPOS DAS FUNÇÕES ENCAPSULADAS NO MÓDULO ************/
 
    static void DestruirValor( void * pValor ) ;
 
    static int ValidarInxLista( int inxLista , int Modo ) ;
 
-/*****  Código das funções exportadas pelo módulo  *****/
-
+/************  CÓDIGO DAS FUNÇÕES EXPORTADAS PELO MÓDULO  *************/
 
 /***********************************************************************
 *
-*  $FC Função: TLIS &Testar lista
+*  $FC Função: TBAR &Efetuar comando
 *
 *  $ED Descrição da função
-*     Podem ser criadas até 10 listas, identificadas pelos índices 0 a 10
+*     Podem ser criados até 10 baralhos guardados em um vetor, 
+*     identificados pelos índices 0 a 10
 *
 *     Comandos disponíveis:
 *
 *     =resetteste
-*           - anula o vetor de listas. Provoca vazamento de memória
-*     =criarlista                   inxLista
-*     =destruirlista                inxLista
-*     =esvaziarlista                inxLista
-*     =inselemantes                 inxLista  string  CondRetEsp
-*     =inselemapos                  inxLista  string  CondRetEsp
-*     =obtervalorelem               inxLista  string  CondretPonteiro
-*     =excluirelem                  inxLista  CondRetEsp
-*     =irinicio                     inxLista
-*     =irfinal                      inxLista
-*     =avancarelem                  inxLista  numElem CondRetEsp
+*           - anula o vetor de baralho e provoca vazamento de memória.
+*
+*     =criarbaralho                 inxBaralho
+*           - cria um 1 a 10 baralhos que serão armazenados em vtBaralhos[].
+*             o ponteiro para essas listas é armazenado nos
+*             elementos do vtBaralhos[].
+*
+*     =criarembaralharvetor
+*           - cria um vetor com 40 elementos tpCarta e reorganiza aleatoriamente
+*
+*     =destruirbaralho              inxBaralho
+*           - destrói um baralho (libera um ponteiro pra um tpLista)
+*
+*     =destruircarta                inxBaralho 
+*           - destrói uma carta (libera um ponteiro pra um tpCarta)
+*
+*     =inselemapos                  inxBaralho  string  CondRetEsp
+*     =obtervalorelem               inxBaralho  string  CondretPonteiro
+*     =excluirelem                  inxBaralho  CondRetEsp
+*     =irinicio                     inxBaralho
+*     =irfinal                      inxBaralho
+*     =avancarelem                  inxBaralho  numElem CondRetEsp
+*
+*  $FV Valor retornado
+*
+*     Comando de teste executou corretamente:
+*     TST_tpCondRet    - TST_CondRetOK
+*
+*     Comando de teste encontrou uma ou mais falhas:
+*     TST_tpCondRet    - TST_CondRetErro
+*
+*     Comando de teste está com a sintaxe em erro:
+*     TST_tpCondRet    - TST_CondRetParm
+*
+*     Comando de teste não se destina ao presente interpretador:
+*     TST_tpCondRet    - TST_CondRetNaoExecutou
+*
+*     Comando de teste não é conhecido:
+*     TST_tpCondRet    - TST_CondRetNaoConhec
+*
+*     Comando de teste não implementado:
+*     TST_tpCondRet    - TST_CondRetNaoImplementado
+*
+*     Faltou memória para executar o comando:
+*     TST_tpCondRet    - TST_CondRetMemoria
 *
 ***********************************************************************/
 
    TST_tpCondRet TST_EfetuarComando( char * ComandoTeste )
    {
 
-      int inxLista  = -1 ,
+      int inxBaralho  = -1 ,
           numLidos   = -1 ,
           CondRetEsp = -1  ;
 
@@ -98,318 +136,124 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
 
       StringDado[ 0 ] = 0 ;
 
-      /* Efetuar reset de teste de lista */
-
-         if ( strcmp( ComandoTeste , RESET_LISTA_CMD ) == 0 )
+      
+      /* RESET TEST */
+         
+         //se o comando for "resettest":
+         if ( strcmp( ComandoTeste , RESET_BARALHO_CMD ) == 0 )
          {
-
-            for( i = 0 ; i < DIM_VT_LISTA ; i++ )
+            //preenche o vetor baralho com Null
+            for( i = 0 ; i < DIM_VT_BARALHO ; i++ )
             {
-               vtListas[ i ] = NULL ;
+               vtBaralhos[ i ] = NULL ;
             } /* for */
 
             return TST_CondRetOK ;
 
-         } /* fim ativa: Efetuar reset de teste de lista */
+         } /* fim ativa: Efetuar reset de teste de baralho */
 
-      /* Testar CriarLista */
+      
+      /* CRIAR BARALHO */
 
-         else if ( strcmp( ComandoTeste , CRIAR_LISTA_CMD ) == 0 )
+         //se o comando for "criarbaralho"
+         else if ( strcmp( ComandoTeste , CRIAR_BARALHO_CMD ) == 0 )
          {
 
-            numLidos = LER_LerParametros( "i" ,
-                       &inxLista ) ;
+            //conta quantos parametros foram declarados
+            numLidos = LER_LerParametros( "i" , &inxBaralho ) ;
 
-            if ( ( numLidos != 1 )
-              || ( ! ValidarInxLista( inxLista , VAZIO )))
+            //se for diferente de 1 retorna erro de declaração de parametro
+            if ( (numLidos != 1) || (! ValidarInxBaralho( inxBaralho , VAZIO )) )
             {
                return TST_CondRetParm ;
-            } /* if */
+            } /* fim if */
 
-            vtListas[ inxLista ] =
-                 LIS_CriarLista( DestruirValor ) ;
+            //se for = 1 cria o vetor baralho
+            vtBaralhos[ inxBaralho ] = LIS_CriarLista( DestruirValor ) ;
 
-            return TST_CompararPonteiroNulo( 1 , vtListas[ inxLista ] ,
-               "Erro em ponteiro de nova lista."  ) ;
+            //retorna TST_CondRetOk ou TST_CondRetErro
+            //1 = checa se é ponteiro nulo e 0 = checa se é ponteiro não nulo
+            return TST_CompararPonteiroNulo( 1 , vtBaralhos[ inxBaralho ] ,
+               "Erro em ponteiro de novo baralho."  ) ;
 
-         } /* fim ativa: Testar CriarLista */
+         } /* fim ativa: Testar CriarBaralho */
 
-      /* Testar Esvaziar lista lista */
+      
+      /* ESVAZIAR BARALHO */
 
-         else if ( strcmp( ComandoTeste , ESVAZIAR_LISTA_CMD ) == 0 )
+         //se o comando for "esvaziarbaralho":
+         else if ( strcmp( ComandoTeste , DESTRUIR_BARALHO_CMD ) == 0 )
          {
 
-            numLidos = LER_LerParametros( "i" ,
-                               &inxLista ) ;
+            //conta quantos parametros foram declarados
+            numLidos = LER_LerParametros( "i" , &inxVetor ) ;
 
-            if ( ( numLidos != 1 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )))
+            //se for diferente de 1 retorna erro de declaração de parametro
+            if ( ( numLidos != 1 ) || ( ! ValidarInxBaralho( inxBaralho , NAO_VAZIO )))
             {
                return TST_CondRetParm ;
-            } /* if */
+            } /* fim if */
 
-            LIS_EsvaziarLista( vtListas[ inxLista ] ) ;
+            LIS_EsvaziarLista( vtBaralhos[ inxBaralho ] ) ;
 
             return TST_CondRetOK ;
 
-         } /* fim ativa: Testar Esvaziar lista lista */
-
-      /* Testar Destruir lista */
-
-         else if ( strcmp( ComandoTeste , DESTRUIR_LISTA_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "i" ,
-                               &inxLista ) ;
-
-            if ( ( numLidos != 1 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )))
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            LIS_DestruirLista( vtListas[ inxLista ] ) ;
-            vtListas[ inxLista ] = NULL ;
-
-            return TST_CondRetOK ;
-
-         } /* fim ativa: Testar Destruir lista */
-
-      /* Testar inserir elemento antes */
-
-         else if ( strcmp( ComandoTeste , INS_ELEM_ANTES_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "isi" ,
-                       &inxLista , StringDado , &CondRetEsp ) ;
-
-            if ( ( numLidos != 3 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            pDado = ( char * ) malloc( strlen( StringDado ) + 1 ) ;
-            if ( pDado == NULL )
-            {
-               return TST_CondRetMemoria ;
-            } /* if */
-
-            strcpy( pDado , StringDado ) ;
-
-
-            CondRet = LIS_InserirElementoAntes( vtListas[ inxLista ] , pDado ) ;
-
-            if ( CondRet != LIS_CondRetOK )
-            {
-               free( pDado ) ;
-            } /* if */
-
-            return TST_CompararInt( CondRetEsp , CondRet ,
-                     "Condicao de retorno errada ao inserir antes."                   ) ;
-
-         } /* fim ativa: Testar inserir elemento antes */
-
-      /* Testar inserir elemento apos */
-
-         else if ( strcmp( ComandoTeste , INS_ELEM_APOS_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "isi" ,
-                       &inxLista , StringDado , &CondRetEsp ) ;
-
-            if ( ( numLidos != 3 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            pDado = ( char * ) malloc( strlen( StringDado ) + 1 ) ;
-            if ( pDado == NULL )
-            {
-               return TST_CondRetMemoria ;
-            } /* if */
-
-            strcpy( pDado , StringDado ) ;
-
-
-            CondRet = LIS_InserirElementoApos( vtListas[ inxLista ] , pDado ) ;
-
-            if ( CondRet != LIS_CondRetOK )
-            {
-               free( pDado ) ;
-            } /* if */
-
-            return TST_CompararInt( CondRetEsp , CondRet ,
-                     "Condicao de retorno errada ao inserir apos."                   ) ;
-
-         } /* fim ativa: Testar inserir elemento apos */
-
-      /* Testar excluir simbolo */
-
-         else if ( strcmp( ComandoTeste , EXC_ELEM_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "ii" ,
-                  &inxLista , &CondRetEsp ) ;
-
-            if ( ( numLidos != 2 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            return TST_CompararInt( CondRetEsp ,
-                      LIS_ExcluirElemento( vtListas[ inxLista ] ) ,
-                     "Condição de retorno errada ao excluir."   ) ;
-
-         } /* fim ativa: Testar excluir simbolo */
-
-      /* Testar obter valor do elemento corrente */
-
-         else if ( strcmp( ComandoTeste , OBTER_VALOR_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "isi" ,
-                       &inxLista , StringDado , &ValEsp ) ;
-
-            if ( ( numLidos != 3 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            pDado = ( char * ) LIS_ObterValor( vtListas[ inxLista ] ) ;
-
-            if ( ValEsp == 0 )
-            {
-               return TST_CompararPonteiroNulo( 0 , pDado ,
-                         "Valor não deveria existir." ) ;
-            } /* if */
-
-            if ( pDado == NULL )
-            {
-               return TST_CompararPonteiroNulo( 1 , pDado ,
-                         "Dado tipo um deveria existir." ) ;
-            } /* if */
-
-            return TST_CompararString( StringDado , pDado ,
-                         "Valor do elemento errado." ) ;
-
-         } /* fim ativa: Testar obter valor do elemento corrente */
-
-      /* Testar ir para o elemento inicial */
-
-         else if ( strcmp( ComandoTeste , IR_INICIO_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "i" , &inxLista ) ;
-
-            if ( ( numLidos != 1 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            IrInicioLista( vtListas[ inxLista ] ) ;
-
-            return TST_CondRetOK ;
-
-         } /* fim ativa: Testar ir para o elemento inicial */
-
-      /* LIS  &Ir para o elemento final */
-
-         else if ( strcmp( ComandoTeste , IR_FIM_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "i" , &inxLista ) ;
-
-            if ( ( numLidos != 1 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            IrFinalLista( vtListas[ inxLista ] ) ;
-
-            return TST_CondRetOK ;
-
-         } /* fim ativa: LIS  &Ir para o elemento final */
-
-      /* LIS  &Avançar elemento */
-
-         else if ( strcmp( ComandoTeste , AVANCAR_ELEM_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "iii" , &inxLista , &numElem ,
-                                &CondRetEsp ) ;
-
-            if ( ( numLidos != 3 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            return TST_CompararInt( CondRetEsp ,
-                      LIS_AvancarElementoCorrente( vtListas[ inxLista ] , numElem ) ,
-                      "Condicao de retorno errada ao avancar" ) ;
-
-         } /* fim ativa: LIS  &Avançar elemento */
+         } /* fim ativa: Testar Esvaziar baralho */
 
       return TST_CondRetNaoConhec ;
 
-   } /* Fim função: TLIS &Testar lista */
+   } /* Fim função: TBAR &Efetuar comando */
 
 
-/*****  Código das funções encapsuladas no módulo  *****/
-
+/**************  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  ***********/
 
 /***********************************************************************
 *
-*  $FC Função: TLIS -Destruir valor
+*  $FC Função: TBAR - Destruir valor
 *
 ***********************************************************************/
 
    void DestruirValor( void * pValor )
    {
-
+      
       free( pValor ) ;
-
-   } /* Fim função: TLIS -Destruir valor */
+      
+   } /* Fim função: TBAR - Destruir valor */
 
 
 /***********************************************************************
 *
-*  $FC Função: TLIS -Validar indice de lista
+*  $FC Função: TBAR - Validar indice de baralho
 *
 ***********************************************************************/
 
-   int ValidarInxLista( int inxLista , int Modo )
+   int ValidarInxBaralho( int inxBaralho , int Modo )
    {
 
-      if ( ( inxLista <  0 )
-        || ( inxLista >= DIM_VT_LISTA ))
+      //checa se o índice declarado tá entre 0 e 9
+      if ( ( inxLista <  0 ) || ( inxLista >= DIM_VT_BARALHO ) )
       {
          return FALSE ;
-      } /* if */
+      } /* fim if */
          
+      //checa se o Modo é 
       if ( Modo == VAZIO )
       {
-         if ( vtListas[ inxLista ] != 0 )
+         if ( vtBaralhos[ inxBaralho ] != 0 )
          {
             return FALSE ;
-         } /* if */
+         } /* fim if */
       } else
       {
-         if ( vtListas[ inxLista ] == 0 )
+         if ( vtBaralhos[ inxBaralho ] == 0 )
          {
             return FALSE ;
-         } /* if */
-      } /* if */
+         } /* fim if */
+      } /* fim if */
          
       return TRUE ;
 
-   } /* Fim função: TBAR - Validar indice de lista */
+   } /* Fim função: TBAR - Validar indice de baralho */
 
 /********** Fim do módulo de implementação: TBAR Teste baralho **********/
 
