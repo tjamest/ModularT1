@@ -53,31 +53,32 @@ static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 
 /***************************************************************************
 *
-*  Função: CAR  &Criar baralho embaralhado
+*  Função: BAR  &Criar baralho embaralhado
    
    Dúvidas durante a elaboração:
    
 1) Se a LIS_CriarLista retorna um tipo "ponteiro pro tipo lista" (LIS_tppLista),
-por que a CAR_CriarBaralho retorna uma condição de retorno (CAR_tpCondRet) e não
+por que a BAR_CriarBaralho retorna uma condição de retorno (BAR_tpCondRet) e não
 um "ponteiro pra um tipo lista"?
 
-2) A função CAR_CriarBaralho recebe um "ponteiro pro tipo lista".
+Assertivas de saida:
+Um ponteiro de estrutura tppLista, que possui 40 elementos com estrutura de Tpp
 
 *
 ***************************************************************************/
 
 
 
-LIS_tppLista CAR_CriarBaralho(void) {
+LIS_tppLista BAR_CriarBaralho(void) {
    LIS_tppLista pBaralho;
-   CAR_tpCarta aux[40];
+   BAR_tpCarta aux[40];
    int tam = 40;
    
    pBaralho = LIS_CriarLista(NULL);
    
    srand (time(NULL));
    for (int i = 0 ; i < tam ; tam--) {
-		CAR_tpCarta carta;
+		BAR_tpCarta carta;
 		LIS_tpCondRet condRetLista;
 
 		int random = rand()%tam;
@@ -141,21 +142,35 @@ LIS_tppLista CAR_CriarBaralho(void) {
    
    return pBaralho; 
    
-} /* Fim função: CAR &Criar baralho embaralhado
+} /* Fim função: BAR &Criar baralho embaralhado
 
 /***************************************************************************
 *
-*  Função: CAR  &Destruir baralho
+*  Função: BAR  &Destruir baralho
 ***************************************************************************/
 
-void CAR_DestruirBaralho(LIS_tppLista pBaralho) {
+void BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 	LIS_tpCondRet condRetLista
 	
 	condRetLista = LIS_DestruirLista (pBaralho);
 	
 	if (condRetLista != LIS_CondRetOK)
-		return CAR_CondRetNaoDestruiuBaralho;
-} /* Fim função: CAR &Destruir baralho
+		return BAR_CondRetNaoDestruiuBaralho;
+} /* Fim função: BAR &Destruir baralho
+
+/***************************************************************************
+*
+*  Função: BAR  &Adiciona carta
+***************************************************************************/
+BAR_tpCarta BAR_AdicionaCarta(BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
+	BAR_tpCarta carta;
+	
+	carta.valor = valor;
+	carta.naipe = naipe;
+	
+	return carta;
+}
+/* Fim função: BAR &Adiciona carta
 
 
 /*****  Código das funções encapsuladas no módulo  *****/
