@@ -110,174 +110,178 @@ BAR_tppCarta CriarVetorAuxEmbaralha() {
 	BAR_tppCarta VetorAux[40] ;
 	
 	/* carta 4 de ouros */
-	VetorAux[0].valor = 0 ;
-	VetorAux[0].naipe = 0 ; 
+	VetorAux[0].valor = _4 ;
+	VetorAux[0].naipe = Ouros ; 
 
 	/* carta 4 de espadas */
-	VetorAux[1].valor = 0 ;
-	VetorAux[1].naipe = 1 ; 
+	VetorAux[1].valor = _4 ;
+	VetorAux[1].naipe = Espadas ; 
 
 	/* carta 4 de copas */
-	VetorAux[2].valor = 0 ;
-	VetorAux[2].naipe = 2 ; 
+	VetorAux[2].valor = _4 ;
+	VetorAux[2].naipe = Copas ; 
 
 	/* carta 4 de paus */
-	VetorAux[3].valor = 0 ;
-	VetorAux[3].naipe = 3 ; 
+	VetorAux[3].valor = _4 ;
+	VetorAux[3].naipe = Paus ; 
 
 	/* carta 5 de ouros */
-	VetorAux[4].valor = 1 ;
-	VetorAux[4].naipe = 0 ; 
+	VetorAux[4].valor = _5 ;
+	VetorAux[4].naipe = Ouros ; 
 
 	/* carta 5 de espadas */
-	VetorAux[5].valor = 1 ;
-	VetorAux[5].naipe = 1 ; 
+	VetorAux[5].valor = _5 ;
+	VetorAux[5].naipe = Espadas ; 
 
 	/* carta 5 de copas */
-	VetorAux[6].valor = 1 ;
-	VetorAux[6].naipe = 2 ; 
+	VetorAux[6].valor = _5 ;
+	VetorAux[6].naipe = Copas ; 
 
 	/* carta 5 de paus */
-	VetorAux[7].valor = 1 ;
-	VetorAux[7].naipe = 3 ;
+	VetorAux[7].valor = _5 ;
+	VetorAux[7].naipe = Paus ;
 
 	/* carta 6 de ouros */
-	VetorAux[8].valor = 2 ;
-	VetorAux[8].naipe = 0 ; 
+	VetorAux[8].valor = _6 ;
+	VetorAux[8].naipe = Ouros ; 
 
 	/* carta 6 de espadas */
-	VetorAux[9].valor = 2 ;
-	VetorAux[9].naipe = 1 ; 
+	VetorAux[9].valor = _6 ;
+	VetorAux[9].naipe = Espadas ; 
 
 	/* carta 6 de copas */
-	VetorAux[10].valor = 2 ;
-	VetorAux[10].naipe = 2 ; 
+	VetorAux[10].valor = _6 ;
+	VetorAux[10].naipe = Copas ; 
 
 	/* carta 6 de paus */
-	VetorAux[11].valor = 2 ;
-	VetorAux[11].naipe = 3 ; 
+	VetorAux[11].valor = _6 ;
+	VetorAux[11].naipe = Paus ; 
 
 	/* carta 7 de ouros */
-	VetorAux[12].valor = 3 ;
-	VetorAux[12].naipe = 0 ; 
+	VetorAux[12].valor = _7 ;
+	VetorAux[12].naipe = Ouros ; 
 
 	/* carta 7 de espadas */
-	VetorAux[13].valor = 3 ;
-	VetorAux[13].naipe = 1 ; 
+	VetorAux[13].valor = _7 ;
+	VetorAux[13].naipe = Espadas ; 
 
 	/* carta 7 de copas */
-	VetorAux[14].valor = 3 ;
-	VetorAux[14].naipe = 2 ; 
+	VetorAux[14].valor = _7 ;
+	VetorAux[14].naipe = Copas ; 
 
 	/* carta 7 de paus */
-	VetorAux[15].valor = 3 ;
-	VetorAux[15].naipe = 3 ; 
+	VetorAux[15].valor = _7 ;
+	VetorAux[15].naipe = Paus ; 
 
 	/* carta Q de ouros */
-	VetorAux[16].valor = 4 ;
-	VetorAux[16].naipe = 0 ; 
+	VetorAux[16].valor = _Q ;
+	VetorAux[16].naipe = Paus ; 
 
 	/* carta Q de espadas */
-	VetorAux[17].valor = 4 ;
-	VetorAux[17].naipe = 1 ; 
+	VetorAux[17].valor = _Q ;
+	VetorAux[17].naipe = Espadas ; 
 
 	/* carta Q de copas */
-	VetorAux[18].valor = 4 ;
-	VetorAux[18].naipe = 2 ; 
+	VetorAux[18].valor = _Q ;
+	VetorAux[18].naipe = Copas ; 
 
 	/* carta Q de paus */
-	VetorAux[19].valor = 4 ;
-	VetorAux[19].naipe = 3 ; 
+	VetorAux[19].valor = _Q ;
+	VetorAux[19].naipe = Paus ; 
 
 	/* carta J de ouros */
-	VetorAux[20].valor = 5 ;
-	VetorAux[20].naipe = 0 ; 
+	VetorAux[20].valor = _J ;
+	VetorAux[20].naipe = Ouros ; 
 
 	/* carta J de espadas */
-	VetorAux[21].valor = 5 ;
-	VetorAux[21].naipe = 1 ; 
+	VetorAux[21].valor = _J ;
+	VetorAux[21].naipe = Espadas ; 
 
 	/* carta J de copas */
-	VetorAux[22].valor = 5 ;
-	VetorAux[22].naipe = 2 ; 
+	VetorAux[22].valor = _J ;
+	VetorAux[22].naipe = Copas ; 
 
 	/* carta J de paus */
-	VetorAux[23].valor = 5 ;
-	VetorAux[23].naipe = 3 ;
+	VetorAux[23].valor = _J ;
+	VetorAux[23].naipe = Paus ;
 
 	/* carta K de ouros */
-	VetorAux[24].valor = 6 ;
-	VetorAux[24].naipe = 0 ; 
+	VetorAux[24].valor = _K ;
+	VetorAux[24].naipe = Ouros ; 
 
 	/* carta K de espadas */
-	VetorAux[25].valor = 6 ;
-	VetorAux[25].naipe = 1 ; 
+	VetorAux[25].valor = _K ;
+	VetorAux[25].naipe = Espadas ; 
 
 	/* carta K de copas */
-	VetorAux[26].valor = 6 ;
-	VetorAux[26].naipe = 2 ; 
+	VetorAux[26].valor = _K ;
+	VetorAux[26].naipe = Copas ; 
 
 	/* carta K de paus */
-	VetorAux[27].valor = 6 ;
-	VetorAux[27].naipe = 3 ; 
+	VetorAux[27].valor = _K ;
+	VetorAux[27].naipe = Paus ; 
 
 	/* carta A de ouros */
-	VetorAux[28].valor = 7 ;
-	VetorAux[28].naipe = 0 ; 
+	VetorAux[28].valor = _A ;
+	VetorAux[28].naipe = Ouros ; 
 
 	/* carta A de espadas */
-	VetorAux[29].valor = 7 ;
-	VetorAux[29].naipe = 1 ; 
+	VetorAux[29].valor = _A ;
+	VetorAux[29].naipe = Espadas ; 
 
 	/* carta A de copas */
-	VetorAux[30].valor = 7 ;
-	VetorAux[30].naipe = 2 ; 
+	VetorAux[30].valor = _A ;
+	VetorAux[30].naipe = Copas ; 
 
 	/* carta A de paus */
-	VetorAux[31].valor = 7 ;
-	VetorAux[31].naipe = 3 ; 
+	VetorAux[31].valor = _A ;
+	VetorAux[31].naipe = Paus ; 
 
 	/* carta 2 de ouros */
-	VetorAux[32].valor = 8 ;
-	VetorAux[32].naipe = 0 ; 
+	VetorAux[32].valor = _2 ;
+	VetorAux[32].naipe = Ouros ; 
 
 	/* carta 2 de espadas */
-	VetorAux[33].valor = 8 ;
-	VetorAux[33].naipe = 1 ; 
+	VetorAux[33].valor = _2 ;
+	VetorAux[33].naipe = Espadas ; 
 
 	/* carta 2 de copas */
-	VetorAux[34].valor = 8 ;
-	VetorAux[34].naipe = 2 ; 
+	VetorAux[34].valor = _2 ;
+	VetorAux[34].naipe = Copas ; 
 
 	/* carta 2 de paus */
-	VetorAux[35].valor = 8 ;
-	VetorAux[35].naipe = 3 ; 
+	VetorAux[35].valor = _2 ;
+	VetorAux[35].naipe = Paus ; 
 
 	/* carta 3 de ouros */
-	VetorAux[36].valor = 9 ;
-	VetorAux[36].naipe = 0 ; 
+	VetorAux[36].valor = _3 ;
+	VetorAux[36].naipe = Ouros ; 
 
 	/* carta 3 de espadas */
-	VetorAux[37].valor = 9 ;
-	VetorAux[37].naipe = 1 ; 
+	VetorAux[37].valor = _3 ;
+	VetorAux[37].naipe = Espadas ; 
 
 	/* carta 3 de copas */
-	VetorAux[38].valor = 9 ;
-	VetorAux[38].naipe = 2 ; 
+	VetorAux[38].valor = _3 ;
+	VetorAux[38].naipe = Copas ; 
 
 	/* carta 3 de paus */
-	VetorAux[39].valor = 9 ;
-	VetorAux[39].naipe = 3 ;
+	VetorAux[39].valor = _3 ;
+	VetorAux[39].naipe = Paus ;
 	
-	for (cont = 0; cont < 40; cont++) { 
-		srand( (unsigned)time(NULL) );
-		r = rand() % 40;
-		temp.valor = pVetorEmbaralhado[contcont].valor;
-		temp.naipe = pVetorEmbaralhado[cont].naipe;
-		pVetorEmbaralhado[cont].valor = pVetorEmbaralhado[r].valor;
-		pVetorEmbaralhado[cont].naipe = pVetorEmbaralhado[r].naipe;
-		pVetorEmbaralhado[r].valor = temp.valor;
-		pVetorEmbaralhado[r].naipe = temp.naipe;
+	srand (time(NULL));
+   for (int i = 0 ; i < tam ; tam--) {
+		CAR_tpCarta carta;
+		LIS_tpCondRet condRetLista;
+
+		int random = rand()%tam;
+
+		carta = aux[random];
+		
+		condRetLista = LIS_InserirElementoApos (pBaralho, carta);
+
+		aux[random] = aux[tam-1];
+	}
 	}
 	
 	/* assertiva de saída: o vetor deve estar organizado aleatoriamente */
