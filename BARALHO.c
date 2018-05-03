@@ -106,6 +106,8 @@ BAR_tpCondRet BAR_DestruirCarta(LIS_tppCarta pCarta) {
 
 BAR_tppCarta CriarEmbaralharVetor() {
    
+	BAR_tppCarta pVetorEmbaralhado ;
+	
 	/* carta 4 de ouros */
 	pVetorEmbaralhado[0].valor = 0 ;
 	pVetorEmbaralhado[0].naipe = 0 ; 
