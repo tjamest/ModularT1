@@ -20,11 +20,11 @@ Para testes:
 
 - TestLIS.c - Implementação do teste do módulo LISTA
 - TesteLista.script - Massa de testes para testes do módulo LISTA
-- TestBARALHO.c - Implementação do teste do módulo BARALHO
+- TestBAR.c - Implementação do teste do módulo BARALHO
 - TesteBaralho.script - Massa de testes para testes do módulo BARALHO
-- TestMESA.c - Implementação do teste do módulo MESA
+- TestMES.c - Implementação do teste do módulo MESA
 - TesteMesa.script - Massa de testes para testes do módulo MESA
-- TestINTERFACE.c - Implementação do teste do módulo INTERFACE
+- TestINTER.c - Implementação do teste do módulo INTERFACE
 - TesteInterface.script - Massa de testes para testes do módulo INTERFACE
 - GENERICO.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 - LERPARM.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
