@@ -19,25 +19,15 @@ Projeto:
 Para testes:
 
 - TSTLIS.c - Implementação do teste do módulo LISTA
-
 - TesteLista.script - Massa de testes para testes do módulo LISTA
-
 - TSTCARTAS.c - Implementação do teste do módulo CARTAS
-
 - TesteCartas.script - Massa de testes para testes do módulo CARTAS
-
 - TSTMESA.c - Implementação do teste do módulo MESA
-
 - TesteMesa.script - Massa de testes para testes do módulo MESA
-
 - TSTINTERFACE.c - Implementação do teste do módulo INTERFACE
-
 - TesteInterface.script - Massa de testes para testes do módulo INTERFACE
-
 - GENERICO.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
-
 - LERPARM.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
-
 - TST_ESPC.h - Módulo de suporte para testes (deve ser incluído nos módulos de teste e não deve ser alterado)
 
 Passo-a-passo T2:
