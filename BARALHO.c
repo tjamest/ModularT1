@@ -41,9 +41,29 @@ static BAR_tppCarta CriarEmbaralharVetor ();
 *
 ***************************************************************************/
 
-LIS_tppLista BAR_CriarBaralho(LIS_tppLista pBaralho) {
-   
-   return pBaralho ;
+LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado) {
+
+	//ponteiro pra um tipo cabeca lista
+	LIS_tppLista pBaralho = (LIS_tppLista*)(malloc(sizeof(LIS_tppLista))) ;
+	//é um ponteiro pra cabeça da lista baralho
+	//é o *pValor do primeiro elemento da lista superior
+	
+	//CriarLista recebe um ponteiro pra função void que aceita void como parametro
+	//LIS_tppLista LIS_CriarLista(void ( * ExcluirValor ) ( void * pDado ) )
+	
+	pBaralho = LIS_CriarLista ( &(pElemCorr), BAR_DestruirCarta );
+	
+	for (i = 0; i < 40; i++) {
+		BAR_tppCarta pValor;
+		pValor.valor = pVetorEmbaralhado[i].valor;
+		pValor.naipe = pVetorEmbaralhado[i].naipe;
+  	LIS_tpCondRet LIS_InserirElementoApos(LIS_tppLista pBaralho , void * pValor ) ;
+	} /* fim for */
+	
+	printf("pValor.valor = %i", pValor.valor); 
+	printf("pValor.naipe = %i", pValor.naipe); 
+	
+  return pBaralho ;
    
 } /* Fim função: BAR &Criar baralho ***************************************/
 
@@ -249,14 +269,12 @@ BAR_tpCarta CriarEmbaralharVetor() {
 	}
 	
 	/* assertiva de saída: o vetor deve estar organizado aleatoriamente */
-	/*
-	for (i = 0; i<40; i++) {
+	/*for (i = 0; i<40; i++) {
 		printf("\n\npVetorEmbaralhado[%i].valor = %i\n", i, pVetorEmbaralhado[i].valor) ; 
 		printf("pVetorEmbaralhado[%i].naipe = %i\n", i, pVetorEmbaralhado[i].naipe) ;
-	}
-	*/
-	
-   	return pVetorEmbaralhado ;
+	}*/
+
+return pVetorEmbaralhado ;
    
 } /* Fim função: BAR &Criar embaralhar vetor *******************************/
 
