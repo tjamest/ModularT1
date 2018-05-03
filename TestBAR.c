@@ -1,8 +1,8 @@
 /***************************************************************************
-*  $MCI Módulo de implementação: TCAR Teste cartas
+*  $MCI Módulo de implementação: TBAR Teste baralho
 *
-*  Arquivo gerado:              TestCAR.c
-*  Letras identificadoras:      TCAR
+*  Arquivo gerado:              TestBAR.c
+*  Letras identificadoras:      TBAR
 *
 *  Nome da base de software:    Jogo de Truco
 *
@@ -28,20 +28,7 @@
 #include    "Cartas.h"
 #include    "Lista.h" //deve incluir?
 
-//comandos originais do TESTLIS.c (não sei se eles devem ser incluídos)
-static const char RESET_LISTA_CMD         [ ] = "=resetteste"     ;
-static const char CRIAR_LISTA_CMD         [ ] = "=criarlista"     ;
-static const char DESTRUIR_LISTA_CMD      [ ] = "=destruirlista"  ;
-static const char ESVAZIAR_LISTA_CMD      [ ] = "=esvaziarlista"  ;
-static const char INS_ELEM_ANTES_CMD      [ ] = "=inselemantes"   ;
-static const char INS_ELEM_APOS_CMD       [ ] = "=inselemapos"    ;
-static const char OBTER_VALOR_CMD         [ ] = "=obtervalorelem" ;
-static const char EXC_ELEM_CMD            [ ] = "=excluirelem"    ;
-static const char IR_INICIO_CMD           [ ] = "=irinicio"       ;
-static const char IR_FIM_CMD              [ ] = "=irfinal"        ;
-static const char AVANCAR_ELEM_CMD        [ ] = "=avancarelem"    ;
-
-//comandos do TESTCARTAS.c
+//comandos do TESTBARALHO.c
 static const char CRIAR_BARALHO_CARTAS_CMD        [ ] = "=criarbaralho"     ;
 static const char EMBARALHAR_BARALHO_CARTAS_CMD   [ ] = "=embaralharbaralho"  ;
 static const char DESTRUIR_BARALHO_CARTAS_CMD     [ ] = "=destruirbaralho"  ;
@@ -422,7 +409,7 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
          
       return TRUE ;
 
-   } /* Fim função: TLIS -Validar indice de lista */
+   } /* Fim função: TBAR - Validar indice de lista */
 
-/********** Fim do módulo de implementação: TLIS Teste lista de símbolos **********/
+/********** Fim do módulo de implementação: TBAR Teste baralho **********/
 
