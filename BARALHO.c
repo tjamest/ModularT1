@@ -274,13 +274,13 @@ BAR_tppCarta CriarVetorAuxEmbaralha() {
 		printf("pVetorEmbaralhado[%i].naipe = %i\n\n", (i+1), pVetorEmbaralhado[i].naipe);
 	}
 	
-	for ( = 0; iSort < 40; iSort++) { // oque é esse isort? por que tem um nada RECEBENDO O VALOR 0 ????
+	for (cont = 0; cont < 40; cont++) { 
 		srand( (unsigned)time(NULL) );
 		r = rand() % 40;
-		temp.valor = pVetorEmbaralhado[iSort].valor;
-		temp.naipe = pVetorEmbaralhado[iSort].naipe;
-		pVetorEmbaralhado[iSort].valor = pVetorEmbaralhado[r].valor;
-		pVetorEmbaralhado[iSort].naipe = pVetorEmbaralhado[r].naipe;
+		temp.valor = pVetorEmbaralhado[contcont].valor;
+		temp.naipe = pVetorEmbaralhado[cont].naipe;
+		pVetorEmbaralhado[cont].valor = pVetorEmbaralhado[r].valor;
+		pVetorEmbaralhado[cont].naipe = pVetorEmbaralhado[r].naipe;
 		pVetorEmbaralhado[r].valor = temp.valor;
 		pVetorEmbaralhado[r].naipe = temp.naipe;
 	}
