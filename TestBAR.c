@@ -12,7 +12,7 @@
 *
 *  $HA Histórico de evolução:
 *     Versão      Autor       Data        Observações
-*     2            gsc     03/mai/2018    feito resettteste e criarbaralho
+*     2            gsc     03/mai/2018    início resettteste, criarbaralho e esvaziarlista
 *     1            gsc     30/abr/2018    início desenvolvimento
 *
 ***************************************************************************/
