@@ -1,14 +1,14 @@
 Tarefas a fazer até o dia 7 (entrega):
 
-- Criar as funções do CARTAS.c
-- Criar a linguagem do TSTCARTAS.c
+- Criar as funções do BARALHO.c
+- Criar a linguagem do TSTBARALHO.c
 - Incrementar a massa de testes do TesteLista.script
 - Criar a massa de testes do TesteCartas.script
 
 Projeto:
 
-- CARTAS.c - Implementação do módulo CARTAS
-- CARTAS.h - Definição do módulo CARTAS
+- BARALHO.c - Implementação do módulo BARALHO
+- BARALHO.h - Definição do módulo BARALHO
 - MESA.c - Implementação do módulo MESA
 - MESA.h - Definição do módulo MESA
 - LISTA.c - Implementação do módulo LISTA
@@ -20,8 +20,8 @@ Para testes:
 
 - TSTLIS.c - Implementação do teste do módulo LISTA
 - TesteLista.script - Massa de testes para testes do módulo LISTA
-- TSTCARTAS.c - Implementação do teste do módulo CARTAS
-- TesteCartas.script - Massa de testes para testes do módulo CARTAS
+- TSTBARALHO.c - Implementação do teste do módulo BARALHO
+- TesteBaralho.script - Massa de testes para testes do módulo BARALHO
 - TSTMESA.c - Implementação do teste do módulo MESA
 - TesteMesa.script - Massa de testes para testes do módulo MESA
 - TSTINTERFACE.c - Implementação do teste do módulo INTERFACE
