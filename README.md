@@ -9,17 +9,11 @@ Projeto:
 
 - CARTAS.c - Implementação do módulo CARTAS
 - CARTAS.h - Definição do módulo CARTAS
-
 - MESA.c - Implementação do módulo MESA
-
 - MESA.h - Definição do módulo MESA
-
 - LISTA.c - Implementação do módulo LISTA
-
 - LISTA.h - Definição do módulo LISTA
-
 - INTERFACE.c - Implementação do módulo INTERFACE
-
 - INTERFACE.h - Definição do módulo INTERFACE
 
 Para testes:
