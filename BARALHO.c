@@ -270,8 +270,9 @@ BAR_tppCarta CriarVetorAuxEmbaralha() {
 	VetorAux[39].naipe = Paus ;
 	
 	srand (time(NULL));
-   for (int i = 0 ; i < tam ; tam--) {
-		CAR_tpCarta carta;
+	
+  for (int i = 0 ; i < tam ; tam--) {
+		BAR_tpCarta carta;	//carta não é um ponteiro pro tipo carta? não deveria ser BAR_tppCarta?
 		LIS_tpCondRet condRetLista;
 
 		int random = rand()%tam;
@@ -281,18 +282,10 @@ BAR_tppCarta CriarVetorAuxEmbaralha() {
 		condRetLista = LIS_InserirElementoApos (pBaralho, carta);
 
 		aux[random] = aux[tam-1];
-	}
-	}
-	
-	/* assertiva de saída: o vetor deve estar organizado aleatoriamente */
-	/*for (i = 0; i<40; i++) {
-		printf("\n\npVetorEmbaralhado[%i].valor = %i\n", i, pVetorEmbaralhado[i].valor) ; 
-		printf("pVetorEmbaralhado[%i].naipe = %i\n", i, pVetorEmbaralhado[i].naipe) ;
-	}*/
+  } /* fim for */
 
-return pVetorEmbaralhado ;
+return pBaralho ;
    
-} /* Fim função: BAR &Criar embaralhar vetor *******************************/
-
+} /* Fim função: BAR &Criar vetor auxiliar embaralhar **********************/
 
 /************ Fim do módulo de implementação: BAR   Baralho ****************/
