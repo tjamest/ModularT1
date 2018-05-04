@@ -39,7 +39,7 @@
 
 /* Tipo referência para uma carta */
 
-typedef struct BAR_tagCarta * BAR_tppCarta
+typedef struct BAR_tagCarta * BAR_tppCarta ;
 
 /***********************************************************************
 *
