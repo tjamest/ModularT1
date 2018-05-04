@@ -55,11 +55,11 @@ LIS_tppLista BAR_CriarBaralho() {
 	//cria um vetor de 40 elementos tipo carta
 	BAR_tppCarta pVetorAux[40] = CriarVetorAux ();
 	
-	//cria uma variável que armazena a condição de
+	//declara uma variável que armazena a condição de
 	//retorno de funções de manipulação da lista
 	LIS_tpCondRet condRetLista;
 	
-	//cria uma variável que armazena o ponteiro pro tipo carta
+	//declara uma variável que armazena o ponteiro pro tipo carta
 	BAR_tppCarta pCarta;
 	
 	//função suporte da rand que faz gerar números diferentes sempre
@@ -140,11 +140,11 @@ LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
 	pCabecaMao = LIS_CriarLista (( * ExcluirValor ) ( void * pDado )) ;
 	//não sei o que botar no pDado
 	
-	//cria uma variável que armazena a condição de
+	//declara uma variável que armazena a condição de
 	//retorno de funções de manipulação da lista
 	LIS_tpCondRet condRetLista ;
 	
-	//cria uma variável que armazena o ponteiro pro tipo carta
+	//declara uma variável que armazena o ponteiro pro tipo carta
 	BAR_tppCarta pCarta ;
 	
 	//insere a ultima carta da lista baralho na
@@ -190,11 +190,11 @@ LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 	pCabecaMesa = LIS_CriarLista (( * ExcluirValor ) ( void * pDado )) ;
 	//não sei o que botar no pDado
 	
-	//cria uma variável que armazena a condição de
+	//declara uma variável que armazena a condição de
 	//retorno de funções de manipulação da lista
 	LIS_tpCondRet condRetLista ;
 	
-	//cria uma variável que armazena o ponteiro pro tipo carta
+	//declara uma variável que armazena o ponteiro pro tipo carta
 	BAR_tppCarta pCarta ;
 	
 	//insere a 3 elementos com pValor = Null na lista mesa
