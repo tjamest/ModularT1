@@ -4,21 +4,17 @@
 *  Arquivo gerado:              BARALHO.c
 *  Letras identificadoras:      BAR
 *
-*  Nome da base de software:    Truco
-*  Arquivo da base de software:
-*
 *  Projeto: INF 1301 Jogo de Truco
-*  Gestor:
 *  Autores: gsc, jvr, tgf
 *
 *  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-*     1       gsc   19/abr/2018 início desenvolvimento
+*  Versão  	Autor    	Data    	Observações
+*     1     gsc, jvr, tgf    19/abr/2018    início desenvolvimento
 *
 ***************************************************************************/
 
 #include   <stdio.h>
-#include   <stdlib.h>
+#include   <stdlib.h> 
 #include   <string.h>
 #include   <malloc.h>
 #include   <time.h>
