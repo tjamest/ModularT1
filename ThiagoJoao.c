@@ -53,83 +53,37 @@ static CAR_tppBaralho EmbaralharBaralho (LIS_tppLista pBaralho);
 
 /***************************************************************************
 *
-*  Função: BAR  &Criar baralho embaralhado
+*  Função: CAR  &Criar baralho
    
    Dúvidas durante a elaboração:
    
 1) Se a LIS_CriarLista retorna um tipo "ponteiro pro tipo lista" (LIS_tppLista),
-por que a BAR_CriarBaralho retorna uma condição de retorno (BAR_tpCondRet) e não
+por que a CAR_CriarBaralho retorna uma condição de retorno (CAR_tpCondRet) e não
 um "ponteiro pra um tipo lista"?
 
-Assertivas de saida:
-Um ponteiro de estrutura tppLista, que possui 40 elementos com estrutura de Tpp
-
+2) A função CAR_CriarBaralho recebe um "ponteiro pro tipo lista", mas isso pode ser
+declarado como (LIS_tpLista * pBaralho) ou (LIS_tppLista pBaralho), qual o correto?
 *
 ***************************************************************************/
 
 
 
-LIS_tppLista BAR_CriarBaralho(void) {
+LIS_tppLista CAR_CriarBaralho(void) {
    LIS_tppLista pBaralho;
-   BAR_tpCarta aux[40];
+   CAR_tpCarta aux[40];
    int tam = 40;
    
    pBaralho = LIS_CriarLista(NULL);
    
    srand (time(NULL));
    for (int i = 0 ; i < tam ; tam--) {
-		BAR_tpCarta carta;
+		CAR_tpCarta carta;
 		LIS_tpCondRet condRetLista;
 
 		int random = rand()%tam;
 
 		carta = aux[random];
-		if(LIS_QtdElem(pBaralho) <3){
 			condRetLista = LIS_InserirElementoApos (pBaralho, carta);
-			switch(condRetLista){
-			case LIS_CondRetOK:
-				printf("ok criado baralho\n ");
-				break;
-			case LIS_CondRetNaoEncontrou:
-				printf("Ponteiro,nao encontrado criar baralho\n");
-				break;
-			case LIS_CondRetListaVazia:
-				printf("A lista esta vazia criar baralho\n");
-				break;
-			default
-				printf("fudeu muito");
-			}
-		}
-		else{
-			condRetLista = LIS_AvancarElementoCorrente(pBaralho,1);
-			switch(condRetLista){
-			case LIS_CondRetOK:
-				printf("ok criado baralho\n ");
-				break;
-			case LIS_CondRetNaoEncontrou:
-				printf("Ponteiro,nao encontrado criar baralho\n");
-				break;
-			case LIS_CondRetListaVazia:
-				printf("A lista esta vazia criar baralho\n");
-				break;
-			default
-				printf("fudeu muito");
-			}
-			condRetLista = LIS_InserirElementoApos (pBaralho, carta);
-			switch(condRetLista){
-			case LIS_CondRetOK:
-				printf("ok criado baralho\n ");
-				break;
-			case LIS_CondRetNaoEncontrou:
-				printf("Ponteiro,nao encontrado criar baralho\n");
-				break;
-			case LIS_CondRetListaVazia:
-				printf("A lista esta vazia criar baralho\n");
-				break;
-			default
-				printf("fudeu muito");
-			}
-
 		}
 
 			
@@ -142,35 +96,21 @@ LIS_tppLista BAR_CriarBaralho(void) {
    
    return pBaralho; 
    
-} /* Fim função: BAR &Criar baralho embaralhado
+} /* Fim função: CAR &Criar baralho
 
 /***************************************************************************
 *
-*  Função: BAR  &Destruir baralho
+*  Função: CAR  &Destruir baralho
 ***************************************************************************/
 
-void BAR_DestruirBaralho(LIS_tppLista pBaralho) {
+void CAR_DestruirBaralho(LIS_tppLista pBaralho) {
 	LIS_tpCondRet condRetLista
 	
 	condRetLista = LIS_DestruirLista (pBaralho);
 	
 	if (condRetLista != LIS_CondRetOK)
-		return BAR_CondRetNaoDestruiuBaralho;
-} /* Fim função: BAR &Destruir baralho
-
-/***************************************************************************
-*
-*  Função: BAR  &Adiciona carta
-***************************************************************************/
-BAR_tpCarta BAR_AdicionaCarta(BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
-	BAR_tpCarta carta;
-	
-	carta.valor = valor;
-	carta.naipe = naipe;
-	
-	return carta;
-}
-/* Fim função: BAR &Adiciona carta
+		return CAR_CondRetNaoDestruiuBaralho;
+} /* Fim função: CAR &Destruir baralho
 
 
 /*****  Código das funções encapsuladas no módulo  *****/
@@ -186,7 +126,8 @@ BAR_tpCarta BAR_AdicionaCarta(BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
 *
 ***********************************************************************/
 
-
+CAR_tppBaralho EmbaralharBaralho(LIS_tppLista pBaralho) {
+   
 } /* Fim função: CAR &Embaralhar baralho
 
 
