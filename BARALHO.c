@@ -88,7 +88,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	/* minha solução */
 	/* https://www.clubedohardware.com.br/forums/topic/957532-resolvido-embaralhar-vetor/ */
 	/* https://www.cprogressivo.net/2013/03/Como-gerar-numeros-aleatorios-em-C-com-a-rand-srand-e-seed.html */
-	/* https://forum.imasters.com.br/topic/312920-código-gerando-numeros-aleatorios-sem-repeti%C3%A7%C3%A3o/ */
+	/* https://forum.imasters.com.br/topic/312920-código-gerando-numeros-aleatorios-sem-repetição/ */
 	for (int i = 0; i < 40 i++){
 		
 		/* parte que copiei do site */
