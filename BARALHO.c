@@ -49,17 +49,19 @@ LIS_tppLista BAR_CriarBaralho() {
 	
 	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
 	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
-	pCabecaBaralho = LIS_CriarLista (( * ExcluirValor ) ( * pDado )) ;
+	pCabecaBaralho = LIS_CriarLista (NULL) ;
 	//não sei o que botar no pDado
 	
-	//cria um vetor de 40 elementos tipo carta
-	BAR_tppCarta pVetorAux[40] = CriarVetorAux ();
+	//cria um vetor de 40 elementos que são ponteiros pra tpCarta
+	BAR_tppCarta VetorAux[40] = CriarVetorAux() ;
 	
 	//declara uma variável que armazena a condição de
 	//retorno de funções de manipulação da lista
 	LIS_tpCondRet condRetLista;
 	
-	//declara uma variável que armazena o ponteiro pro tipo carta
+	//declara uma variável que armazena o ponteiro
+	//pro tpCarta que é o elemento do vetor
+	//ver imagem em Docs/Estrutura de Tipos.png
 	BAR_tppCarta pCarta;
 	
 	//função suporte da rand que faz gerar números diferentes sempre
@@ -73,15 +75,16 @@ LIS_tppLista BAR_CriarBaralho() {
 		//gera um valor int aleatório entre 0 e 39
 		int random = rand()%40;
 		
-		//pCarta recebe um ponteiro aleatório pra um tipo carta
-		pCarta = pVetorAux[random];
+		//Carta recebe um tipo ponteiro pro tipo carta
+		//ver imagem em Docs/Estrutura de Tipos.png
+		pCarta = VetorAux[random];
 		
-		//é inserido um elemento na lista Baralho e 
-		//seu valor é um ponteiro pra um tipo Carta
+		//é inserido um elemento na lista Baralho 
+		//e seu valor é um ponteiro pro tipo Carta
 		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta);
 		
 		//nao entendi
-		pVetorAux[random] = pVetorAux[39];
+		VetorAux[random] = VetorAux[39];
 		
   	} /* fim for */
 	
@@ -90,31 +93,33 @@ LIS_tppLista BAR_CriarBaralho() {
 	/* https://www.cprogressivo.net/2013/03/Como-gerar-numeros-aleatorios-em-C-com-a-rand-srand-e-seed.html */
 	/* https://forum.imasters.com.br/topic/312920-código-gerando-numeros-aleatorios-sem-repetição/ */
 	/* parte que copiei do site */
+	/* embaralhador de vetor */
 	for (int i = 0; i < 40 i++){
 		
 		//gera um número aleatorio entre 0 e 39
 		int random = rand() % 40 ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
-		BAR_tppCarta pCarta = pVetorAux[i] ;
+		pCarta = VetorAux[i] ;
 		
 		//o ponteiro pra um tipo Carta usado anteriormente recebe agora
 		//um ponteiro pra um tipo Carta escolhido aleatoriamente
-		vet[i] = pVetorAux[random] ;
+		VetorAux[i] = VetorAux[random] ;
 		
 		//o ponteiro pra um tipo Carta aleatório
 		//recebe o ponteiro pra um tipo Carta inicial
-		pVetorAux[random] = pCarta ;
+		VetorAux[random] = pCarta ;
 		
 		//conclusao: as cartas trocaram de lugar no vetor auxiliar
 		//testei hoje com um vetor de inteiros de 1 a 20 e funcionou perfeita
 	} /* fim for */
 	
 	/* minha parte */
+	/* preenche um por um usando o vetor embaralhado */
 	for (int i = 0; i < 40 i++){
 		
 		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
-		pCarta = pVetorAux[i] ;
+		pCarta = VetorAux[i] ;
 		
 		//é inserido um elemento na lista Baralho e 
 		//seu valor é um ponteiro pra um tipo Carta
@@ -293,178 +298,178 @@ BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta) {
 *  $FC Função: BAR Criar Vetor Auxiliar
 *
 *  $ED Descrição da função
-*     Cria um vetor de 40 elementos tpCarta.
+*     Cria um vetor de 40 elementos com ponteiros pra tpCarta.
 *
 *  $FV Valor retornado
-*     BAR_tppCarta pVetorAux[40]: retorna um ponteiro pra um tpCarta
+*     BAR_tppCarta VetorAux[40]: retorna ponteiros pra tipos Carta.
 *
 ****************************************************************************/
 
 BAR_tppCarta CriarVetorAux() {
    
-	BAR_tppCarta pVetorAux[40] ;
-	
+	BAR_tppCarta VetorAux[40] ;
+		
 	/* carta 4 de ouros */
-	pVetorAux[0].valor = _4 ;
-	pVetorAux[0].naipe = Ouros ; 
+	VetorAux[0].valor = _4 ;
+	VetorAux[0].naipe = Ouros ; 
 
 	/* carta 4 de espadas */
-	pVetorAux[1].valor = _4 ;
-	pVetorAux[1].naipe = Espadas ; 
+	VetorAux[1].valor = _4 ;
+	VetorAux[1].naipe = Espadas ; 
 
 	/* carta 4 de copas */
-	pVetorAux[2].valor = _4 ;
-	pVetorAux[2].naipe = Copas ; 
+	VetorAux[2].valor = _4 ;
+	VetorAux[2].naipe = Copas ; 
 
 	/* carta 4 de paus */
-	pVetorAux[3].valor = _4 ;
-	pVetorAux[3].naipe = Paus ; 
+	VetorAux[3].valor = _4 ;
+	VetorAux[3].naipe = Paus ; 
 
 	/* carta 5 de ouros */
-	pVetorAux[4].valor = _5 ;
-	pVetorAux[4].naipe = Ouros ; 
+	VetorAux[4].valor = _5 ;
+	VetorAux[4].naipe = Ouros ; 
 
 	/* carta 5 de espadas */
-	pVetorAux[5].valor = _5 ;
-	pVetorAux[5].naipe = Espadas ; 
+	VetorAux[5].valor = _5 ;
+	VetorAux[5].naipe = Espadas ; 
 
 	/* carta 5 de copas */
-	pVetorAux[6].valor = _5 ;
-	pVetorAux[6].naipe = Copas ; 
+	VetorAux[6].valor = _5 ;
+	VetorAux[6].naipe = Copas ; 
 
 	/* carta 5 de paus */
-	pVetorAux[7].valor = _5 ;
-	pVetorAux[7].naipe = Paus ;
+	VetorAux[7].valor = _5 ;
+	VetorAux[7].naipe = Paus ;
 
 	/* carta 6 de ouros */
-	pVetorAux[8].valor = _6 ;
-	pVetorAux[8].naipe = Ouros ; 
+	VetorAux[8].valor = _6 ;
+	VetorAux[8].naipe = Ouros ; 
 
 	/* carta 6 de espadas */
-	pVetorAux[9].valor = _6 ;
-	pVetorAux[9].naipe = Espadas ;
+	VetorAux[9].valor = _6 ;
+	VetorAux[9].naipe = Espadas ;
 
 	/* carta 6 de copas */
-	pVetorAux[10].valor = _6 ;
-	pVetorAux[10].naipe = Copas ; 
+	VetorAux[10].valor = _6 ;
+	VetorAux[10].naipe = Copas ; 
 
 	/* carta 6 de paus */
-	pVetorAux[11].valor = _6 ;
-	pVetorAux[11].naipe = Paus ; 
+	VetorAux[11].valor = _6 ;
+	VetorAux[11].naipe = Paus ; 
 
 	/* carta 7 de ouros */
-	pVetorAux[12].valor = _7 ;
-	pVetorAux[12].naipe = Ouros ; 
+	VetorAux[12].valor = _7 ;
+	VetorAux[12].naipe = Ouros ; 
 
 	/* carta 7 de espadas */
-	pVetorAux[13].valor = _7 ;
-	pVetorAux[13].naipe = Espadas ; 
+	VetorAux[13].valor = _7 ;
+	VetorAux[13].naipe = Espadas ; 
 
 	/* carta 7 de copas */
-	pVetorAux[14].valor = _7 ;
-	pVetorAux[14].naipe = Copas ; 
+	VetorAux[14].valor = _7 ;
+	VetorAux[14].naipe = Copas ; 
 
 	/* carta 7 de paus */
-	pVetorAux[15].valor = _7 ;
-	pVetorAux[15].naipe = Paus ; 
+	VetorAux[15].valor = _7 ;
+	VetorAux[15].naipe = Paus ; 
 
 	/* carta Q de ouros */
-	pVetorAux[16].valor = _Q ;
-	pVetorAux[16].naipe = Paus ; 
+	VetorAux[16].valor = _Q ;
+	VetorAux[16].naipe = Paus ; 
 
 	/* carta Q de espadas */
-	pVetorAux[17].valor = _Q ;
-	pVetorAux[17].naipe = Espadas ; 
+	VetorAux[17].valor = _Q ;
+	VetorAux[17].naipe = Espadas ; 
 
 	/* carta Q de copas */
-	pVetorAux[18].valor = _Q ;
-	pVetorAux[18].naipe = Copas ; 
+	VetorAux[18].valor = _Q ;
+	VetorAux[18].naipe = Copas ; 
 
 	/* carta Q de paus */
-	pVetorAux[19].valor = _Q ;
-	pVetorAux[19].naipe = Paus ; 
+	VetorAux[19].valor = _Q ;
+	VetorAux[19].naipe = Paus ; 
 
 	/* carta J de ouros */
-	pVetorAux[20].valor = _J ;
-	pVetorAux[20].naipe = Ouros ; 
+	VetorAux[20].valor = _J ;
+	VetorAux[20].naipe = Ouros ; 
 
 	/* carta J de espadas */
-	pVetorAux[21].valor = _J ;
-	pVetorAux[21].naipe = Espadas ; 
+	VetorAux[21].valor = _J ;
+	VetorAux[21].naipe = Espadas ; 
 
 	/* carta J de copas */
-	pVetorAux[22].valor = _J ;
-	pVetorAux[22].naipe = Copas ; 
+	VetorAux[22].valor = _J ;
+	VetorAux[22].naipe = Copas ; 
 
 	/* carta J de paus */
-	pVetorAux[23].valor = _J ;
-	pVetorAux[23].naipe = Paus ;
+	VetorAux[23].valor = _J ;
+	VetorAux[23].naipe = Paus ;
 
 	/* carta K de ouros */
-	pVetorAux[24].valor = _K ;
-	pVetorAux[24].naipe = Ouros ; 
+	VetorAux[24].valor = _K ;
+	VetorAux[24].naipe = Ouros ; 
 
 	/* carta K de espadas */
-	pVetorAux[25].valor = _K ;
-	pVetorAux[25].naipe = Espadas ; 
+	VetorAux[25].valor = _K ;
+	VetorAux[25].naipe = Espadas ; 
 
 	/* carta K de copas */
-	pVetorAux[26].valor = _K ;
-	pVetorAux[26].naipe = Copas ; 
+	VetorAux[26].valor = _K ;
+	VetorAux[26].naipe = Copas ; 
 
 	/* carta K de paus */
-	pVetorAux[27].valor = _K ;
-	pVetorAux[27].naipe = Paus ; 
+	VetorAux[27].valor = _K ;
+	VetorAux[27].naipe = Paus ; 
 
 	/* carta A de ouros */
-	pVetorAux[28].valor = _A ;
-	pVetorAux[28].naipe = Ouros ; 
+	VetorAux[28].valor = _A ;
+	VetorAux[28].naipe = Ouros ; 
 
 	/* carta A de espadas */
-	pVetorAux[29].valor = _A ;
-	pVetorAux[29].naipe = Espadas ; 
+	VetorAux[29].valor = _A ;
+	VetorAux[29].naipe = Espadas ; 
 
 	/* carta A de copas */
-	pVetorAux[30].valor = _A ;
-	pVetorAux[30].naipe = Copas ; 
+	VetorAux[30].valor = _A ;
+	VetorAux[30].naipe = Copas ; 
 
 	/* carta A de paus */
-	pVetorAux[31].valor = _A ;
-	pVetorAux[31].naipe = Paus ; 
+	VetorAux[31].valor = _A ;
+	VetorAux[31].naipe = Paus ; 
 
 	/* carta 2 de ouros */
-	pVetorAux[32].valor = _2 ;
-	pVetorAux[32].naipe = Ouros ; 
+	VetorAux[32].valor = _2 ;
+	VetorAux[32].naipe = Ouros ; 
 
 	/* carta 2 de espadas */
-	pVetorAux[33].valor = _2 ;
-	pVetorAux[33].naipe = Espadas ; 
+	VetorAux[33].valor = _2 ;
+	VetorAux[33].naipe = Espadas ; 
 
 	/* carta 2 de copas */
-	pVetorAux[34].valor = _2 ;
-	pVetorAux[34].naipe = Copas ; 
+	VetorAux[34].valor = _2 ;
+	VetorAux[34].naipe = Copas ; 
 
 	/* carta 2 de paus */
-	pVetorAux[35].valor = _2 ;
-	pVetorAux[35].naipe = Paus ; 
+	VetorAux[35].valor = _2 ;
+	VetorAux[35].naipe = Paus ; 
 
 	/* carta 3 de ouros */
-	pVetorAux[36].valor = _3 ;
-	pVetorAux[36].naipe = Ouros ; 
+	VetorAux[36].valor = _3 ;
+	VetorAux[36].naipe = Ouros ; 
 
 	/* carta 3 de espadas */
-	pVetorAux[37].valor = _3 ;
-	pVetorAux[37].naipe = Espadas ; 
+	VetorAux[37].valor = _3 ;
+	VetorAux[37].naipe = Espadas ; 
 
 	/* carta 3 de copas */
-	pVetorAux[38].valor = _3 ;
-	pVetorAux[38].naipe = Copas ; 
+	VetorAux[38].valor = _3 ;
+	VetorAux[38].naipe = Copas ; 
 
 	/* carta 3 de paus */
-	pVetorAux[39].valor = _3 ;
-	pVetorAux[39].naipe = Paus ;
+	VetorAux[39].valor = _3 ;
+	VetorAux[39].naipe = Paus ;
 
-return pVetorAux[40] ;
+return VetorAux[40] ;
    
 } /* Fim função: BAR &Criar vetor auxiliar *********************************/
 
