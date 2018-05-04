@@ -287,7 +287,7 @@ BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta) {
 *     Cria um vetor de 40 elementos tpCarta.
 *
 *  $FV Valor retornado
-*     BAR_tppLista pVetorAux[40]: retorna um ponteiro pra um tpCarta
+*     BAR_tppCarta pVetorAux[40]: retorna um ponteiro pra um tpCarta
 *
 ****************************************************************************/
 
