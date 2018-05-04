@@ -146,14 +146,14 @@ LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
 	
 	//cria uma variável que armazena o ponteiro pro tipo carta
 	BAR_tppCarta pCarta ;
-	 
-	//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
-	IrFinalLista(pCabecaBaralho) ;
 	
 	//insere a ultima carta da lista baralho na
 	//lista mao depois a exclui da lista baralho
 	for (i = 0; i < 3; i++) {
 	
+		//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
+		IrFinalLista(pCabecaBaralho) ;
+		
 		//pCarta recebe o ponteiro pro tpCarta
 		pCarta = pCabecaBaralho->pElemCorr->pValor ; //não tenho certeza disso
 	
@@ -166,14 +166,71 @@ LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
 		//o elemento corrente (o último) da lista baralho é excluido
 		condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
 	
-		//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
-		IrFinalLista(pCabecaBaralho) ;
-	
 	} /* fim for */
 	
   return pCabecaMao ;
    
-} /* Fim função: BAR &Criar baralho ***************************************/
+} /* Fim função: BAR &Criar mao *******************************************/
+
+
+/***************************************************************************
+*
+*  Função: BAR  &Criar mesa
+*
+***************************************************************************/
+
+LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
+
+	//aloca memória pro ponteiro que aponta pra
+	//cabeca da mao (um ponteiro pro tipo lista)
+	LIS_tppLista pCabecaMesa = (LIS_tppLista*)(malloc(sizeof(LIS_tppLista))) ;
+	
+	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
+	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
+	pCabecaMesa = LIS_CriarLista (( * ExcluirValor ) ( void * pDado )) ;
+	//não sei o que botar no pDado
+	
+	//cria uma variável que armazena a condição de
+	//retorno de funções de manipulação da lista
+	LIS_tpCondRet condRetLista ;
+	
+	//cria uma variável que armazena o ponteiro pro tipo carta
+	BAR_tppCarta pCarta ;
+	
+	//insere a 3 elementos com pValor = Null na lista mesa
+	for (i = 0; i < 3; i++) {
+	
+		//cria um elemento na lista mao que tem pValor = Null
+		condRetLista = LIS_InserirElementoApos (pCabecaMesa, NULL) ;
+	
+		//atualiza o fim da lista na cabeça do baralho
+		pCabecaBaralho->pFimLista = pCabecaBaralho->pElemCorr->pAnt
+
+		//o elemento corrente (o último) da lista baralho é excluido
+		condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
+		
+	} /* fim for */
+	
+	/* armazenando a vira no quarto elemento da lista mesa */
+	
+	//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
+	IrFinalLista(pCabecaBaralho) ;
+	
+	//pCarta recebe o ponteiro pro tpCarta
+	pCarta = pCabecaBaralho->pElemCorr->pValor ; //não tenho certeza disso
+	
+	//cria um elemento na lista mao que tem pValor = ponteiro pro tpCarta
+	condRetLista = LIS_InserirElementoApos (pCabecaMesa, pCarta) ;
+	
+	//atualiza o fim da lista na cabeça do baralho
+	pCabecaBaralho->pFimLista = pCabecaBaralho->pElemCorr->pAnt
+
+	//o elemento corrente (o último) da lista baralho é excluido
+	condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
+	
+  return pCabecaMesa ;
+   
+} /* Fim função: BAR &Criar mesa *******************************************/
 
 
 /***************************************************************************
