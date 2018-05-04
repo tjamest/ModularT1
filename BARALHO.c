@@ -473,4 +473,54 @@ return VetorAux[40] ;
    
 } /* Fim função: BAR &Criar vetor auxiliar *********************************/
 
+/***************************************************************************
+*
+*  $FC Função: BAR  &Criar Carta
+*
+*  $ED Descrição da Função
+*	Aloca espaço para um elemento estrutura BAR_tppCarta e o preenche
+*	com o valor e naipe recebidos
+*
+*  $EP Parâmetros
+*	Valor	- Tipo enumerado valor da carta
+*	Naipe	- Tipo enumerado naipe da carta	
+*
+*  $FV Valor retornado
+*	Se executou corretamente retorna um ponteiro para o tipo Carta
+*
+*	Se ocorreu algum erro retorna NULL
+***************************************************************************/
+
+BAR_tppCarta criarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
+
+	BAR_tpCarta * pCarta = NULL;
+	pCarta = (BAR_tpCarta *) malloc(sizeof(BAR_tpCarta));
+	if (pCarta == NULL)
+		return NULL;
+
+	pCarta->valor = valor;
+	pCarta->naipe = naipe;
+
+	return pCarta;
+} /* Fim função: BAR &Criar Carta *****************************************/
+
+/***************************************************************************
+*
+*  $FC Função: BAR  &Destruir Carta
+*
+*  $ED Descrição da Função
+*	Recebe um ponteiro do tipo carta e libera seu espaço na memória
+*
+*  $EP Parâmetros
+*	carta	- ponteiro do tipo carta com valor e naipe preenchido
+*
+*  $FV Valor retornado
+*	Se executou corretamente retorna nada
+*
+***************************************************************************/
+void destruirCarta (BAR_tppCarta carta) {
+
+	free (carta);
+} /* Fim função: BAR &Destruir Carta ***************************************/
+
 /************ Fim do módulo de implementação: BAR   Baralho ****************/
