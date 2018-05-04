@@ -49,8 +49,8 @@ LIS_tppLista BAR_CriarBaralho() {
 	
 	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
 	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
-	pCabecaBaralho = LIS_CriarLista (( * ExcluirValor ) ( void * pDado )) ;
-	//não sei o que botar no ExcluirValor nem no pDado
+	pCabecaBaralho = LIS_CriarLista (( * ExcluirValor ) ( * pDado )) ;
+	//não sei o que botar no pDado
 	
 	//cria um vetor de 40 elementos tipo carta
 	BAR_tppCarta pVetorAux[40] = CriarVetorAux ();
@@ -62,7 +62,8 @@ LIS_tppLista BAR_CriarBaralho() {
 	//cria uma variável que armazena o ponteiro pro tipo carta
 	BAR_tppCarta pCarta;
 	
-	srand (time(NULL));
+	//função suporte da rand que faz gerar números diferentes sempre
+	srand ((unsigned)time(NULL));
 	
 	/* solução de vcs */
 	//insere 40 elementos no pCabecaBaralho e o valor de
@@ -80,9 +81,11 @@ LIS_tppLista BAR_CriarBaralho() {
 		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta);
 		
 		//nao entendi
-		pVetorAux[random] = pVetorAux[39];	
+		pVetorAux[random] = pVetorAux[39];
+		
   	} /* fim for */
 	
+	/* minha solução */
 	/* https://www.clubedohardware.com.br/forums/topic/957532-resolvido-embaralhar-vetor/ */
 	/* https://www.cprogressivo.net/2013/03/Como-gerar-numeros-aleatorios-em-C-com-a-rand-srand-e-seed.html */
 	/* https://forum.imasters.com.br/topic/312920-código-gerando-numeros-aleatorios-sem-repeti%C3%A7%C3%A3o/ */
@@ -104,15 +107,15 @@ LIS_tppLista BAR_CriarBaralho() {
 		pVetorAux[random] = pCarta ;
 		
 		//conclusao: as cartas trocaram de lugar no vetor auxiliar
-		//ja testei ontem com uma main simples e tinha funcionado
+		//testei hoje com um vetor de inteiros de 1 a 20 e funcionou perfeita
 		
 		/* minha parte */
 		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
-		pCarta = pVetorAux[i];
+		pCarta = pVetorAux[i] ;
 		
 		//é inserido um elemento na lista Baralho e 
 		//seu valor é um ponteiro pra um tipo Carta
-		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta);
+		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta) ;
 	}
 	
   return pCabecaBaralho ;
@@ -122,12 +125,76 @@ LIS_tppLista BAR_CriarBaralho() {
 
 /***************************************************************************
 *
-*  Função: BAR  &Destruir baralho
+*  Função: BAR  &Criar mao
 *
 ***************************************************************************/
 
-BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
-   return 0;
+LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
+
+	//aloca memória pro ponteiro que aponta pra
+	//cabeca da mao (um ponteiro pro tipo lista)
+	LIS_tppLista pCabecaMao = (LIS_tppLista*)(malloc(sizeof(LIS_tppLista))) ;
+	
+	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
+	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
+	pCabecaMao = LIS_CriarLista (( * ExcluirValor ) ( void * pDado )) ;
+	//não sei o que botar no pDado
+	
+	//cria uma variável que armazena a condição de
+	//retorno de funções de manipulação da lista
+	LIS_tpCondRet condRetLista ;
+	
+	//cria uma variável que armazena o ponteiro pro tipo carta
+	BAR_tppCarta pCarta ;
+	 
+	//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
+	IrFinalLista(pCabecaBaralho) ;
+	
+	//insere a ultima carta da lista baralho na
+	//lista mao depois a exclui da lista baralho
+	for (i = 0; i < 3; i++) {
+	
+		//pCarta recebe o ponteiro pro tpCarta
+		pCarta = pCabecaBaralho->pElemCorr->pValor ; //não tenho certeza disso
+	
+		//cria um elemento na lista mao que tem pValor = ponteiro pro tpCarta
+		condRetLista = LIS_InserirElementoApos (pCabecaMao, pCarta) ;
+	
+		//atualiza o fim da lista na cabeça do baralho
+		pCabecaBaralho->pFimLista = pCabecaBaralho->pElemCorr->pAnt
+
+		//o elemento corrente (o último) da lista baralho é excluido
+		condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
+	
+		//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
+		IrFinalLista(pCabecaBaralho) ;
+	
+	} /* fim for */
+	
+  return pCabecaMao ;
+   
+} /* Fim função: BAR &Criar baralho ***************************************/
+
+
+/***************************************************************************
+*
+*  Função: BAR  &Destruir baralho
+*
+*  $ED Descrição da função
+*     Libera o ponteiro contido no ElemLista que aponta pro tipo Lista.
+*
+***************************************************************************/
+
+BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
+	BAR_tpCondRet CondRet ;
+	free(pCabecaBaralho) ;
+	if (pCabecaBaralho == Null) {
+		CondRet = BAR_CondRetOK ;
+	}
+	else {
+		CondRet = BAR_CondRetNaoDestruiuBaralho ;
+	}
+	return CondRet ;	
 } /* Fim função: BAR &Destruir baralho ************************************/
 
 
@@ -135,10 +202,21 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho) {
 *
 *  Função: BAR  &Destruir carta
 *
+*  $ED Descrição da função
+*     Libera o ponteiro contido no ElemLista que aponta pro tipo Carta.
+*
 ***************************************************************************/
 
-BAR_tpCondRet BAR_DestruirCarta(LIS_tppCarta pCarta) {
-   return 0;
+BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta) {
+	BAR_tpCondRet CondRet ;
+	free(pCarta) ;
+	if (pCarta == Null) {
+		CondRet = BAR_CondRetOK ;
+	}
+	else {
+		CondRet = BAR_CondRetNaoDestruiuCarta ;
+	}
+	return CondRet ;
 } /* Fim função: BAR &Destruir baralho ************************************/
 
 
@@ -146,14 +224,13 @@ BAR_tpCondRet BAR_DestruirCarta(LIS_tppCarta pCarta) {
 
 /***************************************************************************
 *
-*  $FC Função: BAR Criar Vetor Auxiliar Embaralha
+*  $FC Função: BAR Criar Vetor Auxiliar
 *
 *  $ED Descrição da função
-*     Cria um vetor de 40 elementos tpCarta e insere
-*     na lista "baralho" de forma aleatória.
+*     Cria um vetor de 40 elementos tpCarta.
 *
 *  $FV Valor retornado
-*     BAR_tppLista pBaralho: retorna um ponteiro pra um tpLista
+*     BAR_tppLista pVetorAux[40]: retorna um ponteiro pra um tpCarta
 *
 ****************************************************************************/
 
