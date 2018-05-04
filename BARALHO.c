@@ -116,7 +116,7 @@ LIS_tppLista BAR_CriarBaralho() {
 		//é inserido um elemento na lista Baralho e 
 		//seu valor é um ponteiro pra um tipo Carta
 		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta) ;
-	}
+	} /* fim for */
 	
   return pCabecaBaralho ;
    
@@ -243,6 +243,7 @@ LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 ***************************************************************************/
 
 BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
+	
 	BAR_tpCondRet CondRet ;
 	free(pCabecaBaralho) ;
 	if (pCabecaBaralho == Null) {
@@ -251,7 +252,9 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
 	else {
 		CondRet = BAR_CondRetNaoDestruiuBaralho ;
 	}
+	
 	return CondRet ;	
+	
 } /* Fim função: BAR &Destruir baralho ************************************/
 
 
@@ -273,7 +276,9 @@ BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta) {
 	else {
 		CondRet = BAR_CondRetNaoDestruiuCarta ;
 	}
+	
 	return CondRet ;
+	
 } /* Fim função: BAR &Destruir baralho ************************************/
 
 
