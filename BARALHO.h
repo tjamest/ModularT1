@@ -154,10 +154,10 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
 
 /**********************************************************************
 *
-*  $FC Função: BAR  &CriarVetorAuxEmbaralha
+*  $FC Função: BAR  &CriarVetorAux
 *
 *  $ED Descrição da função
-*   Cria e reordena aleatóriamente um vetor de 40 elementos do tipo Carta.
+*   Cria um vetor de 40 elementos que são ponteiros pro tipo Carta.
 *
 *  $FV Valor retornado
 *     Se executou corretamente retorna o ponteiro pro primeiro elemento do vetor.
@@ -174,7 +174,7 @@ LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
 *
 ***********************************************************************/
 
-BAR_tppCarta CriarVetorAuxEmbaralha();
+BAR_tppCarta CriarVetorAux();
 
 /**********************************************************************
 *
