@@ -89,9 +89,9 @@ LIS_tppLista BAR_CriarBaralho() {
 	/* https://www.clubedohardware.com.br/forums/topic/957532-resolvido-embaralhar-vetor/ */
 	/* https://www.cprogressivo.net/2013/03/Como-gerar-numeros-aleatorios-em-C-com-a-rand-srand-e-seed.html */
 	/* https://forum.imasters.com.br/topic/312920-código-gerando-numeros-aleatorios-sem-repetição/ */
+	/* parte que copiei do site */
 	for (int i = 0; i < 40 i++){
 		
-		/* parte que copiei do site */
 		//gera um número aleatorio entre 0 e 39
 		int random = rand() % 40 ;
 
@@ -108,14 +108,18 @@ LIS_tppLista BAR_CriarBaralho() {
 		
 		//conclusao: as cartas trocaram de lugar no vetor auxiliar
 		//testei hoje com um vetor de inteiros de 1 a 20 e funcionou perfeita
+	} /* fim for */
+	
+	/* minha parte */
+	for (int i = 0; i < 40 i++){
 		
-		/* minha parte */
 		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
 		pCarta = pVetorAux[i] ;
 		
 		//é inserido um elemento na lista Baralho e 
 		//seu valor é um ponteiro pra um tipo Carta
 		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta) ;
+		
 	} /* fim for */
 	
   return pCabecaBaralho ;
