@@ -10,7 +10,6 @@
 *  $HA Histórico de evolução:
 *  Versão  	Autor    	Data    	Observações
 *     1     gsc, jvr, tgf    19/abr/2018    início desenvolvimento
-*
 ***************************************************************************/
 
 #include   <stdio.h>
@@ -25,18 +24,17 @@
 
 #undef BARALHO_OWN
 
-/***** PROTÓTIPOS DAS FUNÇÕES ENCAPSULADAS NO MÓDULO **********************/
 
+/************ PROTÓTIPOS DAS FUNÇÕES ENCAPSULADAS NO MÓDULO ***************/
 static BAR_tppCarta CriarVetorAux ();
+BAR_tppCarta CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe);
 
-/*****  CÓDIGO DAS FUNÇÕES EXPORTADAS PELO MÓDULO  ************************/
+
+/***********  CÓDIGO DAS FUNÇÕES EXPORTADAS PELO MÓDULO  ******************/
 
 /***************************************************************************
-*
 *  Função: BAR  &Criar baralho
-*
 ***************************************************************************/
-
 LIS_tppLista BAR_CriarBaralho() {
 
 	//aloca memória pro ponteiro que aponta pra cabeca
@@ -57,7 +55,6 @@ LIS_tppLista BAR_CriarBaralho() {
 	
 	//declara uma variável que armazena o ponteiro
 	//pro tpCarta que é o elemento do vetor
-	//ver imagem em Docs/Estrutura de Tipos.png
 	BAR_tppCarta pCarta;
 	
 	//função suporte da rand que faz gerar números diferentes sempre
@@ -82,14 +79,10 @@ LIS_tppLista BAR_CriarBaralho() {
 		//nao entendi
 		VetorAux[random] = VetorAux[39];
 		
-  	} /* fim for */
+  	} //fim for
 	
 	/* minha solução */
-	/* https://www.clubedohardware.com.br/forums/topic/957532-resolvido-embaralhar-vetor/ */
-	/* https://www.cprogressivo.net/2013/03/Como-gerar-numeros-aleatorios-em-C-com-a-rand-srand-e-seed.html */
-	/* https://forum.imasters.com.br/topic/312920-código-gerando-numeros-aleatorios-sem-repetição/ */
-	/* parte que copiei do site */
-	/* embaralhador de vetor */
+	// embaralhador de vetor (copiei do site, renomeei variaveis e alterei tipos)
 	for (int i = 0; i < 40 i++){
 		
 		//gera um número aleatorio entre 0 e 39
@@ -106,12 +99,10 @@ LIS_tppLista BAR_CriarBaralho() {
 		//recebe o ponteiro pra um tipo Carta inicial
 		VetorAux[random] = pCarta ;
 		
-		//conclusao: as cartas trocaram de lugar no vetor auxiliar
-		//testei hoje com um vetor de inteiros de 1 a 20 e funcionou perfeita
-	} /* fim for */
+	} //fim for
 	
 	/* minha parte */
-	/* preenche um por um usando o vetor embaralhado */
+	//preenche um por um usando o vetor embaralhado
 	for (int i = 0; i < 40 i++){
 		
 		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
@@ -121,17 +112,15 @@ LIS_tppLista BAR_CriarBaralho() {
 		//seu valor é um ponteiro pra um tipo Carta
 		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta) ;
 		
-	} /* fim for */
+	} //fim for 
 	
   return pCabecaBaralho ;
    
-} /* Fim função: BAR &Criar baralho ***************************************/
+} /***************** Fim função: BAR &Criar baralho ***********************/
 
 
 /***************************************************************************
-*
 *  Função: BAR  &Criar mao
-*
 ***************************************************************************/
 
 LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
@@ -171,17 +160,15 @@ LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
 		//o elemento corrente (o último) da lista baralho é excluido
 		condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
 	
-	} /* fim for */
+	} //fim for
 	
   return pCabecaMao ;
    
-} /* Fim função: BAR &Criar mao *******************************************/
+} /******************* Fim função: BAR &Criar mao *************************/
 
 
 /***************************************************************************
-*
 *  Função: BAR  &Criar mesa
-*
 ***************************************************************************/
 
 LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
@@ -214,7 +201,7 @@ LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 		//o elemento corrente (o último) da lista baralho é excluido
 		condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
 		
-	} /* fim for */
+	} //fim for
 	
 	/* armazenando a vira no quarto elemento da lista mesa */
 	
@@ -235,16 +222,11 @@ LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 	
   return pCabecaMesa ;
    
-} /* Fim função: BAR &Criar mesa *******************************************/
+} /********************* Fim função: BAR &Criar mesa ***********************/
 
 
 /***************************************************************************
-*
 *  Função: BAR  &Destruir baralho
-*
-*  $ED Descrição da função
-*     Libera o ponteiro contido no ElemLista que aponta pro tipo Lista.
-*
 ***************************************************************************/
 
 BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
@@ -260,263 +242,232 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
 	
 	return CondRet ;	
 	
-} /* Fim função: BAR &Destruir baralho ************************************/
+} /************* Fim função: BAR &Destruir baralho ************************/
 
 
 /***************************************************************************
-*
 *  Função: BAR  &Destruir carta
-*
-*  $ED Descrição da função
-*     Libera o ponteiro contido no ElemLista que aponta pro tipo Carta.
-*
 ***************************************************************************/
-
 BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta) {
+	
+	//declaração da variável que armazena a condição de retorno
 	BAR_tpCondRet CondRet ;
+	
+	//destruição do ponteiro pro tipo carta
 	free(pCarta) ;
+	
+	//assertiva de saída
 	if (pCarta == Null) {
-		CondRet = BAR_CondRetOK ;
+		return CondRet = BAR_CondRetOK ;
 	}
 	else {
-		CondRet = BAR_CondRetNaoDestruiuCarta ;
+		return CondRet = BAR_CondRetNaoDestruiuCarta ;
 	}
 	
-	return CondRet ;
-	
-} /* Fim função: BAR &Destruir baralho ************************************/
+} /************ Fim função: BAR &Destruir baralho *************************/
 
 
-/*****  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  ************************/
+/***********  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  ******************/
 
 /***************************************************************************
-*
 *  $FC Função: BAR Criar Vetor Auxiliar
-*
-*  $ED Descrição da função
-*     Cria um vetor de 40 elementos com ponteiros pra tpCarta.
-*
-*  $FV Valor retornado
-*     BAR_tppCarta VetorAux[40]: retorna ponteiros pra tipos Carta.
-*
 ****************************************************************************/
 
 BAR_tppCarta CriarVetorAux() {
    
 	BAR_tppCarta VetorAux[40] ;
 		
-	/* carta 4 de ouros */
+	// carta 4 de ouros
 	VetorAux[0].valor = _4 ;
 	VetorAux[0].naipe = Ouros ; 
 
-	/* carta 4 de espadas */
+	// carta 4 de espadas
 	VetorAux[1].valor = _4 ;
 	VetorAux[1].naipe = Espadas ; 
 
-	/* carta 4 de copas */
+	// carta 4 de copas
 	VetorAux[2].valor = _4 ;
 	VetorAux[2].naipe = Copas ; 
 
-	/* carta 4 de paus */
+	// carta 4 de paus
 	VetorAux[3].valor = _4 ;
 	VetorAux[3].naipe = Paus ; 
 
-	/* carta 5 de ouros */
+	// carta 5 de ouros
 	VetorAux[4].valor = _5 ;
 	VetorAux[4].naipe = Ouros ; 
 
-	/* carta 5 de espadas */
+	// carta 5 de espadas
 	VetorAux[5].valor = _5 ;
 	VetorAux[5].naipe = Espadas ; 
 
-	/* carta 5 de copas */
+	// carta 5 de copas
 	VetorAux[6].valor = _5 ;
 	VetorAux[6].naipe = Copas ; 
 
-	/* carta 5 de paus */
+	// carta 5 de paus
 	VetorAux[7].valor = _5 ;
 	VetorAux[7].naipe = Paus ;
 
-	/* carta 6 de ouros */
+	// carta 6 de ouros
 	VetorAux[8].valor = _6 ;
 	VetorAux[8].naipe = Ouros ; 
 
-	/* carta 6 de espadas */
+	// carta 6 de espadas
 	VetorAux[9].valor = _6 ;
 	VetorAux[9].naipe = Espadas ;
 
-	/* carta 6 de copas */
+	// carta 6 de copas
 	VetorAux[10].valor = _6 ;
 	VetorAux[10].naipe = Copas ; 
 
-	/* carta 6 de paus */
+	// carta 6 de paus
 	VetorAux[11].valor = _6 ;
 	VetorAux[11].naipe = Paus ; 
 
-	/* carta 7 de ouros */
+	// carta 7 de ouros
 	VetorAux[12].valor = _7 ;
 	VetorAux[12].naipe = Ouros ; 
 
-	/* carta 7 de espadas */
+	// carta 7 de espadas
 	VetorAux[13].valor = _7 ;
 	VetorAux[13].naipe = Espadas ; 
 
-	/* carta 7 de copas */
+	// carta 7 de copas
 	VetorAux[14].valor = _7 ;
 	VetorAux[14].naipe = Copas ; 
 
-	/* carta 7 de paus */
+	// carta 7 de paus
 	VetorAux[15].valor = _7 ;
 	VetorAux[15].naipe = Paus ; 
 
-	/* carta Q de ouros */
+	// carta Q de ouros
 	VetorAux[16].valor = _Q ;
 	VetorAux[16].naipe = Paus ; 
 
-	/* carta Q de espadas */
+	// carta Q de espadas
 	VetorAux[17].valor = _Q ;
 	VetorAux[17].naipe = Espadas ; 
 
-	/* carta Q de copas */
+	// carta Q de copas
 	VetorAux[18].valor = _Q ;
 	VetorAux[18].naipe = Copas ; 
 
-	/* carta Q de paus */
+	// carta Q de paus
 	VetorAux[19].valor = _Q ;
 	VetorAux[19].naipe = Paus ; 
 
-	/* carta J de ouros */
+	// carta J de ouros
 	VetorAux[20].valor = _J ;
 	VetorAux[20].naipe = Ouros ; 
 
-	/* carta J de espadas */
+	// carta J de espadas
 	VetorAux[21].valor = _J ;
 	VetorAux[21].naipe = Espadas ; 
 
-	/* carta J de copas */
+	// carta J de copas
 	VetorAux[22].valor = _J ;
 	VetorAux[22].naipe = Copas ; 
 
-	/* carta J de paus */
+	// carta J de paus
 	VetorAux[23].valor = _J ;
 	VetorAux[23].naipe = Paus ;
 
-	/* carta K de ouros */
+	// carta K de ouros
 	VetorAux[24].valor = _K ;
 	VetorAux[24].naipe = Ouros ; 
 
-	/* carta K de espadas */
+	// carta K de espadas
 	VetorAux[25].valor = _K ;
 	VetorAux[25].naipe = Espadas ; 
 
-	/* carta K de copas */
+	// carta K de copas
 	VetorAux[26].valor = _K ;
 	VetorAux[26].naipe = Copas ; 
 
-	/* carta K de paus */
+	// carta K de paus
 	VetorAux[27].valor = _K ;
 	VetorAux[27].naipe = Paus ; 
 
-	/* carta A de ouros */
+	// carta A de ouros
 	VetorAux[28].valor = _A ;
 	VetorAux[28].naipe = Ouros ; 
 
-	/* carta A de espadas */
+	// carta A de espadas
 	VetorAux[29].valor = _A ;
 	VetorAux[29].naipe = Espadas ; 
 
-	/* carta A de copas */
+	// carta A de copas
 	VetorAux[30].valor = _A ;
 	VetorAux[30].naipe = Copas ; 
 
-	/* carta A de paus */
+	// carta A de paus
 	VetorAux[31].valor = _A ;
 	VetorAux[31].naipe = Paus ; 
 
-	/* carta 2 de ouros */
+	// carta 2 de ouros
 	VetorAux[32].valor = _2 ;
 	VetorAux[32].naipe = Ouros ; 
 
-	/* carta 2 de espadas */
+	// carta 2 de espadas
 	VetorAux[33].valor = _2 ;
-	VetorAux[33].naipe = Espadas ; 
-
-	/* carta 2 de copas */
+	VetorAux[33].naipe = Espadas ;
+	
+	// carta 2 de copas
 	VetorAux[34].valor = _2 ;
 	VetorAux[34].naipe = Copas ; 
 
-	/* carta 2 de paus */
+	// carta 2 de paus
 	VetorAux[35].valor = _2 ;
 	VetorAux[35].naipe = Paus ; 
 
-	/* carta 3 de ouros */
+	// carta 3 de ouros
 	VetorAux[36].valor = _3 ;
 	VetorAux[36].naipe = Ouros ; 
 
-	/* carta 3 de espadas */
+	// carta 3 de espadas
 	VetorAux[37].valor = _3 ;
 	VetorAux[37].naipe = Espadas ; 
 
-	/* carta 3 de copas */
+	// carta 3 de copas
 	VetorAux[38].valor = _3 ;
 	VetorAux[38].naipe = Copas ; 
 
-	/* carta 3 de paus */
+	// carta 3 de paus
 	VetorAux[39].valor = _3 ;
 	VetorAux[39].naipe = Paus ;
 
-return VetorAux[40] ;
+return VetorAux ;
    
-} /* Fim função: BAR &Criar vetor auxiliar *********************************/
+} /************** Fim função: BAR &Criar vetor auxiliar ********************/
 
-/***************************************************************************
-*
+/****************************************************************************
 *  $FC Função: BAR  &Criar Carta
-*
-*  $ED Descrição da Função
-*	Aloca espaço para um elemento estrutura BAR_tppCarta e o preenche
-*	com o valor e naipe recebidos
-*
-*  $EP Parâmetros
-*	Valor	- Tipo enumerado valor da carta
-*	Naipe	- Tipo enumerado naipe da carta	
-*
-*  $FV Valor retornado
-*	Se executou corretamente retorna um ponteiro para o tipo Carta
-*
-*	Se ocorreu algum erro retorna NULL
-***************************************************************************/
+****************************************************************************/
+BAR_tppCarta CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
 
-BAR_tppCarta criarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
-
+	//declara um ponteiro pra um tipo carta com valor null
 	BAR_tpCarta * pCarta = NULL;
-	pCarta = (BAR_tpCarta *) malloc(sizeof(BAR_tpCarta));
-	if (pCarta == NULL)
-		return NULL;
+	
+	//aloca memoria pra esse ponteiro do tamanho do tipo carta
+	pCarta = (BAR_tpCarta*) malloc(sizeof(BAR_tpCarta)) ;
+	
+	//assertiva
+	if (pCarta == NULL) {
+		return NULL ;
+	}
+	
+	//atribui valor e naipe a um tipo carta
+	pCarta->valor = valor ;
+	pCarta->naipe = naipe ;
 
-	pCarta->valor = valor;
-	pCarta->naipe = naipe;
+	return pCarta ;
+	
+} /******************** Fim função: BAR &Criar Carta ***********************/
 
-	return pCarta;
-} /* Fim função: BAR &Criar Carta *****************************************/
+/************ FIM DO MÓDULO DE IMPLEMENTAÇÃO: BAR Baralho ******************/
 
-/***************************************************************************
-*
-*  $FC Função: BAR  &Destruir Carta
-*
-*  $ED Descrição da Função
-*	Recebe um ponteiro do tipo carta e libera seu espaço na memória
-*
-*  $EP Parâmetros
-*	carta	- ponteiro do tipo carta com valor e naipe preenchido
-*
-*  $FV Valor retornado
-*	Se executou corretamente retorna nada
-*
-***************************************************************************/
-void destruirCarta (BAR_tppCarta carta) {
-
-	free (carta);
-} /* Fim função: BAR &Destruir Carta ***************************************/
-
-/************ Fim do módulo de implementação: BAR   Baralho ****************/
+/* Links Interessantes */
+// https://www.clubedohardware.com.br/forums/topic/957532-resolvido-embaralhar-vetor/
+// https://www.cprogressivo.net/2013/03/Como-gerar-numeros-aleatorios-em-C-com-a-rand-srand-e-seed.html
+// https://forum.imasters.com.br/topic/312920-código-gerando-numeros-aleatorios-sem-repetição/
