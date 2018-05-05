@@ -132,7 +132,7 @@ LIS_tppLista BAR_CriarBaralho();
 *  $ED Descrição da função
 *     Destrói uma carta.
 ***************************************************************************/
-void BAR_DestruirCarta(BAR_tppCarta pCarta);
+void BAR_DestruirCarta(void * pCarta);
 
 
 /***************************************************************************
