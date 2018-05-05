@@ -38,7 +38,7 @@ LIS_tppLista BAR_CriarBaralho() {
 
 	//aloca memória pro ponteiro que aponta pra cabeca
 	//do baralho (um ponteiro pro tipo lista)
-	LIS_tppLista pCabecaBaralho = (LIS_tppLista*)(malloc(sizeof(LIS_tppLista))) ;
+	LIS_tppLista pCabecaBaralho = (LIS_tppLista)(malloc(sizeof(LIS_tppLista))) ;
 	
 	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
 	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
