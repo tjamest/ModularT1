@@ -54,7 +54,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	
 	//declara uma variável que armazena o ponteiro
 	//pro tpCarta que é o elemento do vetor
-	BAR_tppCarta pCarta;
+	BAR_tppCarta *pCarta;
 	
 	//criando o vetor baralho ordenado
 	pCarta=CriarCarta(_6,Ouros);
