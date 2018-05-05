@@ -60,7 +60,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	//função suporte da rand que faz gerar números diferentes sempre
 	srand ((unsigned)time(NULL));
 	
-	/* solução de vcs */
+	// solução de vcs
 	//insere 40 elementos no pCabecaBaralho e o valor de
 	//cada elemento será um ponteiro pra um tipo Carta
   	for (int i = 0 ; i < 40 ; i++) {
@@ -69,7 +69,6 @@ LIS_tppLista BAR_CriarBaralho() {
 		int random = rand()%40;
 		
 		//Carta recebe um tipo ponteiro pro tipo carta
-		//ver imagem em Docs/Estrutura de Tipos.png
 		pCarta = VetorAux[random];
 		
 		//é inserido um elemento na lista Baralho 
@@ -80,9 +79,10 @@ LIS_tppLista BAR_CriarBaralho() {
 		VetorAux[random] = VetorAux[39];
 		
   	} //fim for
+	// fim solução de vcs
 	
-	/* minha solução */
-	// embaralhador de vetor (copiei do site, renomeei variaveis e alterei tipos)
+	// minha solução
+	// parte que copiei do site (embaralhador de vetor - renomeei variaveis e alterei tipos)
 	for (int i = 0; i < 40 i++){
 		
 		//gera um número aleatorio entre 0 e 39
@@ -101,7 +101,7 @@ LIS_tppLista BAR_CriarBaralho() {
 		
 	} //fim for
 	
-	/* minha parte */
+	// minha parte
 	//preenche um por um usando o vetor embaralhado
 	for (int i = 0; i < 40 i++){
 		
@@ -112,7 +112,8 @@ LIS_tppLista BAR_CriarBaralho() {
 		//seu valor é um ponteiro pra um tipo Carta
 		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta) ;
 		
-	} //fim for 
+	} //fim for
+	// fim minha solução
 	
   return pCabecaBaralho ;
    
