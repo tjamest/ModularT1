@@ -46,11 +46,11 @@ typedef struct BAR_tagCarta * BAR_tppCarta ;
 typedef enum { //não tenho certeza se algumas dessas condições de retorno devem existir
 
    BAR_CondRetOK,                 // 0 Concluiu corretamente
-   BAR_CondRetNaoCriouBaralho,    // 1 Não criou a lista "baralho" de 40 cartas
-   BAR_CondRetNaoCriouMaoJogador, // 2 Não criou as listas "mão jogador"
-   BAR_CondRetNaoCriouMesa,       // 3 Não criou a lista "mesa"
-   BAR_CondRetNaoDestruiuBaralho, // 4 Não destruiu o baralho no fim da partida
-   BAR_CondRetNaoDestruiuCarta,   // 5 Não destruiu o baralho no fim da partida
+   BAR_CondRetNaoCriouBaralho,    // 1 Não criou ponteiro pro tpLista
+   BAR_CondRetNaoCriouCarta,      // 2 Não criou ponteiro pro tpCarta
+   BAR_CondRetNaoCriouMaoJogador, // 3 Não criou ponteiro pro tpLista
+   BAR_CondRetNaoCriouMesa,       // 4 Não criou ponteiro pro tpLista
+   BAR_CondRetNaoDestruiu,        // 5 Não liberou ponteiro
    BAR_CondRetFaltouMemoria,      // 6 Faltou memoria 
    BAR_CondRetParamIncorretos     // 7 Parâmetros da função incorretos
 
