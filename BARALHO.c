@@ -83,7 +83,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	
 	// minha solução
 	// parte que copiei do site (embaralhador de vetor - renomeei variaveis e alterei tipos)
-	for (int i = 0; i < 40 i++){
+	for (int i = 0; i < 40; i++){
 		
 		//gera um número aleatorio entre 0 e 39
 		int random = rand() % 40 ;
