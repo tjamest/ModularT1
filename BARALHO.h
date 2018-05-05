@@ -134,7 +134,8 @@ LIS_tppLista BAR_CriarBaralho();
 *     Cria uma variável tipo carta com valores definidos.
 *
 *  $EP Parâmetros
-*     BAR_tpValorCarta e BAR_tpNaipeCarta
+*     valor - Um tipo ValorCarta
+*     naipe - Um tipo NaipeCarta
 *
 *  $FV Valor retornado
 *     Se executar corretamente retorna o ponteiro para tpCarta.
@@ -150,9 +151,6 @@ BAR_tppCarta BAR_CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe);
 *     Destrói uma carta.
 ***************************************************************************/
 void BAR_DestruirCarta(void * pCarta);
-//se não receber void e retornar ponteiro pra void não
-//tem como passar ela como parâmetro pra LIS_CriarLista
-//quando for criar uma "lista inferior" (lista de elementos cartas)
 
 
 /***************************************************************************
@@ -166,10 +164,28 @@ void BAR_DestruirCarta(void * pCarta);
 *     OBS. não existe previsão para possíveis falhas de execução.
 ***************************************************************************/
 void BAR_DestruirBaralho(void * pBaralho);
-//se não receber void e retornar ponteiro pra void não
-//tem como passar ela como parâmetro pra LIS_CriarLista
-//quando for criar a "lista superior" (lista de elementos listas)
 
+
+/***************************************************************************
+*  $FC Função: BAR  &Obter Informações da Carta
+*
+*  $ED Descrição da função
+*    Recebe uma carta e põe suas informações em dois ponteiros de tipo
+*    valor e naipe.
+*
+*  $EP Parâmetros
+*    carta - Um ponteiro para tipo Carta
+*    *valor - Um ponteiro para tipo ValorCarta
+*    *naipe - Um ponteiro para tipo NaipeCarta
+*
+*  $FV Valor Retornado
+*    BAR_CondRetOK
+*    BAR_CondRetParamIncorretos
+*
+***************************************************************************/
+
+BAR_tpCondRet BAR_ObterInfoCarta(BAR_tppCarta carta,
+ BAR_tpValorCarta *valor, BAR_tpNaipeCarta *naipe);
 
 #undef BARALHO_EXT
 
