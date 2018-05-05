@@ -81,20 +81,38 @@ LIS_tppLista BAR_CriarBaralho() {
 	VetorAux[8] = *pCarta;
 	pCarta=CriarCarta(_3,Ouros);
 	VetorAux[9] = *pCarta;
+
+	pCarta=CriarCarta(_4,Espadas);
+	VetorAux[10] = *pCarta;
+	pCarta=CriarCarta(_5,Espadas);
+	VetorAux[11] = *pCarta;
+	pCarta=CriarCarta(_6,Espadas);
+	VetorAux[12] = *pCarta;
+	pCarta=CriarCarta(_7,Espadas);
+	VetorAux[13] = *pCarta;
+	pCarta=CriarCarta(_Q,Espadas);
+	VetorAux[14] = *pCarta;
+	pCarta=CriarCarta(_J,Espadas);
+	VetorAux[15] = *pCarta;
+	pCarta=CriarCarta(_K,Espadas);
+	VetorAux[16] = *pCarta;
+	pCarta=CriarCarta(_A,Espadas);
+	VetorAux[17] = *pCarta;
+	pCarta=CriarCarta(_2,Espadas);
+	VetorAux[18] = *pCarta;
+	pCarta=CriarCarta(_3,Espadas);
+	VetorAux[19] = *pCarta;
 	
 	//checando se o vetor está preenchido
 	printf("Checando se o vetor esta preenchido:\n");
-	for (i = 0; i < 10; i++){
+	for (i = 0; i < 20; i++){
 		printf("VetorAux[%d]: Valor: %d / Naipe: %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
 	} //fim for
 
 	//função suporte da rand que faz gerar números diferentes sempre
-	srand ((unsigned)time(NULL));
+	srand (time(NULL));
 
-	//checando se o programa chegou aqui
-	printf("\nSem erros ate aqui :)\n\n");
-	
 	// solução de vcs
 	//insere 40 elementos no pCabecaBaralho e o valor de
 	//cada elemento será um ponteiro pra um tipo Carta
@@ -119,13 +137,14 @@ LIS_tppLista BAR_CriarBaralho() {
 	// minha solução
 	// parte que copiei do site (embaralhador de vetor)
 	// (só renomeei variaveis e alterei tipos)
-	for (i = 0; i < 10; i++){
-		
+	//for (i = 0; i < 40; i++){
+	for (i = 0; i < 20; i++){	
+
 		BAR_tpCarta *pCartaAux;
 		
 		//gera um número aleatorio entre 0 e 39
 		//int random = rand() % 40 ;
-		int random = rand() % 10 ;
+		int random = rand() % 20 ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
 		pCartaAux = &VetorAux[i] ;
@@ -142,10 +161,12 @@ LIS_tppLista BAR_CriarBaralho() {
 
 	//checando se o vetor está embaralhado
 	printf("Checando se o vetor esta embaralhado:\n");
-	for (i = 0; i < 10; i++){
+	for (i = 0; i < 20; i++){
 		printf("VetorAux[%d]: Valor: %d / Naipe: %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
 	} //fim for
+
+	printf("\nSem erros ate aqui :)\n\n");
 	
 	// minha parte
 	// preenche um por um usando o vetor embaralhado
