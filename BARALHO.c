@@ -122,7 +122,7 @@ LIS_tppLista BAR_CriarBaralho() {
 /***************************************************************************
 *  Função: BAR  &Criar mao
 ***************************************************************************/
-
+/* IMPLEMENTAR APENAS PARA O T4
 LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
 
 	//aloca memória pro ponteiro que aponta pra
@@ -170,7 +170,7 @@ LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
 /***************************************************************************
 *  Função: BAR  &Criar mesa
 ***************************************************************************/
-
+/* IMPLEMENTAR APENAS PARA O T4
 LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 
 	//aloca memória pro ponteiro que aponta pra
@@ -204,7 +204,7 @@ LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 	} //fim for
 	
 	/* armazenando a vira no quarto elemento da lista mesa */
-	
+/*
 	//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
 	IrFinalLista(pCabecaBaralho) ;
 	
@@ -221,17 +221,19 @@ LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 	condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
 	
   return pCabecaMesa ;
-   
+
 } /********************* Fim função: BAR &Criar mesa ***********************/
 
 
 /***************************************************************************
 *  Função: BAR  &Destruir baralho
 ***************************************************************************/
-
 BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
 	
+	//declaração da variável que armazena a condição de retorno
 	BAR_tpCondRet CondRet ;
+	
+	//destruição do ponteiro pro tipo carta
 	free(pCabecaBaralho) ;
 	if (pCabecaBaralho == Null) {
 		CondRet = BAR_CondRetOK ;
@@ -248,28 +250,17 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
 /***************************************************************************
 *  Função: BAR  &Destruir carta
 ***************************************************************************/
-BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta) {
-	
-	//declaração da variável que armazena a condição de retorno
-	BAR_tpCondRet CondRet ;
+void BAR_DestruirCarta(BAR_tppCarta pCarta) {
 	
 	//destruição do ponteiro pro tipo carta
 	free(pCarta) ;
 	
-	//assertiva de saída
-	if (pCarta == Null) {
-		return CondRet = BAR_CondRetOK ;
-	}
-	else {
-		return CondRet = BAR_CondRetNaoDestruiuCarta ;
-	}
-	
-} /************ Fim função: BAR &Destruir baralho *************************/
+} /************ Fim função: BAR &Destruir carta ****************************/
 
 
-/***********  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  ******************/
+/***********  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  *******************/
 
-/***************************************************************************
+/****************************************************************************
 *  $FC Função: BAR Criar Vetor Auxiliar
 ****************************************************************************/
 
@@ -437,7 +428,7 @@ BAR_tppCarta CriarVetorAux() {
 	VetorAux[39].valor = _3 ;
 	VetorAux[39].naipe = Paus ;
 
-return VetorAux ;
+return *VetorAux ;
    
 } /************** Fim função: BAR &Criar vetor auxiliar ********************/
 
