@@ -135,7 +135,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	
 	// minha parte
 	//preenche um por um usando o vetor embaralhado
-	for (int i = 0; i < 40 i++){
+	for (int i = 0; i < 40; i++){
 		
 		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
 		pCarta = VetorAux[i] ;
