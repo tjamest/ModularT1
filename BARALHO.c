@@ -104,7 +104,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	VetorAux[19] = *pCarta;
 	
 	//checando se o vetor está preenchido
-	printf("Checando se o vetor esta preenchido:\n");
+	printf("\nChecando se o vetor esta preenchido:\n");
 	for (i = 0; i < 20; i++){
 		printf("VetorAux[%d]: Valor: %d / Naipe: %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
@@ -140,14 +140,14 @@ LIS_tppLista BAR_CriarBaralho() {
 	//for (i = 0; i < 40; i++){
 	for (i = 0; i < 20; i++){	
 
-		BAR_tpCarta *pCartaAux;
+		BAR_tpCarta pCartaAux;
 		
 		//gera um número aleatorio entre 0 e 39
 		//int random = rand() % 40 ;
 		int random = rand() % 20 ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
-		pCartaAux = &VetorAux[i] ;
+		pCartaAux = VetorAux[i] ;
 		
 		//o ponteiro pra um tipo Carta usado anteriormente recebe agora
 		//um ponteiro pra um tipo Carta escolhido aleatoriamente
@@ -155,12 +155,12 @@ LIS_tppLista BAR_CriarBaralho() {
 		
 		//o ponteiro pra um tipo Carta aleatório
 		//recebe o ponteiro pra um tipo Carta inicial
-		VetorAux[random] = *pCartaAux ;
+		VetorAux[random] = pCartaAux ;
 		
 	} //fim for
 
 	//checando se o vetor está embaralhado
-	printf("Checando se o vetor esta embaralhado:\n");
+	printf("\nChecando se o vetor esta embaralhado:\n");
 	for (i = 0; i < 20; i++){
 		printf("VetorAux[%d]: Valor: %d / Naipe: %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
