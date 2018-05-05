@@ -311,7 +311,8 @@ LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 /***************************************************************************
 *  Função: BAR  &Destruir baralho
 ***************************************************************************/
-void BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
+void BAR_DestruirBaralho(void * pCabecaBaralho) {
+//tem que ser void e *void pra LIS_CriarLista aceitar
 	
 	//destruição do ponteiro pro tipo lista
 	free(pCabecaBaralho) ;	
@@ -323,6 +324,7 @@ void BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
 *  Função: BAR  &Destruir carta
 ***************************************************************************/
 void BAR_DestruirCarta(void * pCarta) {
+//tem que ser void e *void pra LIS_CriarLista aceitar
 	
 	//destruição do ponteiro pro tipo carta
 	free(pCarta) ;
