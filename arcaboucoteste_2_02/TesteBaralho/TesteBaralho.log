@@ -1,0 +1,46 @@
+
+!!! Inicio dos testes
+!!!      Construto sob teste: TesteBaralho
+!!!      Script de teste:     TesteBaralho.script
+
+!!!    0  Linha:     1  // Script:    TestBaralho.script 
+!!!    0  Linha:     2  // Autor:     Gustavo Contreiras, JoÃ£o Victor Galindo, Thiago Gioso Fernandes 
+!!!    0  Linha:     3  // Data:      05/mai/2018 
+!!!    0  Linha:     4  // PropÃ³sito: Testar o mÃ³dulo baralho do jogo de truco 
+!!!    0  Linha:     5  // 
+    7  == Inicializar valores
+   44  == Criar 9 baralhos
+>>>    1  Linha:    45  Erro nos parâmetros do comando:  =criarbaralho    baralho0
+>>>    2  Linha:    47  Comando de teste ignorado:  =criarbaralho    baralho2
+>>>    3  Linha:    48  Comando de teste ignorado:  =criarbaralho    baralho3
+>>>    4  Linha:    49  Comando de teste ignorado:  =criarbaralho    baralho4
+>>>    5  Linha:    50  Comando de teste ignorado:  =criarbaralho    baralho5
+>>>    6  Linha:    51  Comando de teste ignorado:  =criarbaralho    baralho6
+>>>    7  Linha:    52  Comando de teste ignorado:  =criarbaralho    baralho7
+>>>    8  Linha:    53  Comando de teste ignorado:  =criarbaralho    baralho8
+   55  == Destruir o baralho 8
+>>>    9  Linha:    56  Comando não conhecido:  =destruirbaralho	baralho8
+   58  == Criar carta 4 ouros
+>>>   10  Linha:    59  Erro nos parâmetros do comando:  =criarcarta	carta0 	0 	0	OK
+   61  == Criar carta 5 ouros
+>>>   11  Linha:    62  Erro nos parâmetros do comando:  =criarcarta	carta1 	1 	0	OK
+   64  == Criar carta 7 espadas
+>>>   12  Linha:    65  Erro nos parâmetros do comando:  =criarcarta	carta2 	3 	1	OK
+   67  == Criar carta invÃ¡lida
+>>>   13  Linha:    68  Erro nos parâmetros do comando:  =criarcarta	carta3 	15 	1	CondRetParm
+   70  == Criar carta invÃ¡lida com CondRet errada
+>>>   14  Linha:    71  Erro nos parâmetros do comando:  =criarcarta	carta4 	15 	1	OK
+   73  == Destruir carta
+>>>   15  Linha:    74  Comando não conhecido:  =destruircarta	carta2
+>>>   16  Linha:    75  Comando de teste ignorado:  =destruircarta	carta0
+!!!   16  Linha:    77  // fim 
+
+!!! Número de linhas lidas:          77
+!!! Número de casos de teste:         9
+!!! Número comandos corretos:        32
+!!! Número de falhas encontradas:    16
+
+!!! Foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0
