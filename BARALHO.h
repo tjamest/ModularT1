@@ -123,7 +123,7 @@ typedef struct BAR_tagCarta {
 *     a função retornará NULL.
 *     Não será dada mais informação quanto ao problema ocorrido. 
 ***************************************************************************/
-LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
+LIS_tppLista BAR_CriarBaralho();
 
 
 /***************************************************************************
