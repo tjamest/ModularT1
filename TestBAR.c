@@ -65,7 +65,7 @@ LIS_tppLista vtBaralhos[ DIM_VT_BARALHO ] ;
 *
 *     =resetteste
 *           - anula o vetor de baralho e provoca vazamento de memória.
-*     =criarbaralho                 <inxBaralho>  <CondRetEsp>
+*     =criarbaralho                 <inxBaralho>
 *     =criarcarta                   <inxBaralho>  <int>  <int>
 *     =destruirbaralho              <inxBaralho>
 *     =destruircarta                <inxBaralho> 	 
