@@ -127,6 +127,22 @@ LIS_tppLista BAR_CriarBaralho();
 
 
 /***************************************************************************
+*  $FC Função: BAR  &Criar Carta
+*
+*  $ED Descrição da função
+*     Cria uma variável tipo carta com valores definidos.
+*
+*  $EP Parâmetros
+*     BAR_tpValorCarta e BAR_tpNaipeCarta
+*
+*  $FV Valor retornado
+*     Se executar corretamente retorna o ponteiro para tpCarta.
+*	  Este ponteiro será utilizado para adicionar carta em um vetor.
+***************************************************************************/
+BAR_tppCarta BAR_CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe);
+
+
+/***************************************************************************
 *  $FC Função: BAR  &Destruir Carta
 *
 *  $ED Descrição da função
