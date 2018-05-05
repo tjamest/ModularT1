@@ -360,7 +360,7 @@ void BAR_DestruirCarta(void * pCarta) {
 /***************************************************************************
 *  Função: BAR  &Obter informações da carta
 ***************************************************************************/
-BAR_tpCondRet BAR_ObterInfoCarta(BAR_tppCarta carta, 
+/*BAR_tpCondRet BAR_ObterInfoCarta(BAR_tppCarta carta, 
 				 BAR_tpValorCarta *valor,
 				 BAR_tpNaipeCarta *naipe) {
 	//assertiva de entrada
@@ -370,8 +370,10 @@ BAR_tpCondRet BAR_ObterInfoCarta(BAR_tppCarta carta,
 	valor = carta->valor;
 	naipe = carta->naipe;
 	
+	//faltou assertiva de saída
+	
 	return BAR_tpCondRetOK;
-}
+} /************ Fim função: BAR &Obter informações da carta ****************/
 
 
 /***********  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  *******************/
