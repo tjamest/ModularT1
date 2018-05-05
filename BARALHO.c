@@ -116,13 +116,14 @@ LIS_tppLista BAR_CriarBaralho() {
 	// (só renomeei variaveis e alterei tipos)
 	for (i = 0; i < 40; i++){
 		
-		BAR_tpCarta pCartaAux;
+		BAR_tpCarta *pCartaAux;
 		
 		//gera um número aleatorio entre 0 e 39
-		int random = rand() % 40 ;
+		//int random = rand() % 40 ;
+		int random = rand() % 3 ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
-		pCartaAux = VetorAux[i] ;
+		pCartaAux = &VetorAux[i] ;
 		
 		//o ponteiro pra um tipo Carta usado anteriormente recebe agora
 		//um ponteiro pra um tipo Carta escolhido aleatoriamente
@@ -130,7 +131,7 @@ LIS_tppLista BAR_CriarBaralho() {
 		
 		//o ponteiro pra um tipo Carta aleatório
 		//recebe o ponteiro pra um tipo Carta inicial
-		VetorAux[random] = pCartaAux ;
+		VetorAux[random] = *pCartaAux ;
 		
 	} //fim for
 
@@ -141,11 +142,11 @@ LIS_tppLista BAR_CriarBaralho() {
 	printf("VetorAux[3]: Valor: %d / Naipe: %d\n",VetorAux[2].valor,VetorAux[2].naipe);
 	
 	// minha parte
-	//preenche um por um usando o vetor embaralhado
+	// preenche um por um usando o vetor embaralhado
 	for (i = 0; i < 40; i++){
 		
 		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
-		*pCarta = VetorAux[i] ;
+		pCarta = &VetorAux[i] ;
 		
 		//é inserido um elemento na lista Baralho e 
 		//seu valor é um ponteiro pra um tipo Carta
