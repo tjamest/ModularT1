@@ -358,9 +358,11 @@ void BAR_DestruirCarta(void * pCarta) {
 
 
 /***************************************************************************
-*  Função: BAR  &Destruir carta
+*  Função: BAR  &Obter informações da carta
 ***************************************************************************/
 BAR_tpCondRet BAR_ObterInfoCarta(BAR_tppCarta carta, BAR_tpValorCarta *valor, BAR_tpNaipeCarta *naipe) {
+	
+	//assertiva de entrada
 	if (carta == NULL)
 		return BAR_tpCondRetParamIncorretos;
 	
