@@ -133,6 +133,9 @@ LIS_tppLista BAR_CriarBaralho();
 *     Destrói uma carta.
 ***************************************************************************/
 void BAR_DestruirCarta(void * pCarta);
+//se não receber void e retornar ponteiro pra void não
+//tem como passar ela como parâmetro pra LIS_CriarLista
+//quando for criar uma "lista inferior" (lista de elementos cartas)
 
 
 /***************************************************************************
@@ -145,7 +148,10 @@ void BAR_DestruirCarta(void * pCarta);
 *     estruturalmente incorreta.
 *     OBS. não existe previsão para possíveis falhas de execução.
 ***************************************************************************/
-void BAR_DestruirBaralho(LIS_tppLista pBaralho);
+void BAR_DestruirBaralho(void * pBaralho);
+//se não receber void e retornar ponteiro pra void não
+//tem como passar ela como parâmetro pra LIS_CriarLista
+//quando for criar a "lista superior" (lista de elementos listas)
 
 
 #undef BARALHO_EXT
