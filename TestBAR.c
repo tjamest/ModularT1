@@ -177,6 +177,11 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ){
 
 		//adiciona uma carta no baralho
 		CondRetLista = LIS_InserirElementoApos(vtBaralhos[inxBaralho], pCarta);
+		
+		//assertiva de saída
+		if (CondRetLista != LIS_CondRetOK) {
+			return TST_CondRetErro;
+		}
 
 		return TST_CondRetOK ;
 
