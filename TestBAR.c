@@ -65,25 +65,10 @@ LIS_tppLista vtBaralhos[ DIM_VT_BARALHO ] ;
 *
 *     =resetteste
 *           - anula o vetor de baralho e provoca vazamento de memória.
-*
 *     =criarbaralho                 <inxBaralho>  <CondRetEsp>
-*           - cria um 1 a 10 baralhos que serão armazenados em vtBaralhos[].
-*             o ponteiro para essas listas é armazenado nos
-*             elementos do vtBaralhos[].
-*
-*     =criarcarta                   <inxBaralho>  <int>  <int>  <CondRetEsp>
-*           - insere uma carta em um baralho após o elemento corrente.
-*
+*     =criarcarta                   <inxBaralho>  <int>  <int>
 *     =destruirbaralho              <inxBaralho>
-*
-*           - destrói um baralho (libera um ponteiro pra um tpLista)
-*     =destruircarta                <inxBaralho>  
-*
-*           - destrói o elemento corrente do baralho (libera um ponteiro pra um tpCarta)
-*
-*     =iriniciobaralho              <inxBaralho>  <CondRetEsp>
-*     =irfinalbaralho               <inxBaralho>  <CondRetEsp>
-*     =avancarelembaralho           <inxBaralho>  <CondRetEsp>
+*     =destruircarta                <inxBaralho> 	 
 ***************************************************************************/
 
 TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ){
@@ -132,10 +117,9 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ){
 		//retorna TST_CondRetErro se os dois ponteiros forem diferentes
 		//retorna TST_CondRetOK se os dois ponteiros forem iguais
 		//0 = ponteiro Null		//1 = ponteiro não-Null
-        return TST_CompararPonteiroNulo( 1 , vtBaralhos[ inxBaralho ] ,
-							       "Erro em ponteiro de novo baralho."  ) ;
-
-         } //fim ativa: Testar CriarBaralho
+        	return TST_CompararPonteiroNulo( 1 , vtBaralhos[ inxBaralho ] ,
+						"Erro em ponteiro de novo baralho."  ) ;
+        } //fim ativa: Testar CriarBaralho
       
       
 	//CRIAR CARTA
@@ -143,8 +127,8 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ){
 	else if ( strcmp( ComandoTeste , CRIAR_CARTA_CMD ) == 0 ){
 
 		//conta quantos parametros foram declarados
-		numLidos = LER_LerParametros( "iiii" , &inxBaralho, &valorCarta,
-                                         &naipeCarta, &CondRetEsp ) ;
+		numLidos = LER_LerParametros( "iii" , &inxBaralho, &valorCarta,
+                                         &naipeCarta ) ;
 
 		//se for diferente de 4 retorna erro de declaração de parametro
         	if ( (numLidos != 4) || ValidarInxBaralho ( inxBaralho ) == 0 ){
