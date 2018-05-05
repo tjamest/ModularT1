@@ -102,49 +102,66 @@ LIS_tppLista BAR_CriarBaralho() {
 	VetorAux[18] = *pCarta;
 	pCarta=CriarCarta(_3,Espadas);
 	VetorAux[19] = *pCarta;
+
+	pCarta=CriarCarta(_4,Copas);
+	VetorAux[20] = *pCarta;
+	pCarta=CriarCarta(_5,Copas);
+	VetorAux[21] = *pCarta;
+	pCarta=CriarCarta(_6,Copas);
+	VetorAux[22] = *pCarta;
+	pCarta=CriarCarta(_7,Copas);
+	VetorAux[23] = *pCarta;
+	pCarta=CriarCarta(_Q,Copas);
+	VetorAux[24] = *pCarta;
+	pCarta=CriarCarta(_J,Copas);
+	VetorAux[25] = *pCarta;
+	pCarta=CriarCarta(_K,Copas);
+	VetorAux[26] = *pCarta;
+	pCarta=CriarCarta(_A,Copas);
+	VetorAux[27] = *pCarta;
+	pCarta=CriarCarta(_2,Copas);
+	VetorAux[28] = *pCarta;
+	pCarta=CriarCarta(_3,Copas);
+	VetorAux[29] = *pCarta;
+
+	pCarta=CriarCarta(_4,Paus);
+	VetorAux[30] = *pCarta;
+	pCarta=CriarCarta(_5,Paus);
+	VetorAux[31] = *pCarta;
+	pCarta=CriarCarta(_6,Paus);
+	VetorAux[32] = *pCarta;
+	pCarta=CriarCarta(_7,Paus);
+	VetorAux[33] = *pCarta;
+	pCarta=CriarCarta(_Q,Paus);
+	VetorAux[34] = *pCarta;
+	pCarta=CriarCarta(_J,Paus);
+	VetorAux[35] = *pCarta;
+	pCarta=CriarCarta(_K,Paus);
+	VetorAux[36] = *pCarta;
+	pCarta=CriarCarta(_A,Paus);
+	VetorAux[37] = *pCarta;
+	pCarta=CriarCarta(_2,Paus);
+	VetorAux[38] = *pCarta;
+	pCarta=CriarCarta(_3,Paus);
+	VetorAux[39] = *pCarta;
 	
 	//checando se o vetor está preenchido
 	printf("\nChecando se o vetor esta preenchido:\n");
-	for (i = 0; i < 20; i++){
-		printf("VetorAux[%d]: Valor: %d / Naipe: %d\n",(i+1), 
+	for (i = 0; i < 40; i++){
+		printf("VetorAux[%d]: Valor %d / Naipe %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
 	} //fim for
 
 	//função suporte da rand que faz gerar números diferentes sempre
 	srand (time(NULL));
 
-	// solução de vcs
-	//insere 40 elementos no pCabecaBaralho e o valor de
-	//cada elemento será um ponteiro pra um tipo Carta
-/*  	for (int i = 0 ; i < 40 ; i++) {
-		
-		//gera um valor int aleatório entre 0 e 39
-		int random = rand()%40;
-		
-		//Carta recebe um tipo ponteiro pro tipo carta
-		pCarta = VetorAux[random];
-		
-		//é inserido um elemento na lista Baralho 
-		//e seu valor é um ponteiro pro tipo Carta
-		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta);
-		
-		//nao entendi
-		VetorAux[random] = VetorAux[39];
-		
-  	} //fim for
-	// fim solução de vcs
-*/	
-	// minha solução
-	// parte que copiei do site (embaralhador de vetor)
-	// (só renomeei variaveis e alterei tipos)
-	//for (i = 0; i < 40; i++){
-	for (i = 0; i < 20; i++){	
+	//embaralhando o vetor (troca os indices aleatoriamente)
+	for (i = 0; i < 40; i++){
 
 		BAR_tpCarta pCartaAux;
 		
 		//gera um número aleatorio entre 0 e 39
-		//int random = rand() % 40 ;
-		int random = rand() % 20 ;
+		int random = rand() % 40 ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
 		pCartaAux = VetorAux[i] ;
@@ -161,12 +178,10 @@ LIS_tppLista BAR_CriarBaralho() {
 
 	//checando se o vetor está embaralhado
 	printf("\nChecando se o vetor esta embaralhado:\n");
-	for (i = 0; i < 20; i++){
-		printf("VetorAux[%d]: Valor: %d / Naipe: %d\n",(i+1), 
+	for (i = 0; i < 40; i++){
+		printf("VetorAux[%d]: Valor %d / Naipe %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
 	} //fim for
-
-	printf("\nSem erros ate aqui :)\n\n");
 	
 	// minha parte
 	// preenche um por um usando o vetor embaralhado
@@ -174,11 +189,20 @@ LIS_tppLista BAR_CriarBaralho() {
 		
 		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
 		pCarta = &VetorAux[i] ;
+
+		//checando se pCarta recebe um valor aleatorio
+		printf("\npCarta: Valor %d / Naipe %d\n", pCarta->valor,pCarta->naipe);
 		
 		//é inserido um elemento na lista Baralho e 
 		//seu valor é um ponteiro pra um tipo Carta
-		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, &pCarta) ;
-		
+		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta) ;
+
+		//assertiva de saída
+		if (condRetLista != LIS_CondRetOK){
+			printf("\nNão inseriu elemento\n");
+			return NULL;
+		}
+
 	} //fim for
 	// fim minha solução
 	
