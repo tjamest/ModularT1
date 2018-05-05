@@ -383,7 +383,6 @@ BAR_tppCarta CriarVetorAux() {
 	// carta 2 de espadas
 	VetorAux[33].valor = _2 ;
 	VetorAux[33].naipe = Espadas ;
-	
 	// carta 2 de copas
 	VetorAux[34].valor = _2 ;
 	VetorAux[34].naipe = Copas ; 
