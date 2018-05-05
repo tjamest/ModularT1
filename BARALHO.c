@@ -79,12 +79,16 @@ LIS_tppLista BAR_CriarBaralho() {
 	VetorAux[7] = *pCarta;*/
 	
 	//checando se o vetor está preenchido
+	printf("Checando se o vetor esta preenchido:\n");
 	printf("VetorAux[1]: Valor: %d / Naipe: %d\n",VetorAux[0].valor,VetorAux[0].naipe);
 	printf("VetorAux[2]: Valor: %d / Naipe: %d\n",VetorAux[1].valor,VetorAux[1].naipe);
 	printf("VetorAux[3]: Valor: %d / Naipe: %d\n",VetorAux[2].valor,VetorAux[2].naipe);
 	
 	//função suporte da rand que faz gerar números diferentes sempre
 	srand ((unsigned)time(NULL));
+
+	//checando se o programa chegou aqui
+	printf("\nSem erros ate aqui :)\n\n");
 	
 	// solução de vcs
 	//insere 40 elementos no pCabecaBaralho e o valor de
@@ -131,6 +135,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	} //fim for
 
 	//checando se o vetor está embaralhado
+	printf("Checando se o vetor esta embaralhado:\n");
 	printf("VetorAux[1]: Valor: %d / Naipe: %d\n",VetorAux[0].valor,VetorAux[0].naipe);
 	printf("VetorAux[2]: Valor: %d / Naipe: %d\n",VetorAux[1].valor,VetorAux[1].naipe);
 	printf("VetorAux[3]: Valor: %d / Naipe: %d\n",VetorAux[2].valor,VetorAux[2].naipe);
