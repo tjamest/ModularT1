@@ -22,7 +22,19 @@ Estudei o módulo Lista e o módulo Baralho.
 20/04/2018 - 1h trabalhada - Revisar Especificações
 Redigir descrições, parâmetros, retorno e assertivas das funções do módulo baralho.
 
+20/04/2018 - 1h trabalhada - Revisar Especificações
+Redigir descrições, parâmetros, retorno e assertivas das funções do módulo baralho.
 
+01/05/2018 - 2h trabalhada - Codificar Módulo
+Reinteramos a função criarBaralho para criar um baralho já embaralhado.
+
+03/05/2018 - 2h trabalhada - Revisar Código do Módulo
+Consertamos problemas com a função criarBaralho.
+
+04/05/2018 - 3h trabalhada - Codificar Módulo
+Escrevi as funções criarCarta e destruirCarta.
+
+05/05/2018 - 
 
 Os tipos de tarefa são:
 - estudar
