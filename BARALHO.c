@@ -41,13 +41,8 @@ LIS_tppLista BAR_CriarBaralho() {
 
 	//aloca memória pro ponteiro que aponta pra cabeca
 	//do baralho (um ponteiro pro tipo lista)
-	LIS_tppLista pCabecaBaralho = (LIS_tppLista)(malloc(sizeof(LIS_tppLista))) ;
-	
-	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
-	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
-	//pCabecaBaralho = LIS_CriarLista (BAR_DestruirCarta) ;
-	//não sei o que botar no pDado
-	
+	LIS_tppLista pCabecaBaralho = LIS_CriarLista (BAR_DestruirCarta) ;
+		
 	//cria um vetor de 40 elementos que são ponteiros pra tpCarta
 	BAR_tpCarta VetorAux[40] ;
 	
@@ -152,7 +147,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	} //fim for
 
 	//função suporte da rand que faz gerar números diferentes sempre
-	srand (time(NULL));
+	srand ((unsigned)time(NULL));
 
 	//embaralhando o vetor (troca os indices aleatoriamente)
 	for (i = 0; i < 40; i++){
@@ -190,7 +185,7 @@ LIS_tppLista BAR_CriarBaralho() {
 		pCarta = &VetorAux[i] ;
 
 		//checando se pCarta recebe um valor aleatorio
-		printf("\npCarta: Valor %d / Naipe %d\n", pCarta->valor,pCarta->naipe);
+		printf("\npCarta: Valor %d / Naipe %d", pCarta->valor,pCarta->naipe);
 		
 		//é inserido um elemento na lista Baralho e 
 		//seu valor é um ponteiro pra um tipo Carta
@@ -198,8 +193,11 @@ LIS_tppLista BAR_CriarBaralho() {
 
 		//assertiva de saída
 		if (condRetLista != LIS_CondRetOK){
-			printf("\nNão inseriu elemento\n");
+			printf("\nNão inseriu elemento");
 			return NULL;
+		}
+		else{
+			printf("    (Elemento inserido)");
 		}
 
 	} //fim for
@@ -324,7 +322,7 @@ void BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
 /***************************************************************************
 *  Função: BAR  &Destruir carta
 ***************************************************************************/
-void BAR_DestruirCarta(BAR_tppCarta pCarta) {
+void BAR_DestruirCarta(void * pCarta) {
 	
 	//destruição do ponteiro pro tipo carta
 	free(pCarta) ;
