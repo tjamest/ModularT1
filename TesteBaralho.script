@@ -19,10 +19,10 @@
 =declararparm   pNULL          int  0
 =declararparm   pNaoNULL       int  1
 
-== Criar a lista 0
+== Criar o baralho 0
 =criarbaralho    baralho0 
 
-== Destruir o baralho
+== Destruir o baralho 0
 =destruirvalor   baralho0
 
 // fim
