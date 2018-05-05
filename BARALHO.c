@@ -65,23 +65,23 @@ LIS_tppLista BAR_CriarBaralho() {
 	VetorAux[0] = *pCarta;
 	pCarta=CriarCarta(_7,Ouros);
 	VetorAux[1] = *pCarta;
-/*	pCarta=CriarCarta(_Q,Ouros);
-	VetorAux[2] = pCarta;
+	pCarta=CriarCarta(_Q,Ouros);
+	VetorAux[2] = *pCarta;
 	pCarta=CriarCarta(_J,Ouros);
-	VetorAux[3] = pCarta;
+/*	VetorAux[3] = *pCarta;
 	pCarta=CriarCarta(_K,Ouros);
-	VetorAux[4] = pCarta;
+	VetorAux[4] = *pCarta;
 	pCarta=CriarCarta(_A,Ouros);
-	VetorAux[5] = pCarta;
+	VetorAux[5] = *pCarta;
 	pCarta=CriarCarta(_2,Ouros);
-	VetorAux[6] = pCarta;
+	VetorAux[6] = *pCarta;
 	pCarta=CriarCarta(_3,Ouros);
-	VetorAux[7] = pCarta;*/
+	VetorAux[7] = *pCarta;*/
 	
 	//checando se o vetor está preenchido
-	printf("VetorAux[1]: Valor: %d / Naipe: %d)",VetorAux[0].valor,VetorAux[0].naipe);
-	printf("VetorAux[2]: Valor: %d / Naipe: %d)",VetorAux[1].valor,VetorAux[1].naipe);
-	printf("VetorAux[3]: Valor: %d / Naipe: %d)",VetorAux[2].valor,VetorAux[2].naipe);
+	printf("VetorAux[1]: Valor: %d / Naipe: %d\n",VetorAux[0].valor,VetorAux[0].naipe);
+	printf("VetorAux[2]: Valor: %d / Naipe: %d\n",VetorAux[1].valor,VetorAux[1].naipe);
+	printf("VetorAux[3]: Valor: %d / Naipe: %d\n",VetorAux[2].valor,VetorAux[2].naipe);
 	
 	//função suporte da rand que faz gerar números diferentes sempre
 	srand ((unsigned)time(NULL));
@@ -112,13 +112,13 @@ LIS_tppLista BAR_CriarBaralho() {
 	// (só renomeei variaveis e alterei tipos)
 	for (i = 0; i < 40; i++){
 		
-		BAR_tppCarta pCartaAux;
+		BAR_tpCarta pCartaAux;
 		
 		//gera um número aleatorio entre 0 e 39
 		int random = rand() % 40 ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
-		*pCartaAux = VetorAux[i] ;
+		pCartaAux = VetorAux[i] ;
 		
 		//o ponteiro pra um tipo Carta usado anteriormente recebe agora
 		//um ponteiro pra um tipo Carta escolhido aleatoriamente
@@ -126,9 +126,14 @@ LIS_tppLista BAR_CriarBaralho() {
 		
 		//o ponteiro pra um tipo Carta aleatório
 		//recebe o ponteiro pra um tipo Carta inicial
-		VetorAux[random] = *pCartaAux ;
+		VetorAux[random] = pCartaAux ;
 		
 	} //fim for
+
+	//checando se o vetor está embaralhado
+	printf("VetorAux[1]: Valor: %d / Naipe: %d\n",VetorAux[0].valor,VetorAux[0].naipe);
+	printf("VetorAux[2]: Valor: %d / Naipe: %d\n",VetorAux[1].valor,VetorAux[1].naipe);
+	printf("VetorAux[3]: Valor: %d / Naipe: %d\n",VetorAux[2].valor,VetorAux[2].naipe);
 	
 	// minha parte
 	//preenche um por um usando o vetor embaralhado
