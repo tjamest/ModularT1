@@ -17,7 +17,20 @@ Fizemos um esboço dos módulos que existirão no programa.
 16/04/2018 - 3h trabalhadas - Revisar Especificações
 Foi feita uma revisão da Visão de Módulos, da Visão de Interface e dos Requisitos.
 
-19/04/2018 - 2h trabalhada - Estudar o Módulo lista do Arcabouço / Editar o Módulo Baralho
+19/04/2018 - 2h trabalhadas - Estudar o Módulo lista do Arcabouço / Editar o Módulo Baralho
+
+20/04/2018 - 4h trabalhadas - Tirando duvidas na moniria sobre como implementar o Baralho.c
+
+27/04/2018 - 4h trabalhadas - Tirando duvidas e estudando o metodo de funcionamento do arcabouço na monitoria
+
+30/04/2018 - 3h trabalhadas - Observando e corrigindo os Modulos existentes
+
+31/04/2018 - 3h trabalhadas - Aplicando uma forma diferente de construção do embaralhar o baralho no baralho.c
+
+
+
+
+
 
 Os tipos de tarefa são:
 - estudar
