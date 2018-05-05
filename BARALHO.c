@@ -452,7 +452,8 @@ BAR_tppCarta CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
 	//atribui valor e naipe a um tipo carta
 	pCarta->valor = valor ;
 	pCarta->naipe = naipe ;
-
+	
+	//retorna um ponteiro pra um tipo carta
 	return pCarta ;
 	
 } /******************** Fim função: BAR &Criar Carta ***********************/
