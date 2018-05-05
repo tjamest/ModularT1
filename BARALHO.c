@@ -57,21 +57,28 @@ LIS_tppLista BAR_CriarBaralho() {
 	BAR_tppCarta pCarta;
 	
 	//criando o vetor baralho ordenado
-	pcarta=CriarCarta(_6,Ouros)
+	pCarta=CriarCarta(_6,Ouros);
 	VetorAux[0] = pCarta;
-	pcarta=CriarCarta(_7,Ouros)
+	
+	pCarta=CriarCarta(_7,Ouros);
 	VetorAux[1] = pCarta;
-	pcarta=CriarCarta(_Q,Ouros)
+	
+	pCarta=CriarCarta(_Q,Ouros);
 	VetorAux[2] = pCarta;
-	pcarta=CriarCarta(_J,Ouros)
+	
+	pCarta=CriarCarta(_J,Ouros);
 	VetorAux[3] = pCarta;
-	pcarta=CriarCarta(_K,Ouros)
+	
+	pCarta=CriarCarta(_K,Ouros);
 	VetorAux[4] = pCarta;
-	pcarta=CriarCarta(_A,Ouros)
+	
+	pCarta=CriarCarta(_A,Ouros);
 	VetorAux[5] = pCarta;
-	pcarta=CriarCarta(_2,Ouros)
+	
+	pCarta=CriarCarta(_2,Ouros);
 	VetorAux[6] = pCarta;
-	pcarta=CriarCarta(_3,Ouros)
+	
+	pCarta=CriarCarta(_3,Ouros);
 	VetorAux[7] = pCarta;
 	
 	//checando se o vetor está preenchido
