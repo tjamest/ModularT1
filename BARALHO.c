@@ -229,21 +229,10 @@ LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
 /***************************************************************************
 *  Função: BAR  &Destruir baralho
 ***************************************************************************/
-BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
+void BAR_DestruirBaralho(LIS_tppLista pCabecaBaralho) {
 	
-	//declaração da variável que armazena a condição de retorno
-	BAR_tpCondRet CondRet ;
-	
-	//destruição do ponteiro pro tipo carta
-	free(pCabecaBaralho) ;
-	if (pCabecaBaralho == Null) {
-		CondRet = BAR_CondRetOK ;
-	}
-	else {
-		CondRet = BAR_CondRetNaoDestruiuBaralho ;
-	}
-	
-	return CondRet ;	
+	//destruição do ponteiro pro tipo lista
+	free(pCabecaBaralho) ;	
 	
 } /************* Fim função: BAR &Destruir baralho ************************/
 
