@@ -1,0 +1,28 @@
+// Script:    TestBaralho.script
+// Autor:     Gustavo Contreiras, João Victor Galindo, Thiago Gioso Fernandes
+// Data:      05/mai/2018
+// Propósito: Testar o módulo baralho do jogo de truco
+//
+
+== Inicializar valores
+=declararparm   baralho0  int 0
+=declararparm   baralho1  int 1
+=declararparm   baralho2  int 2
+
+=declararparm   OK                  int  0
+=declararparm   NaoCriouBaralho     int  1
+=declararparm   NaoCriouCarta       int  2
+=declararparm   NaoDestruiu         int  5
+=declararparm   FaltouMemoria       int  6
+=declararparm   ParamIncorreto      int  7
+
+=declararparm   pNULL          int  0
+=declararparm   pNaoNULL       int  1
+
+== Criar o baralho 0
+=criarbaralho    baralho0 
+
+== Destruir o baralho 0
+=destruirvalor   baralho0
+
+// fim

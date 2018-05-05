@@ -1,0 +1,39 @@
+04/04/2018 - 1h trabalhada - Estudar
+Estudamos os requisitos funcionais e não funcionais de um jogo de truco.
+
+05/04/2018 - 1h trabalhada - Estudar
+Estudamos as regras do jogo de truco baseados nas regras de um encontro nacional de jogos de truco.
+
+09/04/2018 - 2h trabalhadas - Revisar Especificações
+Revisamos as especificações do programa vendo especificações de outros grupos.
+
+11/04/2018 - 1h	trabalhada - Especificar as Funções
+Fizemos um esboço das funções que existirão no programa.
+
+11/04/2018 - 1h trabalhada - Especificar os Módulos
+Fizemos um esboço dos módulos que existirão no programa.
+
+16/04/2018 - 3h trabalhadas - Revisar Especificações
+Foi feita uma revisão da Visão de Módulos, da Visão de Interface e dos Requisitos.
+
+20/04/2018 - 1h trabalhada - Estudar
+Estudei o módulo Lista e o módulo Baralho.
+
+20/04/2018 - 1h trabalhada - Revisar Especificações
+Redigir descrições, parâmetros, retorno e assertivas das funções do módulo baralho.
+
+
+
+Os tipos de tarefa são:
+- estudar
+- especificar os módulos
+- especificar as funções
+- revisar especificações
+- projetar
+- revisar projetos
+- codificar módulo
+- revisar código do módulo
+- redigir script de teste
+- revisar script de teste
+- realizar os testes
+- diagnosticar e corrigir os problemas encontrados
