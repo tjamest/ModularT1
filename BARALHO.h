@@ -51,7 +51,8 @@ typedef enum { //não tenho certeza se algumas dessas condições de retorno dev
    BAR_CondRetNaoCriouMesa,       // 3 Não criou a lista "mesa"
    BAR_CondRetNaoDestruiuBaralho, // 4 Não destruiu o baralho no fim da partida
    BAR_CondRetNaoDestruiuCarta,   // 5 Não destruiu o baralho no fim da partida
-   BAR_CondRetFaltouMemoria       // 6 Faltou memoria 
+   BAR_CondRetFaltouMemoria,      // 6 Faltou memoria 
+   BAR_CondRetParamIncorretos
 
 } BAR_tpCondRet;
 
