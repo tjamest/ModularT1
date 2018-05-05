@@ -19,7 +19,6 @@
 #include   <time.h>
 
 #define BARALHO_OWN
-#include "BARALHO.h"
 #include "LISTA.h"
 
 #undef BARALHO_OWN
