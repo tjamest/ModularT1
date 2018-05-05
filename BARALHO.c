@@ -27,7 +27,7 @@
 
 
 /************ PROTÓTIPOS DAS FUNÇÕES ENCAPSULADAS NO MÓDULO ***************/
-BAR_tppCarta CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe);
+//não há funções encapsuladas no módulo
 
 
 /***********  CÓDIGO DAS FUNÇÕES EXPORTADAS PELO MÓDULO  ******************/
@@ -55,92 +55,92 @@ LIS_tppLista BAR_CriarBaralho() {
 	BAR_tpCarta *pCarta;
 	
 	//criando o vetor baralho ordenado
-	pCarta=CriarCarta(_4,Ouros);
+	pCarta=BAR_CriarCarta(_4,Ouros);
 	VetorAux[0] = *pCarta;
-	pCarta=CriarCarta(_5,Ouros);
+	pCarta=BAR_CriarCarta(_5,Ouros);
 	VetorAux[1] = *pCarta;
-	pCarta=CriarCarta(_6,Ouros);
+	pCarta=BAR_CriarCarta(_6,Ouros);
 	VetorAux[2] = *pCarta;
-	pCarta=CriarCarta(_7,Ouros);
+	pCarta=BAR_CriarCarta(_7,Ouros);
 	VetorAux[3] = *pCarta;
-	pCarta=CriarCarta(_Q,Ouros);
+	pCarta=BAR_CriarCarta(_Q,Ouros);
 	VetorAux[4] = *pCarta;
-	pCarta=CriarCarta(_J,Ouros);
+	pCarta=BAR_CriarCarta(_J,Ouros);
 	VetorAux[5] = *pCarta;
-	pCarta=CriarCarta(_K,Ouros);
+	pCarta=BAR_CriarCarta(_K,Ouros);
 	VetorAux[6] = *pCarta;
-	pCarta=CriarCarta(_A,Ouros);
+	pCarta=BAR_CriarCarta(_A,Ouros);
 	VetorAux[7] = *pCarta;
-	pCarta=CriarCarta(_2,Ouros);
+	pCarta=BAR_CriarCarta(_2,Ouros);
 	VetorAux[8] = *pCarta;
-	pCarta=CriarCarta(_3,Ouros);
+	pCarta=BAR_CriarCarta(_3,Ouros);
 	VetorAux[9] = *pCarta;
 
-	pCarta=CriarCarta(_4,Espadas);
+	pCarta=BAR_CriarCarta(_4,Espadas);
 	VetorAux[10] = *pCarta;
-	pCarta=CriarCarta(_5,Espadas);
+	pCarta=BAR_CriarCarta(_5,Espadas);
 	VetorAux[11] = *pCarta;
-	pCarta=CriarCarta(_6,Espadas);
+	pCarta=BAR_CriarCarta(_6,Espadas);
 	VetorAux[12] = *pCarta;
-	pCarta=CriarCarta(_7,Espadas);
+	pCarta=BAR_CriarCarta(_7,Espadas);
 	VetorAux[13] = *pCarta;
-	pCarta=CriarCarta(_Q,Espadas);
+	pCarta=BAR_CriarCarta(_Q,Espadas);
 	VetorAux[14] = *pCarta;
-	pCarta=CriarCarta(_J,Espadas);
+	pCarta=BAR_CriarCarta(_J,Espadas);
 	VetorAux[15] = *pCarta;
-	pCarta=CriarCarta(_K,Espadas);
+	pCarta=BAR_CriarCarta(_K,Espadas);
 	VetorAux[16] = *pCarta;
-	pCarta=CriarCarta(_A,Espadas);
+	pCarta=BAR_CriarCarta(_A,Espadas);
 	VetorAux[17] = *pCarta;
-	pCarta=CriarCarta(_2,Espadas);
+	pCarta=BAR_CriarCarta(_2,Espadas);
 	VetorAux[18] = *pCarta;
-	pCarta=CriarCarta(_3,Espadas);
+	pCarta=BAR_CriarCarta(_3,Espadas);
 	VetorAux[19] = *pCarta;
 
-	pCarta=CriarCarta(_4,Copas);
+	pCarta=BAR_CriarCarta(_4,Copas);
 	VetorAux[20] = *pCarta;
-	pCarta=CriarCarta(_5,Copas);
+	pCarta=BAR_CriarCarta(_5,Copas);
 	VetorAux[21] = *pCarta;
-	pCarta=CriarCarta(_6,Copas);
+	pCarta=BAR_CriarCarta(_6,Copas);
 	VetorAux[22] = *pCarta;
-	pCarta=CriarCarta(_7,Copas);
+	pCarta=BAR_CriarCarta(_7,Copas);
 	VetorAux[23] = *pCarta;
-	pCarta=CriarCarta(_Q,Copas);
+	pCarta=BAR_CriarCarta(_Q,Copas);
 	VetorAux[24] = *pCarta;
-	pCarta=CriarCarta(_J,Copas);
+	pCarta=BAR_CriarCarta(_J,Copas);
 	VetorAux[25] = *pCarta;
-	pCarta=CriarCarta(_K,Copas);
+	pCarta=BAR_CriarCarta(_K,Copas);
 	VetorAux[26] = *pCarta;
-	pCarta=CriarCarta(_A,Copas);
+	pCarta=BAR_CriarCarta(_A,Copas);
 	VetorAux[27] = *pCarta;
-	pCarta=CriarCarta(_2,Copas);
+	pCarta=BAR_CriarCarta(_2,Copas);
 	VetorAux[28] = *pCarta;
-	pCarta=CriarCarta(_3,Copas);
+	pCarta=BAR_CriarCarta(_3,Copas);
 	VetorAux[29] = *pCarta;
 
-	pCarta=CriarCarta(_4,Paus);
+	pCarta=BAR_CriarCarta(_4,Paus);
 	VetorAux[30] = *pCarta;
-	pCarta=CriarCarta(_5,Paus);
+	pCarta=BAR_CriarCarta(_5,Paus);
 	VetorAux[31] = *pCarta;
-	pCarta=CriarCarta(_6,Paus);
+	pCarta=BAR_CriarCarta(_6,Paus);
 	VetorAux[32] = *pCarta;
-	pCarta=CriarCarta(_7,Paus);
+	pCarta=BAR_CriarCarta(_7,Paus);
 	VetorAux[33] = *pCarta;
-	pCarta=CriarCarta(_Q,Paus);
+	pCarta=BAR_CriarCarta(_Q,Paus);
 	VetorAux[34] = *pCarta;
-	pCarta=CriarCarta(_J,Paus);
+	pCarta=BAR_CriarCarta(_J,Paus);
 	VetorAux[35] = *pCarta;
-	pCarta=CriarCarta(_K,Paus);
+	pCarta=BAR_CriarCarta(_K,Paus);
 	VetorAux[36] = *pCarta;
-	pCarta=CriarCarta(_A,Paus);
+	pCarta=BAR_CriarCarta(_A,Paus);
 	VetorAux[37] = *pCarta;
-	pCarta=CriarCarta(_2,Paus);
+	pCarta=BAR_CriarCarta(_2,Paus);
 	VetorAux[38] = *pCarta;
-	pCarta=CriarCarta(_3,Paus);
+	pCarta=BAR_CriarCarta(_3,Paus);
 	VetorAux[39] = *pCarta;
 	
 	//checando se o vetor está preenchido
-	printf("\nChecando se o vetor esta preenchido:\n");
+	printf("Checando se o vetor esta preenchido:\n");
 	for (i = 0; i < 40; i++){
 		printf("VetorAux[%d]: Valor %d / Naipe %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
@@ -177,7 +177,6 @@ LIS_tppLista BAR_CriarBaralho() {
 			VetorAux[i].valor,VetorAux[i].naipe);
 	} //fim for
 	
-	// minha parte
 	// preenche um por um usando o vetor embaralhado
 	for (i = 0; i < 40; i++){
 		
@@ -206,6 +205,32 @@ LIS_tppLista BAR_CriarBaralho() {
   return pCabecaBaralho ;
    
 } /***************** Fim função: BAR &Criar baralho ***********************/
+
+
+/****************************************************************************
+*  $FC Função: BAR  &Criar Carta
+****************************************************************************/
+BAR_tppCarta BAR_CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
+
+	//declara um ponteiro pra um tipo carta com valor null
+	BAR_tpCarta * pCarta = NULL;
+	
+	//aloca memoria pra esse ponteiro do tamanho do tipo carta
+	pCarta = (BAR_tpCarta*) malloc(sizeof(BAR_tpCarta)) ;
+	
+	//assertiva
+	if (pCarta == NULL) {
+		return NULL ;
+	}
+	
+	//atribui valor e naipe a um tipo carta
+	pCarta->valor = valor ;
+	pCarta->naipe = naipe ;
+	
+	//retorna um ponteiro pra um tipo carta
+	return pCarta ;
+	
+} /******************** Fim função: BAR &Criar Carta ***********************/
 
 
 /***************************************************************************
@@ -333,30 +358,6 @@ void BAR_DestruirCarta(void * pCarta) {
 
 
 /***********  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  *******************/
-
-/****************************************************************************
-*  $FC Função: BAR  &Criar Carta
-****************************************************************************/
-BAR_tppCarta CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
-
-	//declara um ponteiro pra um tipo carta com valor null
-	BAR_tpCarta * pCarta = NULL;
-	
-	//aloca memoria pra esse ponteiro do tamanho do tipo carta
-	pCarta = (BAR_tpCarta*) malloc(sizeof(BAR_tpCarta)) ;
-	
-	//assertiva
-	if (pCarta == NULL) {
-		return NULL ;
-	}
-	
-	//atribui valor e naipe a um tipo carta
-	pCarta->valor = valor ;
-	pCarta->naipe = naipe ;
-	
-	//retorna um ponteiro pra um tipo carta
-	return pCarta ;
-	
-} /******************** Fim função: BAR &Criar Carta ***********************/
+//não há funções encapsuladas no módulo
 
 /************ FIM DO MÓDULO DE IMPLEMENTAÇÃO: BAR Baralho ******************/
