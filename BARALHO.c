@@ -357,6 +357,20 @@ void BAR_DestruirCarta(void * pCarta) {
 } /************ Fim função: BAR &Destruir carta ****************************/
 
 
+/***************************************************************************
+*  Função: BAR  &Destruir carta
+***************************************************************************/
+BAR_tpCondRet BAR_ObterInfoCarta(BAR_tppCarta carta, BAR_tpValorCarta *valor, BAR_tpNaipeCarta *naipe) {
+	if (carta == NULL)
+		return BAR_tpCondRetParamIncorretos;
+	
+	valor = carta->valor;
+	naipe = carta->naipe;
+	
+	return BAR_tpCondRetOK;
+}
+
+
 /***********  CÓDIGO DAS FUNÇÕES ENCAPSULADAS NO MÓDULO  *******************/
 //não há funções encapsuladas no módulo
 
