@@ -1,14 +1,10 @@
 #if ! defined( BARALHO_ )
 #define BARALHO_
 /***************************************************************************
-*
 *  $MCD Módulo de definição: BAR  Baralho
 *
 *  Arquivo gerado:              BARALHO.h
 *  Letras identificadoras:      BAR
-*
-*  Nome da base de software:    Truco
-*  Arquivo da base de software:
 *
 *  Projeto: INF 1301 Jogo de Truco
 *  Gestor:
@@ -35,103 +31,88 @@
    #define BARALHO_EXT extern
 #endif
 
-/***** Declarações exportadas pelo módulo *****/
+/**************** DECLARAÇÕES EXPORTADAS PELO MÓDULO **********************/
 
-/* Tipo referência para uma carta */
-
+// Tipo referência para uma carta
 typedef struct BAR_tagCarta * BAR_tppCarta ;
 
-/***********************************************************************
-*
+
+/***************************************************************************
 *  $TC Tipo de dados: BAR Condições de retorno
-*
 *
 *  $ED Descrição do tipo
 *     Condições de retorno das funções de carta.
-*
-***********************************************************************/
-
+***************************************************************************/
 typedef enum { //não tenho certeza se algumas dessas condições de retorno devem existir
 
-  BAR_CondRetOK,                 /* 0 Concluiu corretamente */
-  BAR_CondRetNaoCriouBaralho,    /* 1 Não criou a lista "baralho" de 40 cartas */
-  BAR_CondRetNaoCriouMaoJogador, /* 2 Não criou as listas "mão jogador" */
-  BAR_CondRetNaoCriouMesa,       /* 3 Não criou a lista "mesa" */
-  BAR_CondRetNaoDestruiuBaralho, /* 4 Não destruiu o baralho no fim da partida */
-  BAR_CondRetNaoDestruiuCarta,   /* 5 Não destruiu o baralho no fim da partida */
-  BAR_CondRetFaltouMemoria       /* 6 Faltou memoria */ 
+   BAR_CondRetOK,                 /* 0 Concluiu corretamente */
+   BAR_CondRetNaoCriouBaralho,    /* 1 Não criou a lista "baralho" de 40 cartas */
+   BAR_CondRetNaoCriouMaoJogador, /* 2 Não criou as listas "mão jogador" */
+   BAR_CondRetNaoCriouMesa,       /* 3 Não criou a lista "mesa" */
+   BAR_CondRetNaoDestruiuBaralho, /* 4 Não destruiu o baralho no fim da partida */
+   BAR_CondRetNaoDestruiuCarta,   /* 5 Não destruiu o baralho no fim da partida */
+   BAR_CondRetFaltouMemoria       /* 6 Faltou memoria */ 
 
 } BAR_tpCondRet;
 
-/***********************************************************************
-*
+
+/***************************************************************************
 *  $TC Tipo de dados: BAR tpValorCarta
 *
 *  $ED Descrição do tipo
 *     Domínio dos possíveis valores de uma carta.
-*
-***********************************************************************/
+***************************************************************************/
 typedef enum {
-
-
-  _4,               /* 0 */
-  _5,               /* 1 */
-  _6,               /* 2 */
-  _7,               /* 3 */
-  _Q,               /* 4 */
-  _J,               /* 5 */
-  _K,               /* 6 */
-  _A,               /* 7 */                         
-  _2,               /* 8 */
-  _3,               /* 9 */
+   _4,               // 0
+   _5,               // 1
+   _6,               // 2
+   _7,               // 3
+   _Q,               // 4
+   _J,               // 5
+   _K,               // 6
+   _A,               // 7                        
+   _2,               // 8
+   _3,               // 9
 } BAR_tpValorCarta ;
 
-/***********************************************************************
-*
+
+/***************************************************************************
 *  $TC Tipo de dados: BAR tpNaipeCarta
 *
 *  $ED Descrição do tipo
 *     Dominio dos possiveis naipes de uma carta.
-*
-***********************************************************************/
+***************************************************************************/
 typedef enum {
-
-  Ouros,          /* 0 */
-  Espadas,        /* 1 */
-  Copas,          /* 2 */
-  Paus            /* 3 */
-
+  Ouros,          // 0
+  Espadas,        // 1
+  Copas,          // 2
+  Paus            // 3
 } BAR_tpNaipeCarta ;
 
-/***********************************************************************
-*
+
+/***************************************************************************
 *  $TC Tipo de dados: BAR tpCarta
 *
 *  $ED Descrição do tipo
 *     Estrutura de uma carta, que tem um valor e um naipe.
-*
-***********************************************************************/
+***************************************************************************/
 typedef struct BAR_tagCarta {
-
-  BAR_tpValorCarta valor ; /* 0 4, 1 5, 2 6, 3 7, 4 Q, 5 J, 6 K, 7 A,
-                              8 2, 9 3*/
-
-  BAR_tpNaipeCarta naipe ; /* 0 Ouros, 1 Espadas, 2 Copas, 3 Paus */
-
+   
+  BAR_tpValorCarta valor ;
+  BAR_tpNaipeCarta naipe ;
+   
 } BAR_tpCarta;
 
-/***********************************************************************
-*
+
+/***************************************************************************
 *  $FC Função: BAR  &Criar Baralho
 *
 *  $ED Descrição da função
 *     Cria um baralho (tpLista) de 40 elementos (tpCarta) sem os 8, 9, 10
 *     e coringas.
-*     Pega 40 elementos (tipo Carta) de um vetor aleatoriamente ordenado
-*     e coloca em uma lista.
 *
 *  $EP Parâmetros
-*     pVetorEmbaralhado: ponteiro pra um vetor de tipo Carta
+*     
 *
 *  $FV Valor retornado
 *     Se executar corretamente retorna o ponteiro para o início do baralho
@@ -140,44 +121,12 @@ typedef struct BAR_tagCarta {
 *
 *     Se ocorrer algum erro, por exemplo falta de memória ou dados errados,
 *     a função retornará NULL.
-*     Não será dada mais informação quanto ao problema ocorrido.
-*
-*     Assertivas de entrada:
-*     - pVetorEmbaralhado != NULL
-*     Assertivas de saída:
-*     - pBaralho != NULL
-*     
-*
-***********************************************************************/
-
+*     Não será dada mais informação quanto ao problema ocorrido. 
+***************************************************************************/
 LIS_tppLista BAR_CriarBaralho(BAR_tppCarta pVetorEmbaralhado);
 
-/**********************************************************************
-*
-*  $FC Função: BAR  &CriarVetorAux
-*
-*  $ED Descrição da função
-*   Cria um vetor de 40 elementos que são ponteiros pro tipo Carta.
-*
-*  $FV Valor retornado
-*     Se executou corretamente retorna o ponteiro pro primeiro elemento do vetor.
-*     Este ponteiro será utilizado pela função CriarBaralho.
-*
-*     Se ocorreu algum erro, por exemplo falta de memória ou dados incorretos, 
-*     a função retornará NULL.
-*     E Dirá erro ao criar Vetor Auxiliar.
-*     Não será dada mais informação quanto ao problema ocorrido.
-*
-*     Assertivas de saída:
-*     - O ponteiro pro tpCarta retornado não pode ser NULL.
-*
-*
-***********************************************************************/
 
-BAR_tppCarta CriarVetorAux();
-
-/**********************************************************************
-*
+/***************************************************************************
 *  $FC Função: BAR  &Destruir Carta
 *
 *  $ED Descrição da função
@@ -186,13 +135,11 @@ BAR_tppCarta CriarVetorAux();
 *  $FV Valor retornado
 *     BAR_tpCondRet    - BAR_CondRetNaoDestruiuCarta
 *     BAR_tpCondRet    - BAR_CondRetOK
-*
-***********************************************************************/
-
+***************************************************************************/
 BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta);
 
-/**********************************************************************
-*
+
+/***************************************************************************
 *  $FC Função: BAR  &Destruir Baralho
 *
 *  $ED Descrição da função
@@ -205,14 +152,13 @@ BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta);
 *  $FV Valor retornado
 *     BAR_tpCondRet    - BAR_CondRetNaoDestruiuBaralho
 *     BAR_tpCondRet    - BAR_CondRetOK
-*
-***********************************************************************/
-
+***************************************************************************/
 BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho);
+
 
 #undef BARALHO_EXT
 
-/************** Fim do módulo de definição: BAR  Baralho **************/
+/**************** FIM DO MÓDULO DE DEFINIÇÃO: BAR Baralho *****************/
 
 #else
 #endif
