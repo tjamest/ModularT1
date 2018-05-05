@@ -65,18 +65,22 @@ LIS_tppLista vtBaralhos[ DIM_VT_BARALHO ] ;
 *
 *     =resetteste
 *           - anula o vetor de baralho e provoca vazamento de memória.
+*
 *     =criarbaralho                 <inxBaralho>  <CondRetEsp>
 *           - cria um 1 a 10 baralhos que serão armazenados em vtBaralhos[].
 *             o ponteiro para essas listas é armazenado nos
 *             elementos do vtBaralhos[].
-*     =criarcarta                   <inxBaralho>  <string>  <string>  <CondRetEsp>
+*
+*     =criarcarta                   <inxBaralho>  <int>  <int>  <CondRetEsp>
 *           - insere uma carta em um baralho após o elemento corrente.
-*     =criarembaralharvetor         <CondRetEsp>
-*           - cria um vetor com 40 elementos tpCarta e reorganiza aleatoriamente
+*
 *     =destruirbaralho              <inxBaralho>
+*
 *           - destrói um baralho (libera um ponteiro pra um tpLista)
 *     =destruircarta                <inxBaralho>  
+*
 *           - destrói o elemento corrente do baralho (libera um ponteiro pra um tpCarta)
+*
 *     =iriniciobaralho              <inxBaralho>  <CondRetEsp>
 *     =irfinalbaralho               <inxBaralho>  <CondRetEsp>
 *     =avancarelembaralho           <inxBaralho>  <CondRetEsp>
@@ -85,14 +89,19 @@ LIS_tppLista vtBaralhos[ DIM_VT_BARALHO ] ;
 TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ){
 
 	//VARIÁVEIS USADAS POR TODOS COMANDOS
-      
     int inxBaralho = -1 ,
         numLidos   = -1 ,
         CondRetEsp = -1 ,
+		valorCarta = -1 ,
+		naipeCarta = -1 ,
 		i ;
 
-	char * valorCarta;
-	char * naipeCarta;
+	BAR_tpValorCarta ValorCarta ;
+	BAR_tpNaipeCarta NaipeCarta ;
+
+	BAR_tppCarta pCarta ;
+
+	LIS_tpCondRet CondRetLista ;
 
 	//RESET TEST
 	//se o comando for "resettest":
@@ -134,20 +143,41 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ){
 	else if ( strcmp( ComandoTeste , CRIAR_CARTA_CMD ) == 0 ){
 
 		//conta quantos parametros foram declarados
-		numLidos = LER_LerParametros( "issi" , &inxBaralho, valorCarta,
-                                         naipeCarta, &CondRetEsp ) ;
+		numLidos = LER_LerParametros( "iiii" , &inxBaralho, &valorCarta,
+                                         &naipeCarta, &CondRetEsp ) ;
 
 		//se for diferente de 4 retorna erro de declaração de parametro
-        if ( (numLidos != 4) || ValidarInxBaralho ( inxBaralho ) == 0 ){
+        	if ( (numLidos != 4) || ValidarInxBaralho ( inxBaralho ) == 0 ){
 			return TST_CondRetParm ;
 		}
 
-		BAR_tpValorCarta *ValorCarta = &valorCarta;
+		//transformando o parâmetro int recebido em tipo específico
+		switch (valorCarta) {
+		case 0: ValorCarta = _4;	break;
+		case 1: ValorCarta = _5;	break;
+		case 2: ValorCarta = _6;	break;
+		case 3:	ValorCarta = _7;	break;
+		case 4:	ValorCarta = _Q;	break;
+		case 5:	ValorCarta = _J;	break;
+		case 6:	ValorCarta = _K;	break;
+		case 7:	ValorCarta = _A;	break;
+		case 8:	ValorCarta = _2;	break;
+		case 9:	ValorCarta = _3;	break;
+		}//fim switch valorCarta
 
-		//adiciona uma ponteiro pra tpCarta no pValor do elemento da lista
-		vtBaralhos[inxBaralho] = BAR_CriarCarta(valorCarta, naipeCarta ) ;
+		switch (naipeCarta) {
+		case 0: NaipeCarta = Ouros;	break;
+		case 1:	NaipeCarta = Espadas;	break;
+		case 2:	NaipeCarta = Copas;	break;
+		case 3:	NaipeCarta = Paus;	break;
+		}//fim switch naipeCarta
+
+		//armazena em pCarta um ponteiro pra um tipo carta criado
+		pCarta = BAR_CriarCarta( ValorCarta, NaipeCarta ) ;
 
 		//adiciona uma carta no baralho
+		CondRetLista = LIS_InserirElementoApos(vtBaralhos[inxBaralho], pCarta);
+
 		return TST_CondRetOK ;
 
 	} //fim ativa: Testar CriarCarta
@@ -162,18 +192,21 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ){
 /***************************************************************************
 *  $FC Função: TBAR - Validar indice de baralho
 ***************************************************************************/
+int ValidarInxBaralho( int inxBaralho ){
 
-   int ValidarInxBaralho( int inxBaralho )
-   {
+	//checa se o índice declarado tá entre 0 e 9
+	if ( ( inxBaralho <  0 ) || ( inxBaralho >= DIM_VT_BARALHO ) ){
+		return FALSE ;
+	}     
+	return TRUE ;
+} /************** Fim função: TBAR &Validar indice baralho ****************/
 
-      //checa se o índice declarado tá entre 0 e 9
-      if ( ( inxBaralho <  0 ) || ( inxBaralho >= DIM_VT_BARALHO ) )
-      {
-         return FALSE ;
-      }
-         
-      return TRUE ;
 
-   } /************ Fim função: TBAR &Validar indice baralho ***************/
+/***************************************************************************
+*  $FC Função: TBAR - Destruir valor
+***************************************************************************/
+void DestruirValor( void * pValor ){
+	free( pValor ) ;   
+} /****************** Fim função: TBAR - Destruir valor *******************/
 
 /********* FIM DO MÓDULO DE IMPLEMENTAÇÃO: TBAR Teste Baralho *************/
