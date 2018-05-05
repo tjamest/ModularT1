@@ -7,11 +7,12 @@
 *  Nome da base de software:    Jogo de Truco
 *
 *  Projeto: Jogo de Truco
-*  Gestor:  LES/DI/PUC-Rio
 *  Autores: gsc, jvr, tgf
 *
 *  $HA Histórico de evolução:
 *     Versão      Autor       Data        Observações
+*     3		   gsc	   05/mai/2018	  desenvolvida criarcarta, 
+*					  projeto revisado
 *     2            gsc     03/mai/2018    início criarbaralho
 *     1            gsc     30/abr/2018    início desenvolvimento
 ***************************************************************************/
@@ -33,7 +34,6 @@ static const char CRIAR_BARALHO_CMD             [ ] = "=criarbaralho" ;
 static const char CRIAR_CARTA_CMD               [ ] = "=criarcarta" ;
 static const char DESTRUIR_BARALHO_CMD          [ ] = "=destruirbaralho" ;
 static const char DESTRUIR_CARTA_CMD            [ ] = "=destruircarta" ;
-static const char CRIAR_EMBARALHAR_VETOR_CMD    [ ] = "=criarembaralharvetor" ;
 
 #define FALSE 0
 #define TRUE  1
@@ -89,12 +89,12 @@ LIS_tppLista vtBaralhos[ DIM_VT_BARALHO ] ;
 TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ){
 
 	//VARIÁVEIS USADAS POR TODOS COMANDOS
-    int inxBaralho = -1 ,
+    	int inxBaralho = -1 ,
         numLidos   = -1 ,
         CondRetEsp = -1 ,
-		valorCarta = -1 ,
-		naipeCarta = -1 ,
-		i ;
+	valorCarta = -1 ,
+	naipeCarta = -1 ,
+	i ;
 
 	BAR_tpValorCarta ValorCarta ;
 	BAR_tpNaipeCarta NaipeCarta ;
