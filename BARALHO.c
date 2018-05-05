@@ -26,7 +26,7 @@
 
 
 /************ PROTÓTIPOS DAS FUNÇÕES ENCAPSULADAS NO MÓDULO ***************/
-static BAR_tppCarta CriarVetorAux ();
+//static BAR_tppCarta CriarVetorAux ();
 BAR_tppCarta CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe);
 
 
@@ -47,7 +47,7 @@ LIS_tppLista BAR_CriarBaralho() {
 	//não sei o que botar no pDado
 	
 	//cria um vetor de 40 elementos que são ponteiros pra tpCarta
-	BAR_tppCarta VetorAux[40] = CriarVetorAux() ;
+	BAR_tppCarta VetorAux[40] ;
 	
 	//declara uma variável que armazena a condição de
 	//retorno de funções de manipulação da lista
@@ -57,13 +57,36 @@ LIS_tppLista BAR_CriarBaralho() {
 	//pro tpCarta que é o elemento do vetor
 	BAR_tppCarta pCarta;
 	
+	//criando o vetor baralho ordenado
+	pcarta=CriarCarta(_6,Ouros)
+	VetorAux[0] = pCarta;
+	pcarta=CriarCarta(_7,Ouros)
+	VetorAux[1] = pCarta;
+	pcarta=CriarCarta(_Q,Ouros)
+	VetorAux[2] = pCarta;
+	pcarta=CriarCarta(_J,Ouros)
+	VetorAux[3] = pCarta;
+	pcarta=CriarCarta(_K,Ouros)
+	VetorAux[4] = pCarta;
+	pcarta=CriarCarta(_A,Ouros)
+	VetorAux[5] = pCarta;
+	pcarta=CriarCarta(_2,Ouros)
+	VetorAux[6] = pCarta;
+	pcarta=CriarCarta(_3,Ouros)
+	VetorAux[7] = pCarta;
+	
+	//checando se o vetor está preenchido
+	printf("VetorAux[1]: Valor: %d / Naipe: %d)",VetorAux[0].valor,VetorAux[0].naipe);
+	printf("VetorAux[2]: Valor: %d / Naipe: %d)",VetorAux[1].valor,VetorAux[1].naipe);
+	printf("VetorAux[3]: Valor: %d / Naipe: %d)",VetorAux[2].valor,VetorAux[2].naipe);
+	
 	//função suporte da rand que faz gerar números diferentes sempre
 	srand ((unsigned)time(NULL));
 	
 	// solução de vcs
 	//insere 40 elementos no pCabecaBaralho e o valor de
 	//cada elemento será um ponteiro pra um tipo Carta
-  	for (int i = 0 ; i < 40 ; i++) {
+/*  	for (int i = 0 ; i < 40 ; i++) {
 		
 		//gera um valor int aleatório entre 0 e 39
 		int random = rand()%40;
@@ -80,16 +103,19 @@ LIS_tppLista BAR_CriarBaralho() {
 		
   	} //fim for
 	// fim solução de vcs
-	
+*/	
 	// minha solução
-	// parte que copiei do site (embaralhador de vetor - renomeei variaveis e alterei tipos)
+	// parte que copiei do site (embaralhador de vetor)
+	// (só renomeei variaveis e alterei tipos)
 	for (int i = 0; i < 40; i++){
+		
+		BAR_tppCarta pCartaAux;
 		
 		//gera um número aleatorio entre 0 e 39
 		int random = rand() % 40 ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
-		pCarta = VetorAux[i] ;
+		pCartaAux = VetorAux[i] ;
 		
 		//o ponteiro pra um tipo Carta usado anteriormente recebe agora
 		//um ponteiro pra um tipo Carta escolhido aleatoriamente
@@ -97,7 +123,7 @@ LIS_tppLista BAR_CriarBaralho() {
 		
 		//o ponteiro pra um tipo Carta aleatório
 		//recebe o ponteiro pra um tipo Carta inicial
-		VetorAux[random] = pCarta ;
+		VetorAux[random] = pCartaAux ;
 		
 	} //fim for
 	
@@ -253,7 +279,7 @@ void BAR_DestruirCarta(BAR_tppCarta pCarta) {
 /****************************************************************************
 *  $FC Função: BAR Criar Vetor Auxiliar
 ****************************************************************************/
-
+/*
 BAR_tppCarta CriarVetorAux() {
    
 	BAR_tppCarta VetorAux[40] ;
