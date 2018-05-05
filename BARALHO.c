@@ -142,7 +142,7 @@ LIS_tppLista BAR_CriarBaralho() {
 		
 		//é inserido um elemento na lista Baralho e 
 		//seu valor é um ponteiro pra um tipo Carta
-		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, pCarta) ;
+		condRetLista = LIS_InserirElementoApos (pCabecaBaralho, &pCarta) ;
 		
 	} //fim for
 	// fim minha solução
