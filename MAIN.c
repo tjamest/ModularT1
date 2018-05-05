@@ -8,9 +8,7 @@
 
 int main (void) {
 
-	LIS_tppLista pCabecaBaralho;
-
-	pCabecaBaralho = BAR_CriarBaralho () ;
+	LIS_tppLista pCabecaBaralho = BAR_CriarBaralho () ;
 
 	return 0;
 }
