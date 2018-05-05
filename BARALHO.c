@@ -61,29 +61,34 @@ LIS_tppLista BAR_CriarBaralho() {
 	BAR_tpCarta *pCarta;
 	
 	//criando o vetor baralho ordenado
-	pCarta=CriarCarta(_6,Ouros);
+	pCarta=CriarCarta(_4,Ouros);
 	VetorAux[0] = *pCarta;
-	pCarta=CriarCarta(_7,Ouros);
+	pCarta=CriarCarta(_5,Ouros);
 	VetorAux[1] = *pCarta;
-	pCarta=CriarCarta(_Q,Ouros);
+	pCarta=CriarCarta(_6,Ouros);
 	VetorAux[2] = *pCarta;
-	pCarta=CriarCarta(_J,Ouros);
-/*	VetorAux[3] = *pCarta;
-	pCarta=CriarCarta(_K,Ouros);
+	pCarta=CriarCarta(_7,Ouros);
+	VetorAux[3] = *pCarta;
+	pCarta=CriarCarta(_Q,Ouros);
 	VetorAux[4] = *pCarta;
-	pCarta=CriarCarta(_A,Ouros);
+	pCarta=CriarCarta(_J,Ouros);
 	VetorAux[5] = *pCarta;
-	pCarta=CriarCarta(_2,Ouros);
+	pCarta=CriarCarta(_K,Ouros);
 	VetorAux[6] = *pCarta;
+	pCarta=CriarCarta(_A,Ouros);
+	VetorAux[7] = *pCarta;
+	pCarta=CriarCarta(_2,Ouros);
+	VetorAux[8] = *pCarta;
 	pCarta=CriarCarta(_3,Ouros);
-	VetorAux[7] = *pCarta;*/
+	VetorAux[9] = *pCarta;
 	
 	//checando se o vetor está preenchido
 	printf("Checando se o vetor esta preenchido:\n");
-	printf("VetorAux[1]: Valor: %d / Naipe: %d\n",VetorAux[0].valor,VetorAux[0].naipe);
-	printf("VetorAux[2]: Valor: %d / Naipe: %d\n",VetorAux[1].valor,VetorAux[1].naipe);
-	printf("VetorAux[3]: Valor: %d / Naipe: %d\n",VetorAux[2].valor,VetorAux[2].naipe);
-	
+	for (i = 0; i < 10; i++){
+		printf("VetorAux[%d]: Valor: %d / Naipe: %d\n",(i+1), 
+			VetorAux[i].valor,VetorAux[i].naipe);
+	} //fim for
+
 	//função suporte da rand que faz gerar números diferentes sempre
 	srand ((unsigned)time(NULL));
 
@@ -114,13 +119,13 @@ LIS_tppLista BAR_CriarBaralho() {
 	// minha solução
 	// parte que copiei do site (embaralhador de vetor)
 	// (só renomeei variaveis e alterei tipos)
-	for (i = 0; i < 40; i++){
+	for (i = 0; i < 10; i++){
 		
 		BAR_tpCarta *pCartaAux;
 		
 		//gera um número aleatorio entre 0 e 39
 		//int random = rand() % 40 ;
-		int random = rand() % 3 ;
+		int random = rand() % 10 ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
 		pCartaAux = &VetorAux[i] ;
@@ -137,9 +142,10 @@ LIS_tppLista BAR_CriarBaralho() {
 
 	//checando se o vetor está embaralhado
 	printf("Checando se o vetor esta embaralhado:\n");
-	printf("VetorAux[1]: Valor: %d / Naipe: %d\n",VetorAux[0].valor,VetorAux[0].naipe);
-	printf("VetorAux[2]: Valor: %d / Naipe: %d\n",VetorAux[1].valor,VetorAux[1].naipe);
-	printf("VetorAux[3]: Valor: %d / Naipe: %d\n",VetorAux[2].valor,VetorAux[2].naipe);
+	for (i = 0; i < 10; i++){
+		printf("VetorAux[%d]: Valor: %d / Naipe: %d\n",(i+1), 
+			VetorAux[i].valor,VetorAux[i].naipe);
+	} //fim for
 	
 	// minha parte
 	// preenche um por um usando o vetor embaralhado
