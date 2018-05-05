@@ -132,7 +132,7 @@ LIS_tppLista BAR_CriarBaralho();
 *  $ED Descrição da função
 *     Destrói uma carta.
 ***************************************************************************/
-BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta);
+void BAR_DestruirCarta(BAR_tppCarta pCarta);
 
 
 /***************************************************************************
@@ -144,12 +144,8 @@ BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta);
 *     Se ocorrer algum erro durante a destruição, a lista resultará
 *     estruturalmente incorreta.
 *     OBS. não existe previsão para possíveis falhas de execução.
-*
-*  $FV Valor retornado
-*     BAR_tpCondRet    - BAR_CondRetNaoDestruiuBaralho
-*     BAR_tpCondRet    - BAR_CondRetOK
 ***************************************************************************/
-BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista pBaralho);
+void BAR_DestruirBaralho(LIS_tppLista pBaralho);
 
 
 #undef BARALHO_EXT
