@@ -25,6 +25,8 @@
 
 #undef BARALHO_OWN
 
+#define TAM 40
+
 
 /************ PROTÓTIPOS DAS FUNÇÕES ENCAPSULADAS NO MÓDULO ***************/
 //não há funções encapsuladas no módulo
@@ -37,14 +39,12 @@
 ***************************************************************************/
 LIS_tppLista BAR_CriarBaralho() {
 
-	int i;
-
 	//aloca memória pro ponteiro que aponta pra cabeca
 	//do baralho (um ponteiro pro tipo lista)
 	LIS_tppLista pCabecaBaralho = LIS_CriarLista (BAR_DestruirCarta) ;
 		
-	//cria um vetor de 40 elementos que são ponteiros pra tpCarta
-	BAR_tpCarta VetorAux[40] ;
+	//cria um vetor de TAM elementos que são ponteiros pra tpCarta
+	BAR_tpCarta VetorAux[TAM] ;
 	
 	//declara uma variável que armazena a condição de
 	//retorno de funções de manipulação da lista
@@ -53,95 +53,23 @@ LIS_tppLista BAR_CriarBaralho() {
 	//declara uma variável que armazena o ponteiro
 	//pro tpCarta que é o elemento do vetor
 	BAR_tpCarta *pCarta;
-	
-	//criando o vetor baralho ordenado
-	pCarta=BAR_CriarCarta(_4,Ouros);
-	VetorAux[0] = *pCarta;
-	pCarta=BAR_CriarCarta(_5,Ouros);
-	VetorAux[1] = *pCarta;
-	pCarta=BAR_CriarCarta(_6,Ouros);
-	VetorAux[2] = *pCarta;
-	pCarta=BAR_CriarCarta(_7,Ouros);
-	VetorAux[3] = *pCarta;
-	pCarta=BAR_CriarCarta(_Q,Ouros);
-	VetorAux[4] = *pCarta;
-	pCarta=BAR_CriarCarta(_J,Ouros);
-	VetorAux[5] = *pCarta;
-	pCarta=BAR_CriarCarta(_K,Ouros);
-	VetorAux[6] = *pCarta;
-	pCarta=BAR_CriarCarta(_A,Ouros);
-	VetorAux[7] = *pCarta;
-	pCarta=BAR_CriarCarta(_2,Ouros);
-	VetorAux[8] = *pCarta;
-	pCarta=BAR_CriarCarta(_3,Ouros);
-	VetorAux[9] = *pCarta;
 
-	pCarta=BAR_CriarCarta(_4,Espadas);
-	VetorAux[10] = *pCarta;
-	pCarta=BAR_CriarCarta(_5,Espadas);
-	VetorAux[11] = *pCarta;
-	pCarta=BAR_CriarCarta(_6,Espadas);
-	VetorAux[12] = *pCarta;
-	pCarta=BAR_CriarCarta(_7,Espadas);
-	VetorAux[13] = *pCarta;
-	pCarta=BAR_CriarCarta(_Q,Espadas);
-	VetorAux[14] = *pCarta;
-	pCarta=BAR_CriarCarta(_J,Espadas);
-	VetorAux[15] = *pCarta;
-	pCarta=BAR_CriarCarta(_K,Espadas);
-	VetorAux[16] = *pCarta;
-	pCarta=BAR_CriarCarta(_A,Espadas);
-	VetorAux[17] = *pCarta;
-	pCarta=BAR_CriarCarta(_2,Espadas);
-	VetorAux[18] = *pCarta;
-	pCarta=BAR_CriarCarta(_3,Espadas);
-	VetorAux[19] = *pCarta;
+	for (int i = 0, j = 0, k = 0; i < TAM; i++, j++) {
+		BAR_tpValorCarta valor = j;
+		BAR_tpNaipeCarta naipe = k;
 
-	pCarta=BAR_CriarCarta(_4,Copas);
-	VetorAux[20] = *pCarta;
-	pCarta=BAR_CriarCarta(_5,Copas);
-	VetorAux[21] = *pCarta;
-	pCarta=BAR_CriarCarta(_6,Copas);
-	VetorAux[22] = *pCarta;
-	pCarta=BAR_CriarCarta(_7,Copas);
-	VetorAux[23] = *pCarta;
-	pCarta=BAR_CriarCarta(_Q,Copas);
-	VetorAux[24] = *pCarta;
-	pCarta=BAR_CriarCarta(_J,Copas);
-	VetorAux[25] = *pCarta;
-	pCarta=BAR_CriarCarta(_K,Copas);
-	VetorAux[26] = *pCarta;
-	pCarta=BAR_CriarCarta(_A,Copas);
-	VetorAux[27] = *pCarta;
-	pCarta=BAR_CriarCarta(_2,Copas);
-	VetorAux[28] = *pCarta;
-	pCarta=BAR_CriarCarta(_3,Copas);
-	VetorAux[29] = *pCarta;
+		pCarta = BAR_CriarCarta(valor, naipe);
+		VetorAux[i] = *pCarta;
 
-	pCarta=BAR_CriarCarta(_4,Paus);
-	VetorAux[30] = *pCarta;
-	pCarta=BAR_CriarCarta(_5,Paus);
-	VetorAux[31] = *pCarta;
-	pCarta=BAR_CriarCarta(_6,Paus);
-	VetorAux[32] = *pCarta;
-	pCarta=BAR_CriarCarta(_7,Paus);
-	VetorAux[33] = *pCarta;
-	pCarta=BAR_CriarCarta(_Q,Paus);
-	VetorAux[34] = *pCarta;
-	pCarta=BAR_CriarCarta(_J,Paus);
-	VetorAux[35] = *pCarta;
-	pCarta=BAR_CriarCarta(_K,Paus);
-	VetorAux[36] = *pCarta;
-	pCarta=BAR_CriarCarta(_A,Paus);
-	VetorAux[37] = *pCarta;
-	pCarta=BAR_CriarCarta(_2,Paus);
-	VetorAux[38] = *pCarta;
-	pCarta=BAR_CriarCarta(_3,Paus);
-	VetorAux[39] = *pCarta;
+		if (i == 9 || i == 19 || i == 29) { // Quando estiver terminado o naipe atual
+			j = -1; // Volto para valor 0
+			k++; // Passando para o próximo naipe
+		}
+	} //fim for
 	
 	//checando se o vetor está preenchido
 	printf("Checando se o vetor esta preenchido:\n");
-	for (i = 0; i < 40; i++){
+	for (int i = 0; i < TAM; i++){
 		printf("VetorAux[%d]: Valor %d / Naipe %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
 	} //fim for
@@ -150,12 +78,12 @@ LIS_tppLista BAR_CriarBaralho() {
 	srand ((unsigned)time(NULL));
 
 	//embaralhando o vetor (troca os indices aleatoriamente)
-	for (i = 0; i < 40; i++){
+	for (int i = 0; i < TAM; i++){
 
 		BAR_tpCarta pCartaAux;
 		
 		//gera um número aleatorio entre 0 e 39
-		int random = rand() % 40 ;
+		int random = rand() % TAM ;
 
 		//um ponteiro pra um tipo Carta recebe um ponteiro pra um tipo Carta
 		pCartaAux = VetorAux[i] ;
@@ -172,13 +100,13 @@ LIS_tppLista BAR_CriarBaralho() {
 
 	//checando se o vetor está embaralhado
 	printf("\nChecando se o vetor esta embaralhado:\n");
-	for (i = 0; i < 40; i++){
+	for (int i = 0; i < TAM; i++){
 		printf("VetorAux[%d]: Valor %d / Naipe %d\n",(i+1), 
 			VetorAux[i].valor,VetorAux[i].naipe);
 	} //fim for
 	
 	// preenche um por um usando o vetor embaralhado
-	for (i = 0; i < 40; i++){
+	for (int i = 0; i < TAM; i++){
 		
 		//pCarta recebe um ponteiro pra um tipo Carta do vetor embaralhado
 		pCarta = &VetorAux[i] ;
@@ -231,106 +159,6 @@ BAR_tppCarta BAR_CriarCarta (BAR_tpValorCarta valor, BAR_tpNaipeCarta naipe) {
 	return pCarta ;
 	
 } /******************** Fim função: BAR &Criar Carta ***********************/
-
-
-/***************************************************************************
-*  Função: BAR  &Criar mao
-***************************************************************************/
-/* IMPLEMENTAR APENAS PARA O T4
-LIS_tppLista BAR_CriarMao(LIS_tppLista pCabecaBaralho) {
-	//aloca memória pro ponteiro que aponta pra
-	//cabeca da mao (um ponteiro pro tipo lista)
-	LIS_tppLista pCabecaMao = (LIS_tppLista*)(malloc(sizeof(LIS_tppLista))) ;
-	
-	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
-	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
-	pCabecaMao = LIS_CriarLista (( * ExcluirValor ) ( void * pDado )) ;
-	//não sei o que botar no pDado
-	
-	//declara uma variável que armazena a condição de
-	//retorno de funções de manipulação da lista
-	LIS_tpCondRet condRetLista ;
-	
-	//declara uma variável que armazena o ponteiro pro tipo carta
-	BAR_tppCarta pCarta ;
-	
-	//insere a ultima carta da lista baralho na
-	//lista mao depois a exclui da lista baralho
-	for (i = 0; i < 3; i++) {
-	
-		//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
-		IrFinalLista(pCabecaBaralho) ;
-		
-		//pCarta recebe o ponteiro pro tpCarta
-		pCarta = pCabecaBaralho->pElemCorr->pValor ; //não tenho certeza disso
-	
-		//cria um elemento na lista mao que tem pValor = ponteiro pro tpCarta
-		condRetLista = LIS_InserirElementoApos (pCabecaMao, pCarta) ;
-	
-		//atualiza o fim da lista na cabeça do baralho
-		pCabecaBaralho->pFimLista = pCabecaBaralho->pElemCorr->pAnt
-		//o elemento corrente (o último) da lista baralho é excluido
-		condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
-	
-	} //fim for
-	
-  return pCabecaMao ;
-   
-} /******************* Fim função: BAR &Criar mao *************************/
-
-
-/***************************************************************************
-*  Função: BAR  &Criar mesa
-***************************************************************************/
-/* IMPLEMENTAR APENAS PARA O T4
-LIS_tppLista BAR_CriarMesa(LIS_tppLista pCabecaBaralho) {
-	//aloca memória pro ponteiro que aponta pra
-	//cabeca da mao (um ponteiro pro tipo lista)
-	LIS_tppLista pCabecaMesa = (LIS_tppLista*)(malloc(sizeof(LIS_tppLista))) ;
-	
-	//usa o LIS_CriarLista que retorna um ponteiro pra uma lista criada
-	//(um ponteiro pra um tipo lista, que é um tipo cabeça de lista)
-	pCabecaMesa = LIS_CriarLista (( * ExcluirValor ) ( void * pDado )) ;
-	//não sei o que botar no pDado
-	
-	//declara uma variável que armazena a condição de
-	//retorno de funções de manipulação da lista
-	LIS_tpCondRet condRetLista ;
-	
-	//declara uma variável que armazena o ponteiro pro tipo carta
-	BAR_tppCarta pCarta ;
-	
-	//insere a 3 elementos com pValor = Null na lista mesa
-	for (i = 0; i < 3; i++) {
-	
-		//cria um elemento na lista mao que tem pValor = Null
-		condRetLista = LIS_InserirElementoApos (pCabecaMesa, NULL) ;
-	
-		//atualiza o fim da lista na cabeça do baralho
-		pCabecaBaralho->pFimLista = pCabecaBaralho->pElemCorr->pAnt
-		//o elemento corrente (o último) da lista baralho é excluido
-		condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
-		
-	} //fim for
-	
-	/* armazenando a vira no quarto elemento da lista mesa */
-/*
-	//vai pro final da lista baralho (ElemCorr = ponteiro pra tpCarta)
-	IrFinalLista(pCabecaBaralho) ;
-	
-	//pCarta recebe o ponteiro pro tpCarta
-	pCarta = pCabecaBaralho->pElemCorr->pValor ; //não tenho certeza disso
-	
-	//cria um elemento na lista mao que tem pValor = ponteiro pro tpCarta
-	condRetLista = LIS_InserirElementoApos (pCabecaMesa, pCarta) ;
-	
-	//atualiza o fim da lista na cabeça do baralho
-	pCabecaBaralho->pFimLista = pCabecaBaralho->pElemCorr->pAnt
-	//o elemento corrente (o último) da lista baralho é excluido
-	condRetLista = LIS_ExcluirElemento( pCabecaBaralho ) ;
-	
-  return pCabecaMesa ;
-} /********************* Fim função: BAR &Criar mesa ***********************/
 
 
 /***************************************************************************
