@@ -1,4 +1,3 @@
-
 04/04/2018 - 1h trabalhada - Estudar
 Estudamos os requisitos funcionais e não funcionais de um jogo de truco.
 
@@ -26,6 +25,17 @@ Foi feita uma revisão da Visão de Módulos, da Visão de Interface e dos Requi
 30/04/2018 - 3h trabalhadas - Observando e corrigindo os Modulos existentes
 
 31/04/2018 - 3h trabalhadas - Aplicando uma forma diferente de construção do embaralhar o baralho no baralho.c
+
+01/05/2018- 3h  trabalhadas - diagnosticar e corrigir os problemas encontrados
+
+02/05/2018 - 2h trabalhadas - revisar código do módulo
+
+04/05/2018 - 3h trabalhada - revisar especificações, estudar
+
+05/05/2018 - 6h trabalhadas -codificar módulo,revisar código do módulo ,realizar os testes,diagnosticar e corrigir os problemas encontrados.
+
+07/05/2018 - 7h trabalhadas - codificar módulo,revisar código do módulo ,realizar os testes,diagnosticar e corrigir os problemas encontrados.
+
 
 
 
