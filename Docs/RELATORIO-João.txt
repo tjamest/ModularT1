@@ -25,16 +25,25 @@ Redigir descrições, parâmetros, retorno e assertivas das funções do módulo
 20/04/2018 - 1h trabalhada - Revisar Especificações
 Redigir descrições, parâmetros, retorno e assertivas das funções do módulo baralho.
 
-01/05/2018 - 2h trabalhada - Codificar Módulo
+01/05/2018 - 2h trabalhadas - Codificar Módulo
 Reinteramos a função criarBaralho para criar um baralho já embaralhado.
 
-03/05/2018 - 2h trabalhada - Revisar Código do Módulo
+03/05/2018 - 2h trabalhadas - Revisar Código do Módulo
 Consertamos problemas com a função criarBaralho.
 
-04/05/2018 - 3h trabalhada - Codificar Módulo
-Escrevi as funções criarCarta e destruirCarta.
+04/05/2018 - 3h trabalhadas - Codificar Módulo
+Escrevemos as funções criarCarta e destruirCarta.
 
-05/05/2018 - 
+05/05/2018 - 6h trabalhadas - Codificar Módulo / Revisar Código do Módulo
+Escrevemos ObterInfoCarta e criarCarta foi revisada.
+
+06/05/2018 - 5h trabalhadas - Revisar Código do Módulo / Codificar Módulo / Redigir Script de Teste
+CriarBaralho foi atualizada. ObterInfoCarta foi dividida em ObterCarta, ObterValor e ObterNaipe. Foi escrito o módulo de teste.
+Foi escrito o script de teste do módulo baralho.
+
+07/05/2018 - 3h trabalhadas - Realizar os testes / Revisar Script de Teste
+Foram realizados os testes do módulo baralho  e o script de teste do módulo lista foi revisado com mais casos de teste.
+
 
 Os tipos de tarefa são:
 - estudar
