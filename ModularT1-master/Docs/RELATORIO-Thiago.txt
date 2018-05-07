@@ -27,6 +27,17 @@ Foi feita uma revisão da Visão de Módulos, da Visão de Interface e dos Requi
 
 31/04/2018 - 3h trabalhadas - Aplicando uma forma diferente de construção do embaralhar o baralho no baralho.c
 
+01/05/2018- 3h  trabalhadas - diagnosticar e corrigir os problemas encontrados
+
+02/05/2018 - 2h trabalhadas - revisar código do módulo
+
+04/05/2018 - 3h trabalhada - revisar especificações, estudar
+
+05/05/2018 - 6h trabalhadas -codificar módulo,revisar código do módulo ,realizar os testes,diagnosticar e corrigir os problemas encontrados.
+
+07/05/2018 - 7h trabalhadas - codificar módulo,revisar código do módulo ,realizar os testes,diagnosticar e corrigir os problemas encontrados.
+
+
 
 
 
